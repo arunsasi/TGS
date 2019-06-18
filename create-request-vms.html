@@ -301,21 +301,21 @@
                                     <div class="col-sm-6">
                                         <h3 class="subHeadBox">Add Message Content</h3>
                                         <div class="well messageBox">
-                                            <div class="form-group"><label class="radio-inline">
-                                                    <input type="radio" name="optionsMessage" id="optionsExisting" value="Existing Message Content" checked="" onclick="show1();">
+                                            <div class="form-group"> <label class=" radio-inline">
+                                                    <input type="radio" name="optionsMessage" id="optionsNew" value="New Message Content" checked="" onclick="show1();">
+                                                    New Message Content
+                                                </label><label class="radio-inline">
+                                                    <input type="radio" name="optionsMessage" id="optionsExisting" value="Existing Message Content" onclick="show2();">
                                                     Existing Message Content
                                                 </label>
-                                                <label class=" radio-inline">
-                                                    <input type="radio" name="optionsMessage" id="optionsNew" value="New Message Content" onclick="show2();">
-                                                    New Message Content
-                                                </label>
+
                                             </div>
                                             <div class="row">
-                                                <div id="ExistingMsgContent">
+                                                <div id="ExistingMsgContent" style="display: none;">
                                                     <div class="col-sm-6">
                                                         <div class="form-group">
                                                             <label>Message Code</label>
-                                                            <select class="form-control select2" data-placeholder="Select Message Code">
+                                                            <select class="form-control select2" data-placeholder="Select Message Code" style="width: 100%">
                                                                 <option></option>
                                                                 <option>ADV/1/2019</option>
                                                                 <option>ADV/2/2019</option>
@@ -325,17 +325,47 @@
                                                         <div class="form-group">
                                                             <label>Message Name</label>
                                                             <div class="form-group">
-                                                                <input class="form-control" type="text" placeholder="Message Name">
+                                                                <input class="form-control" type="text" placeholder="Message Name" disabled value="">
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-12">
                                                         <div class="form-group">
                                                             <label>Message Preview</label>
-                                                            <textarea class="form-control" rows="3"></textarea>
+                                                            <textarea class="form-control" rows="3" disabled>This text is visible</textarea>
                                                         </div>
                                                     </div>
                                                 </div>
+
+                                                <div id="NewMsgContent">
+                                                    <div class="col-sm-12">
+                                                        <div class="form-group">
+                                                            <label>Text Message</label>
+                                                            <textarea class="form-control" rows="3" placeholder="Type your message"></textarea>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="form-group">
+                                                                <div class="col-sm-12"><img id="MsgImgInput" class="prevImg" style="display: none;" /></div>
+                                                                <div class="col-sm-3"><label class="btn btn-primary btn-flat">
+                                                                        Upload Image<input type="file" id="imgInp" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;">
+                                                                    </label>
+                                                                    <small class="help-block">Max File size 2 MB</small>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+
+                                                            <div class="form-group">
+                                                                <input type="file" class="fileuploader" style="display: none;">
+                                                                <button class="fileuploader-btn btn btn-primary btn-flat">Upload Video</button><small class="help-block">Max File size 2 MB</small><br>
+                                                                <div id="VideoMsgPreview"></div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
                                                 <div class="col-sm-6">
                                                     <div class="form-group">
                                                         <label>Display Duration</label>
@@ -347,14 +377,13 @@
                                                 <div class="col-sm-6">
                                                     <div class="form-group">
                                                         <label class="empty-lbl"></label>
-                                                        <button type="button" class="btn btn-success btn-flat">Add</button>
+                                                        <button type="button" class="btn btn-success btn-flat">Add Message</button>
                                                     </div>
                                                 </div>
                                             </div>
                                             <table class="table table-bordered table-striped table-message">
                                                 <tbody>
                                                     <tr>
-
                                                         <th>Message Code</th>
                                                         <th>Message Name</th>
                                                         <th>Message Content</th>
@@ -424,7 +453,9 @@
     <script>
         $(function() {
             //select2
-            $('.select2').select2();
+            $('.select2').select2({
+                allowClear: true,
+            });
             $('.mselect2').select2({
                 closeOnSelect: false,
                 placeholder: "Select",
@@ -478,12 +509,56 @@
         })
 
         function show1() {
-            document.getElementById('ExistingMsgContent').style.display = 'block';
+            document.getElementById('ExistingMsgContent').style.display = 'none';
         }
 
         function show2() {
-            document.getElementById('ExistingMsgContent').style.display = 'none';
+            document.getElementById('ExistingMsgContent').style.display = 'block';
         }
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#MsgImgInput').attr('src', e.target.result);
+                    $('#MsgImgInput').show();
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $("#imgInp").change(function() {
+            readURL(this);
+        });
+
+
+        jQuery(document).ready(function($) {
+
+            // Click button to activate hidden file input
+            $('.fileuploader-btn').on('click', function() {
+                $('.fileuploader').click();
+            });
+
+            // Click above calls the open dialog box
+            // Once something is selected the change function will run
+            $('.fileuploader').change(function() {
+
+                // Create new FileReader as a variable
+                var reader = new FileReader();
+
+                // Onload Function will run after video has loaded
+                reader.onload = function(file) {
+                    var fileContent = file.target.result;
+                    $('#VideoMsgPreview').append('<video src="' + fileContent + '" width="320" height="240" controls></video>');
+                }
+
+                // Get the selected video from Dialog
+                reader.readAsDataURL(this.files[0]);
+
+            });
+
+        });
 
     </script>
 </body>

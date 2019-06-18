@@ -6322,7 +6322,13 @@ legend {
 .select2-container--default .select2-selection--multiple {
     border: 1px solid #d2d6de;
     border-radius: 0;
-    height: 34px;
+    min-height: 34px;
+}
+
+.prevImg {
+    max-width: 50%;
+    display: block;
+    margin-bottom: 5px;
 }
 
 /*
