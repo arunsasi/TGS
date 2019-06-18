@@ -285,7 +285,8 @@
                                                     <div class="form-group">
                                                         <label>Valid Till</label>
                                                         <select class="form-control select2" style="width: 100%;">
-                                                            <option selected>One Time</option>
+                                                            <option selected>Select Validity</option>
+                                                            <option>One Time</option>
                                                             <option>Repeat</option>
                                                         </select> </div>
                                                 </div>
@@ -296,36 +297,38 @@
                                         <h3 class="subHeadBox">Add Message Content</h3>
                                         <div class="well messageBox">
                                             <div class="form-group"><label class="radio-inline">
-                                                    <input type="radio" name="optionsMessage" id="optionsExisting" value="Existing Message Content" checked="">
+                                                    <input type="radio" name="optionsMessage" id="optionsExisting" value="Existing Message Content" checked="" onclick="show1();">
                                                     Existing Message Content
                                                 </label>
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="optionsMessage" id="optionsNew" value="New Message Content">
+                                                <label class=" radio-inline">
+                                                    <input type="radio" name="optionsMessage" id="optionsNew" value="New Message Content" onclick="show2();">
                                                     New Message Content
                                                 </label>
                                             </div>
                                             <div class="row">
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <label>Message Code</label>
-                                                        <select class="form-control select2" style="width: 100%;">
-                                                            <option selected>Select Message Code</option>
-                                                            <option>ADV/1/2019</option>
-                                                            <option>ADV/2/2019</option>
-                                                        </select> </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <label>Message Name</label>
+                                                <div id="ExistingMsgContent">
+                                                    <div class="col-sm-6">
                                                         <div class="form-group">
-                                                            <input class="form-control" type="text" placeholder="Message Name">
+                                                            <label>Message Code</label>
+                                                            <select class="form-control select2" style="width: 100%;">
+                                                                <option selected>Select Message Code</option>
+                                                                <option>ADV/1/2019</option>
+                                                                <option>ADV/2/2019</option>
+                                                            </select> </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label>Message Name</label>
+                                                            <div class="form-group">
+                                                                <input class="form-control" type="text" placeholder="Message Name">
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="col-sm-12">
-                                                    <div class="form-group">
-                                                        <label>Message Preview</label>
-                                                        <textarea class="form-control" rows="3"></textarea>
+                                                    <div class="col-sm-12">
+                                                        <div class="form-group">
+                                                            <label>Message Preview</label>
+                                                            <textarea class="form-control" rows="3"></textarea>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6">
@@ -437,7 +440,7 @@
                 $(this).val('');
             });
 
-            //Date picker with Time
+            //Date picker with Time Position Up
             $('.dateSingleTime2').daterangepicker({
                 singleDatePicker: true,
                 autoUpdateInput: false,
@@ -461,6 +464,15 @@
             });
 
         })
+
+        function show1() {
+            document.getElementById('ExistingMsgContent').style.display = 'block';
+        }
+
+        function show2() {
+            document.getElementById('ExistingMsgContent').style.display = 'none';
+        }
+
     </script>
 </body>
 
