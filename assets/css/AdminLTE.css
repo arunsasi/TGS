@@ -6315,6 +6315,16 @@ legend {
     background: #f9f9f9;
 }
 
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    border-radius: 0;
+}
+
+.select2-container--default .select2-selection--multiple {
+    border: 1px solid #d2d6de;
+    border-radius: 0;
+    height: 34px;
+}
+
 /*
 .zoomimg {
     -webkit-transition: all .2s ease-in-out;

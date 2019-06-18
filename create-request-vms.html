@@ -141,8 +141,8 @@
                                         <div class="col-sm-3">
                                             <div class="form-group">
                                                 <label>Information Provided By</label>
-                                                <select class="form-control select2" style="width: 100%;">
-                                                    <option selected>Select Information</option>
+                                                <select class="form-control select2" data-placeholder="Select Information">
+                                                    <option></option>
                                                     <option>RC-1</option>
                                                     <option>RC-2</option>
                                                 </select>
@@ -151,8 +151,8 @@
                                         <div class="col-sm-3">
                                             <div class="form-group">
                                                 <label>Source/Reported Via</label>
-                                                <select class="form-control select2" style="width: 100%;">
-                                                    <option value="" selected="">Select Source/Reported</option>
+                                                <select class="form-control select2" data-placeholder="Select Source/Reported">
+                                                    <option></option>
                                                     <option value="SMS">SMS</option>
                                                     <option value="Phone">Phone</option>
                                                     <option value="Fax">Fax</option>
@@ -173,8 +173,8 @@
                                         <div class="col-sm-3">
                                             <div class="form-group">
                                                 <label id="lblmake">Priority</label>
-                                                <select class="form-control select2" style="width: 100%;">
-                                                    <option value="" selected="">Select Priority</option>
+                                                <select class="form-control select2" data-placeholder="Select Source/Reported">
+                                                    <option></option>
                                                     <option value="Critical">Critical</option>
                                                     <option value="High">High</option>
                                                     <option value="Medium">Medium</option>
@@ -200,8 +200,8 @@
                                                 <div class="col-sm-6">
                                                     <div class="form-group">
                                                         <label>Message Category</label>
-                                                        <select class="form-control select2" style="width: 100%;">
-                                                            <option selected>Select Category</option>
+                                                        <select class="form-control select2" data-placeholder="Select Category">
+                                                            <option></option>
                                                             <option>ADV</option>
                                                             <option>PA</option>
                                                         </select>
@@ -210,8 +210,8 @@
                                                 <div class="col-sm-6">
                                                     <div class="form-group">
                                                         <label>Message Format</label>
-                                                        <select class="form-control select2" style="width: 100%;">
-                                                            <option selected>Select Format</option>
+                                                        <select class="form-control select2" data-placeholder="Select Format">
+                                                            <option></option>
                                                             <option>Text</option>
                                                             <option>Image</option>
                                                             <option>Video</option>
@@ -221,8 +221,8 @@
                                                 <div class="col-sm-6">
                                                     <div class="form-group">
                                                         <label>Template</label>
-                                                        <select class="form-control select2" style="width: 100%;" onchange="$('#imageTemplate').attr('src', this.options[this.selectedIndex].value);">
-                                                            <option value="assets/img/template/preview.png" selected>Select Template</option>
+                                                        <select class="form-control select2" onchange="$('#imageTemplate').attr('src', this.options[this.selectedIndex].value);" data-placeholder="Select Template">
+                                                            <option></option>
                                                             <option value="assets/img/template/template-1.png">Template 1</option>
                                                             <option value="assets/img/template/template-2.png">Template 2</option>
                                                         </select>
@@ -232,8 +232,8 @@
                                                 <div class="col-sm-6">
                                                     <div class="form-group">
                                                         <label>Widget</label>
-                                                        <select class="form-control select2" style="width: 100%;">
-                                                            <option selected>Select Widget</option>
+                                                        <select class="form-control select2" data-placeholder="Select Widget">
+                                                            <option></option>
                                                             <option>Widget 1</option>
                                                             <option>Widget 2</option>
                                                         </select>
@@ -255,22 +255,25 @@
                                             <legend>Message Scheduling &amp; Device Selection</legend>
                                             <div class="row">
                                                 <div class="col-sm-6">
-                                                    <label>Select Device</label>
-                                                    <div class="form-group"><label class="radio-inline">
-                                                            <input type="radio" name="selectDevice" id="vmsDevice" value="VMS" checked="">
-                                                            VMS
-                                                        </label>
-                                                        <label class="radio-inline">
-                                                            <input type="radio" name="selectDevice" id="vmsGroupDevice" value="VMS Group">
-                                                            VMS Group
-                                                        </label>
+                                                    <div class="form-group">
+                                                        <label>Select Group</label>
+                                                        <select class="form-control select2" data-placeholder="Select Group">
+                                                            <option></option>
+                                                            <option>VMS</option>
+                                                            <option>VMS Group</option>
+                                                        </select>
                                                     </div>
-                                                    <div class="form-group"><select multiple="" class="form-control">
-                                                            <option>option 1</option>
-                                                            <option>option 2</option>
-                                                            <option>option 3</option>
-                                                            <option>option 4</option>
-                                                            <option>option 5</option>
+                                                </div>
+                                                <div class="col-sm-6">
+
+                                                    <div class="form-group">
+                                                        <label>Select Devices</label>
+                                                        <select multiple="" class="form-control mselect2">
+                                                            <option>Option 1</option>
+                                                            <option>Option 2</option>
+                                                            <option>Option 3</option>
+                                                            <option>Option 4</option>
+                                                            <option>Option 5</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -282,12 +285,14 @@
                                                             <input type="text" placeholder="Start Date &amp; Time" class="form-control dateSingleTime2 bg-white" readonly="readonly">
                                                         </div>
                                                     </div>
+                                                </div>
+                                                <div class="col-sm-6">
                                                     <div class="form-group">
                                                         <label>Valid Till</label>
-                                                        <select class="form-control select2" style="width: 100%;">
-                                                            <option selected>Select Validity</option>
-                                                            <option>One Time</option>
-                                                            <option>Repeat</option>
+                                                        <select class="form-control select2" data-placeholder="Select Validity">
+                                                            <option> </option>
+                                                            <option value="0">One Time</option>
+                                                            <option value="1">Repeat</option>
                                                         </select> </div>
                                                 </div>
                                             </div>
@@ -310,8 +315,8 @@
                                                     <div class="col-sm-6">
                                                         <div class="form-group">
                                                             <label>Message Code</label>
-                                                            <select class="form-control select2" style="width: 100%;">
-                                                                <option selected>Select Message Code</option>
+                                                            <select class="form-control select2" data-placeholder="Select Message Code">
+                                                                <option></option>
                                                                 <option>ADV/1/2019</option>
                                                                 <option>ADV/2/2019</option>
                                                             </select> </div>
@@ -352,16 +357,19 @@
 
                                                         <th>Message Code</th>
                                                         <th>Message Name</th>
+                                                        <th>Message Content</th>
                                                         <th class="text-center" width="10%">Action</th>
                                                     </tr>
                                                     <tr>
                                                         <td>ADV/19/2019</td>
+                                                        <td>Display Message 1 </td>
                                                         <td>Display Message 1 </td>
                                                         <td class="text-center" width="10%"><a><i class="fas fa-times" title="Delete"></i></a></td>
                                                     </tr>
                                                     <tr>
 
                                                         <td>ADV/20/2019</td>
+                                                        <td>Display Message 2</td>
                                                         <td>Display Message 2</td>
                                                         <td class="text-center" width="10%"><a><i class="fas fa-times" title="Delete"></i></a></td>
                                                     </tr>
@@ -417,6 +425,10 @@
         $(function() {
             //select2
             $('.select2').select2();
+            $('.mselect2').select2({
+                closeOnSelect: false,
+                placeholder: "Select",
+            });
 
             //Date picker with Time
             $('.dateSingleTime').daterangepicker({
