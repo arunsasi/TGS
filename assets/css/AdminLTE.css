@@ -6331,6 +6331,10 @@ legend {
     margin-bottom: 5px;
 }
 
+.msgFormat {
+    display: none;
+}
+
 /*
 .zoomimg {
     -webkit-transition: all .2s ease-in-out;

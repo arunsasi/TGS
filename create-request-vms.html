@@ -210,11 +210,11 @@
                                                 <div class="col-sm-6">
                                                     <div class="form-group">
                                                         <label>Message Format</label>
-                                                        <select class="form-control select2" data-placeholder="Select Format">
+                                                        <select class="form-control select2" data-placeholder="Select Format" id="formatSelector">
                                                             <option></option>
-                                                            <option>Text</option>
-                                                            <option>Image</option>
-                                                            <option>Video</option>
+                                                            <option value="txtFormat">Text</option>
+                                                            <option value="imgFormat">Image</option>
+                                                            <option value="videoFormat">Video</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -340,27 +340,31 @@
                                                 <div id="NewMsgContent">
                                                     <div class="col-sm-12">
                                                         <div class="form-group">
+                                                            <label>Message Name</label>
+                                                            <div class="form-group">
+                                                                <input class="form-control" type="text" placeholder="Message Name" disabled value="">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group msgFormat" id="txtFormat">
                                                             <label>Text Message</label>
                                                             <textarea class="form-control" rows="3" placeholder="Type your message"></textarea>
                                                         </div>
-                                                        <div class="row">
-                                                            <div class="form-group">
-                                                                <div class="col-sm-12"><img id="MsgImgInput" class="prevImg" style="display: none;" /></div>
-                                                                <div class="col-sm-3"><label class="btn btn-primary btn-flat">
-                                                                        Upload Image<input type="file" id="imgInp" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;">
-                                                                    </label>
-                                                                    <small class="help-block">Max File size 2 MB</small>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div>
 
-                                                            <div class="form-group">
-                                                                <input type="file" class="fileuploader" style="display: none;">
-                                                                <button class="fileuploader-btn btn btn-primary btn-flat">Upload Video</button><small class="help-block">Max File size 2 MB</small><br>
-                                                                <div id="VideoMsgPreview"></div>
-                                                            </div>
+                                                        <div class="form-group msgFormat" id="imgFormat">
+                                                            <img id="MsgImgInput" class="prevImg" style="display: none;" />
+                                                            <input type="file" class="imguploader" id="imgInp" style="display: none;">
+                                                            <button class="imguploader-btn btn btn-primary btn-flat">Upload Image</button><small class="help-block">Max File size 2 MB</small>
                                                         </div>
+
+
+                                                        <div class="form-group msgFormat" id="videoFormat">
+                                                            <div id="VideoMsgPreview"></div>
+                                                            <input type="file" class="fileuploader" style="display: none;">
+                                                            <button class="fileuploader-btn btn btn-primary btn-flat">Upload Video</button><small class="help-block">Max File size 12 MB</small>
+
+                                                        </div>
+
 
                                                     </div>
 
@@ -506,7 +510,41 @@
                 $(this).val('');
             });
 
+            $('#formatSelector').change(function() {
+                $('.msgFormat').hide();
+                $('#' + $(this).val()).show();
+            });
+
+            // Click button to activate hidden file Image input
+            $('.imguploader-btn').on('click', function() {
+                $('.imguploader').click();
+            });
+
+            // Click button to activate hidden file Video input
+            $('.fileuploader-btn').on('click', function() {
+                $('.fileuploader').click();
+            });
+
+            // Click above calls the open dialog box
+            // Once something is selected the change function will run
+            $('.fileuploader').change(function() {
+
+                // Create new FileReader as a variable
+                var reader = new FileReader();
+
+                // Onload Function will run after video has loaded
+                reader.onload = function(file) {
+                    var fileContent = file.target.result;
+                    $('#VideoMsgPreview').append('<video src="' + fileContent + '" width="320" height="240" controls></video>');
+                }
+
+                // Get the selected video from Dialog
+                reader.readAsDataURL(this.files[0]);
+
+            });
+
         })
+
 
         function show1() {
             document.getElementById('ExistingMsgContent').style.display = 'none';
@@ -530,34 +568,6 @@
 
         $("#imgInp").change(function() {
             readURL(this);
-        });
-
-
-        jQuery(document).ready(function($) {
-
-            // Click button to activate hidden file input
-            $('.fileuploader-btn').on('click', function() {
-                $('.fileuploader').click();
-            });
-
-            // Click above calls the open dialog box
-            // Once something is selected the change function will run
-            $('.fileuploader').change(function() {
-
-                // Create new FileReader as a variable
-                var reader = new FileReader();
-
-                // Onload Function will run after video has loaded
-                reader.onload = function(file) {
-                    var fileContent = file.target.result;
-                    $('#VideoMsgPreview').append('<video src="' + fileContent + '" width="320" height="240" controls></video>');
-                }
-
-                // Get the selected video from Dialog
-                reader.readAsDataURL(this.files[0]);
-
-            });
-
         });
 
     </script>
