@@ -8,9 +8,7 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/js/datatables.net-bs/css/dataTables.bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
     <link rel="stylesheet" href="assets/Ionicons/css/ionicons.min.css">
     <link rel="stylesheet" href="assets/icofont/icofont.min.css">
@@ -127,303 +125,351 @@
 
             <!-- Main content -->
             <section class="content container-fluid">
+
+
+
+
+
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="box box-default box-solid">
-                            <div class="box-header with-border">
-                                <h3 class="box-title">Create Message Request</h3>
-                            </div>
-                            <div class="box-body">
-
-                                <fieldset>
-                                    <legend>Request Info</legend>
+                        <!-- Custom Tabs -->
+                        <div class="nav-tabs-custom box-default">
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#listView" data-toggle="tab">Select VMS Template</a></li>
+                                <li><a href="#mapView" data-toggle="tab">Create Message</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="listView">
                                     <div class="row">
-                                        <div class="col-sm-3">
-                                            <div class="form-group">
-                                                <label>Information Provided By</label>
-                                                <select class="form-control select2" data-placeholder="Select Information">
-                                                    <option></option>
-                                                    <option>RC-1</option>
-                                                    <option>RC-2</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <div class="form-group">
-                                                <label>Source/Reported Via</label>
-                                                <select class="form-control select2" data-placeholder="Select Source/Reported">
-                                                    <option></option>
-                                                    <option value="SMS">SMS</option>
-                                                    <option value="Phone">Phone</option>
-                                                    <option value="Fax">Fax</option>
-                                                    <option value="Email">Email</option>
-                                                    <option value="System">System</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <div class="form-group">
-                                                <label>Reported On Date &amp; Time</label>
-                                                <div class="input-group">
-                                                    <div class="input-group-addon"><i class="far fa-calendar-alt"></i></div>
-                                                    <input type="text" placeholder="Reported On Date &amp; Time" class="form-control dateSingleTime bg-white" readonly="readonly">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <div class="form-group">
-                                                <label id="lblmake">Priority</label>
-                                                <select class="form-control select2" data-placeholder="Select Source/Reported">
-                                                    <option></option>
-                                                    <option value="Critical">Critical</option>
-                                                    <option value="High">High</option>
-                                                    <option value="Medium">Medium</option>
-                                                    <option value="Low">Low</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-12">
-                                            <div class="form-group">
-                                                <label>Request Description</label>
-                                                <textarea class="form-control" rows="3" placeholder="Request Description"></textarea>
-                                            </div>
-                                        </div>
-
+                                        <div class="col-md-12"> ddd</div>
                                     </div>
-                                </fieldset>
 
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <fieldset>
-                                            <legend>Message Info</legend>
-                                            <div class="row">
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <label>Message Category</label>
-                                                        <select class="form-control select2" data-placeholder="Select Category">
-                                                            <option></option>
-                                                            <option>ADV</option>
-                                                            <option>PA</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <label>Message Format</label>
-                                                        <select class="form-control select2" data-placeholder="Select Format" id="formatSelector">
-                                                            <option></option>
-                                                            <option value="txtFormat">Text</option>
-                                                            <option value="imgFormat">Image</option>
-                                                            <option value="videoFormat">Video</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <label>Template</label>
-                                                        <select class="form-control select2" onchange="$('#imageTemplate').attr('src', this.options[this.selectedIndex].value);" data-placeholder="Select Template">
-                                                            <option></option>
-                                                            <option value="assets/img/template/template-1.png">Template 1</option>
-                                                            <option value="assets/img/template/template-2.png">Template 2</option>
-                                                        </select>
 
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <label>Widget</label>
-                                                        <select class="form-control select2" data-placeholder="Select Widget">
-                                                            <option></option>
-                                                            <option>Widget 1</option>
-                                                            <option>Widget 2</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-12">
-                                                    <div class="form-group">
-                                                        <label>Template Widget Preview</label>
-                                                        <div class="attachment-block clearfix">
-                                                            <img id="imageTemplate" class="img-responsive center-block" src="assets/img/template/preview.png" alt="Template Preview">
+                                    <div class="box-footer no-padding-left-right">
 
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </fieldset>
-                                        <fieldset>
-                                            <legend>Message Scheduling &amp; Device Selection</legend>
-                                            <div class="row">
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <label>Select Group</label>
-                                                        <select class="form-control select2" data-placeholder="Select Group">
-                                                            <option></option>
-                                                            <option>VMS</option>
-                                                            <option>VMS Group</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6">
-
-                                                    <div class="form-group">
-                                                        <label>Select Devices</label>
-                                                        <select multiple="" class="form-control mselect2">
-                                                            <option>Option 1</option>
-                                                            <option>Option 2</option>
-                                                            <option>Option 3</option>
-                                                            <option>Option 4</option>
-                                                            <option>Option 5</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <label>Start Date &amp; Time</label>
-                                                        <div class="input-group">
-                                                            <div class="input-group-addon"><i class="far fa-calendar-alt"></i></div>
-                                                            <input type="text" placeholder="Start Date &amp; Time" class="form-control dateSingleTime2 bg-white" readonly="readonly">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <label>Valid Till</label>
-                                                        <select class="form-control select2" data-placeholder="Select Validity">
-                                                            <option> </option>
-                                                            <option value="0">One Time</option>
-                                                            <option value="1">Repeat</option>
-                                                        </select> </div>
-                                                </div>
-                                            </div>
-                                        </fieldset>
+                                        <button type="button" class="btn btn-success btn-flat pull-right">Next</button>
                                     </div>
-                                    <div class="col-sm-6">
-                                        <h3 class="subHeadBox">Add Message Content</h3>
-                                        <div class="well messageBox">
-                                            <div class="form-group"> <label class=" radio-inline">
-                                                    <input type="radio" name="optionsMessage" id="optionsNew" value="New Message Content" checked="" onclick="show1();">
-                                                    New Message Content
-                                                </label><label class="radio-inline">
-                                                    <input type="radio" name="optionsMessage" id="optionsExisting" value="Existing Message Content" onclick="show2();">
-                                                    Existing Message Content
-                                                </label>
 
+
+                                </div>
+                                <!-- /.tab-pane -->
+                                <div class="tab-pane" id="mapView">
+
+
+                                    <fieldset>
+                                        <legend>Request Info</legend>
+                                        <div class="row">
+                                            <div class="col-sm-6 col-md-3">
+                                                <div class="form-group">
+                                                    <label>Information Provided By</label>
+                                                    <select class="form-control select2" data-placeholder="Select Information" style="width: 100%">
+                                                        <option></option>
+                                                        <option>RC-1</option>
+                                                        <option>RC-2</option>
+                                                    </select>
+                                                </div>
                                             </div>
-                                            <div class="row">
-                                                <div id="ExistingMsgContent" style="display: none;">
+                                            <div class="col-sm-6 col-md-3">
+                                                <div class="form-group">
+                                                    <label>Source/Reported Via</label>
+                                                    <select class="form-control select2" data-placeholder="Select Source/Reported" style="width: 100%">
+                                                        <option></option>
+                                                        <option value="SMS">SMS</option>
+                                                        <option value="Phone">Phone</option>
+                                                        <option value="Fax">Fax</option>
+                                                        <option value="Email">Email</option>
+                                                        <option value="System">System</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 col-md-3">
+                                                <div class="form-group">
+                                                    <label>Reported On Date &amp; Time</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-addon"><i class="far fa-calendar-alt"></i></div>
+                                                        <input type="text" placeholder="Reported On Date &amp; Time" class="form-control dateSingleTime bg-white" readonly="readonly">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 col-md-3">
+                                                <div class="form-group">
+                                                    <label id="lblmake">Priority</label>
+                                                    <select class="form-control select2" data-placeholder="Select Source/Reported" style="width: 100%">
+                                                        <option></option>
+                                                        <option value="Critical">Critical</option>
+                                                        <option value="High">High</option>
+                                                        <option value="Medium">Medium</option>
+                                                        <option value="Low">Low</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Request Description</label>
+                                                    <textarea class="form-control" rows="3" placeholder="Request Description"></textarea>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </fieldset>
+
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-6">
+                                            <fieldset>
+                                                <legend>Message Info</legend>
+                                                <div class="row">
                                                     <div class="col-sm-6">
                                                         <div class="form-group">
-                                                            <label>Message Code</label>
-                                                            <select class="form-control select2" data-placeholder="Select Message Code" style="width: 100%">
+                                                            <label>Message Category</label>
+                                                            <select class="form-control select2" data-placeholder="Select Category" style="width: 100%">
                                                                 <option></option>
-                                                                <option>ADV/1/2019</option>
-                                                                <option>ADV/2/2019</option>
+                                                                <option>ADV</option>
+                                                                <option>PA</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label>Message Format</label>
+                                                            <select class="form-control select2" data-placeholder="Select Format" id="formatSelector" style="width: 100%">
+                                                                <option></option>
+                                                                <option value="txtFormat">Text</option>
+                                                                <option value="imgFormat">Image</option>
+                                                                <option value="videoFormat">Video</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label>Template</label>
+                                                            <select class="form-control select2" onchange="$('#imageTemplate').attr('src', this.options[this.selectedIndex].value);" data-placeholder="Select Template" style="width: 100%">
+                                                                <option></option>
+                                                                <option value="assets/img/template/template-1.png">Template 1</option>
+                                                                <option value="assets/img/template/template-2.png">Template 2</option>
+                                                            </select>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label>Widget</label>
+                                                            <select class="form-control select2" data-placeholder="Select Widget" style="width: 100%">
+                                                                <option></option>
+                                                                <option>Widget 1</option>
+                                                                <option>Widget 2</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <div class="form-group">
+                                                            <label>Template Widget Preview</label>
+                                                            <div class="attachment-block clearfix">
+                                                                <img id="imageTemplate" class="img-responsive center-block" src="assets/img/template/preview.png" alt="Template Preview">
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </fieldset>
+                                            <fieldset>
+                                                <legend>Message Scheduling &amp; Device Selection</legend>
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label>Select Group</label>
+                                                            <select class="form-control select2" data-placeholder="Select Group" style="width: 100%">
+                                                                <option></option>
+                                                                <option>VMS</option>
+                                                                <option>VMS Group</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+
+                                                        <div class="form-group">
+                                                            <label>Select Devices</label>
+                                                            <select multiple="" class="form-control mselect2" data-placeholder="Select Devices" style="width: 100%">
+                                                                <option></option>
+                                                                <option>Option 1</option>
+                                                                <option>Option 2</option>
+                                                                <option>Option 3</option>
+                                                                <option>Option 4</option>
+                                                                <option>Option 5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label>Start Date &amp; Time</label>
+                                                            <div class="input-group">
+                                                                <div class="input-group-addon"><i class="far fa-calendar-alt"></i></div>
+                                                                <input type="text" placeholder="Start Date &amp; Time" class="form-control dateSingleTime2 bg-white" readonly="readonly">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label>Valid Till</label>
+                                                            <select class="form-control select2" data-placeholder="Select Validity" style="width: 100%">
+                                                                <option> </option>
+                                                                <option value="0">One Time</option>
+                                                                <option value="1">Repeat</option>
                                                             </select> </div>
                                                     </div>
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                        <div class="col-sm-12 col-md-6">
+                                            <h3 class="subHeadBox">Add Message Content</h3>
+                                            <div class="well messageBox">
+                                                <div class="form-group"> <label class=" radio-inline">
+                                                        <input type="radio" name="optionsMessage" id="optionsNew" value="New Message Content" checked="" onclick="show1();">
+                                                        New Message Content
+                                                    </label><label class="radio-inline">
+                                                        <input type="radio" name="optionsMessage" id="optionsExisting" value="Existing Message Content" onclick="show2();">
+                                                        Existing Message Content
+                                                    </label>
+
+                                                </div>
+                                                <div class="row">
+                                                    <div id="ExistingMsgContent" style="display: none;">
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label>Message Code</label>
+                                                                <select class="form-control select2" data-placeholder="Select Message Code" style="width: 100%">
+                                                                    <option></option>
+                                                                    <option>ADV/1/2019</option>
+                                                                    <option>ADV/2/2019</option>
+                                                                </select> </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label>Message Name</label>
+                                                                <div class="form-group">
+                                                                    <input class="form-control" type="text" placeholder="Message Name" disabled value="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-12">
+                                                            <div class="form-group">
+                                                                <label>Message Preview</label>
+                                                                <textarea class="form-control" rows="3" disabled>This text is visible</textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div id="NewMsgContent">
+                                                        <div class="col-sm-12">
+                                                            <div class="form-group">
+                                                                <label>Message Name</label>
+                                                                <div class="form-group">
+                                                                    <input class="form-control" type="text" placeholder="Message Name" disabled value="">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group msgFormat" id="txtFormat">
+                                                                <label>Text Message</label>
+                                                                <textarea class="form-control" rows="3" placeholder="Type your message"></textarea>
+                                                            </div>
+
+                                                            <div class="form-group msgFormat" id="imgFormat">
+                                                                <img id="MsgImgInput" class="prevImg" style="display: none;" />
+                                                                <input type="file" class="imguploader" id="imgInp" style="visibility: hidden; position: absolute">
+                                                                <button class="imguploader-btn btn btn-primary btn-flat">Upload Image</button><small class="help-block">Max File size 2 MB</small>
+                                                            </div>
+
+
+                                                            <div class="form-group msgFormat" id="videoFormat">
+                                                                <div id="VideoMsgPreview"></div>
+                                                                <input type="file" class="fileuploader" style="visibility: hidden; position: absolute">
+                                                                <button class="fileuploader-btn btn btn-primary btn-flat">Upload Video</button><small class="help-block">Max File size 12 MB</small>
+
+                                                            </div>
+
+
+                                                        </div>
+
+                                                    </div>
+
                                                     <div class="col-sm-6">
                                                         <div class="form-group">
-                                                            <label>Message Name</label>
+                                                            <label>Display Duration</label>
                                                             <div class="form-group">
-                                                                <input class="form-control" type="text" placeholder="Message Name" disabled value="">
+                                                                <input class="form-control" type="text" placeholder="hh:mm:ss">
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-sm-12">
+                                                    <div class="col-sm-6">
                                                         <div class="form-group">
-                                                            <label>Message Preview</label>
-                                                            <textarea class="form-control" rows="3" disabled>This text is visible</textarea>
+                                                            <label class="empty-lbl"></label>
+                                                            <button type="button" class="btn btn-success btn-flat">Add Message</button>
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <table class="table table-bordered table-striped table-message">
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>Message Code</th>
+                                                            <th>Message Name</th>
+                                                            <th>Message Content</th>
+                                                            <th class="text-center" width="10%">Action</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>ADV/19/2019</td>
+                                                            <td>Display Message 1 </td>
+                                                            <td>Display Message 1 </td>
+                                                            <td class="text-center" width="10%"><a><i class="fas fa-times" title="Delete"></i></a></td>
+                                                        </tr>
+                                                        <tr>
 
-                                                <div id="NewMsgContent">
-                                                    <div class="col-sm-12">
-                                                        <div class="form-group">
-                                                            <label>Message Name</label>
-                                                            <div class="form-group">
-                                                                <input class="form-control" type="text" placeholder="Message Name" disabled value="">
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="form-group msgFormat" id="txtFormat">
-                                                            <label>Text Message</label>
-                                                            <textarea class="form-control" rows="3" placeholder="Type your message"></textarea>
-                                                        </div>
-
-                                                        <div class="form-group msgFormat" id="imgFormat">
-                                                            <img id="MsgImgInput" class="prevImg" style="display: none;" />
-                                                            <input type="file" class="imguploader" id="imgInp" style="display: none;">
-                                                            <button class="imguploader-btn btn btn-primary btn-flat">Upload Image</button><small class="help-block">Max File size 2 MB</small>
-                                                        </div>
-
-
-                                                        <div class="form-group msgFormat" id="videoFormat">
-                                                            <div id="VideoMsgPreview"></div>
-                                                            <input type="file" class="fileuploader" style="display: none;">
-                                                            <button class="fileuploader-btn btn btn-primary btn-flat">Upload Video</button><small class="help-block">Max File size 12 MB</small>
-
-                                                        </div>
-
-
-                                                    </div>
-
-                                                </div>
-
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <label>Display Duration</label>
-                                                        <div class="form-group">
-                                                            <input class="form-control" type="text" placeholder="hh:mm:ss">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <label class="empty-lbl"></label>
-                                                        <button type="button" class="btn btn-success btn-flat">Add Message</button>
-                                                    </div>
-                                                </div>
+                                                            <td>ADV/20/2019</td>
+                                                            <td>Display Message 2</td>
+                                                            <td>Display Message 2</td>
+                                                            <td class="text-center" width="10%"><a><i class="fas fa-times" title="Delete"></i></a></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
                                             </div>
-                                            <table class="table table-bordered table-striped table-message">
-                                                <tbody>
-                                                    <tr>
-                                                        <th>Message Code</th>
-                                                        <th>Message Name</th>
-                                                        <th>Message Content</th>
-                                                        <th class="text-center" width="10%">Action</th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>ADV/19/2019</td>
-                                                        <td>Display Message 1 </td>
-                                                        <td>Display Message 1 </td>
-                                                        <td class="text-center" width="10%"><a><i class="fas fa-times" title="Delete"></i></a></td>
-                                                    </tr>
-                                                    <tr>
-
-                                                        <td>ADV/20/2019</td>
-                                                        <td>Display Message 2</td>
-                                                        <td>Display Message 2</td>
-                                                        <td class="text-center" width="10%"><a><i class="fas fa-times" title="Delete"></i></a></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
                                         </div>
-
+                                    </div>
+                                    <div class="box-footer no-padding-left-right">
+                                        <button type="button" class="btn btn-danger btn-flat">View Conflicts</button>
+                                        <button type="button" class="btn btn-success btn-flat">Save</button>
                                     </div>
 
-                                </div>
 
-
-                                <div class="box-footer no-padding-left-right">
-                                    <button type="button" class="btn btn-danger btn-flat">View Conflicts</button>
-                                    <button type="button" class="btn btn-success btn-flat">Save</button>
                                 </div>
+                                <!-- /.tab-pane -->
 
                             </div>
+                            <!-- /.tab-content -->
                         </div>
                     </div>
+
+
                 </div>
+
+
+
+
+                <!--
+<div class="row">
+    <div class="col-md-12">
+        <div class="box box-default box-solid">
+            <div class="box-header with-border">
+                <h3 class="box-title">Create Message Request</h3>
+            </div>
+            <div class="box-body">
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+-->
 
 
             </section>
@@ -446,7 +492,6 @@
     <script src="assets/js/datatables.net/js/jquery.dataTables.min.js"></script>
     <script src="assets/js/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <script src="assets/js/jquery.slimscroll.min.js"></script>
     <script src="assets/js/fastclick.js"></script>
