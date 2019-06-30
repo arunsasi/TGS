@@ -6354,6 +6354,17 @@ legend {
     margin-left: 10px;
 }
 
+.template-table,
+.template-table td {
+    border-color: #adadad !important;
+}
+
+.template-table td {
+    text-align: center;
+    padding: 70px 0 !important;
+    cursor: pointer;
+}
+
 .empty-lbl {
     display: block;
     min-height: 20px;
@@ -6460,8 +6471,42 @@ fieldset[disabled] .form-control {
 
 .template-select-grid li {
     margin: 15px 0;
+    position: relative;
 }
 
+.template-select-grid label {
+    position: relative;
+}
+
+.zoomTemplate {
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    transition: 200ms all;
+    width: 27px;
+    height: 27px;
+    background: #6f6f6f;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.template-select-grid label .selectedTemplate i {
+    color: #00a65a;
+    font-size: 20px;
+}
+
+.template-select-grid label .zoomTemplate a {
+    display: block;
+    width: 27px;
+    height: 27px;
+}
+
+.template-select-grid label .zoomTemplate i {
+    color: #fff;
+    font-size: 16px;
+    line-height: 27px;
+}
 
 .input-hidden {
     position: absolute;
@@ -6479,6 +6524,19 @@ input[type=radio] + label > img {
     border: 1px solid #bebfc1;
     transition: 200ms all;
     cursor: pointer;
+}
+
+input[type=radio] + label .selectedTemplate {
+    display: none;
+    transition: 200ms all;
+}
+
+input[type=radio]:checked + label .selectedTemplate {
+    display: block;
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    transition: 200ms all;
 }
 
 .panel-heading .accordion-toggle:after {

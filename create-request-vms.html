@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" href="assets/css/lightbox.min.css">
     <link rel="stylesheet" href="assets/Ionicons/css/ionicons.min.css">
     <link rel="stylesheet" href="assets/icofont/icofont.min.css">
     <link rel="stylesheet" href="assets/css/AdminLTE.css">
@@ -170,51 +171,67 @@
                                             <!-- Template Grid -->
                                             <ul class="row template-select-grid">
                                                 <li class="col-sm-3 col-md-2">
-                                                    <input type="radio" name="templateSelection" id="template1" class="input-hidden" />
+                                                    <input type="radio" name="templateSelection" id="template1" class="input-hidden" checked />
                                                     <label for="template1">
                                                         <img src="assets/img/template/thumbnail/wireframe.jpg" class="img-responsive">
+                                                        <span class="selectedTemplate"><i class="fas fa-check-circle"></i></span>
+                                                        <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe.jpg" data-lightbox="Template 1"><i class="fas fa-search"></i></a></span>
                                                     </label>
                                                 </li>
                                                 <li class="col-sm-3 col-md-2">
                                                     <input type="radio" name="templateSelection" id="template2" class="input-hidden" />
                                                     <label for="template2">
                                                         <img src="assets/img/template/thumbnail/wireframe2.jpg" class="img-responsive">
+                                                        <span class="selectedTemplate"><i class="fas fa-check-circle"></i></span>
+                                                        <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe2.jpg" data-lightbox="Template 2"><i class="fas fa-search"></i></a></span>
                                                     </label>
                                                 </li>
                                                 <li class="col-sm-3 col-md-2">
                                                     <input type="radio" name="templateSelection" id="template3" class="input-hidden" />
                                                     <label for="template3">
                                                         <img src="assets/img/template/thumbnail/wireframe3.jpg" class="img-responsive">
+                                                        <span class="selectedTemplate"><i class="fas fa-check-circle"></i></span>
+                                                        <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe3.jpg" data-lightbox="Template 3"><i class="fas fa-search"></i></a></span>
                                                     </label>
                                                 </li>
                                                 <li class="col-sm-3 col-md-2">
                                                     <input type="radio" name="templateSelection" id="template4" class="input-hidden" />
                                                     <label for="template4">
                                                         <img src="assets/img/template/thumbnail/wireframe4.jpg" class="img-responsive">
+                                                        <span class="selectedTemplate"><i class="fas fa-check-circle"></i></span>
+                                                        <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe4.jpg" data-lightbox="Template 4"><i class="fas fa-search"></i></a></span>
                                                     </label>
                                                 </li>
                                                 <li class="col-sm-3 col-md-2">
                                                     <input type="radio" name="templateSelection" id="template5" class="input-hidden" />
                                                     <label for="template5">
                                                         <img src="assets/img/template/thumbnail/wireframe.jpg" class="img-responsive">
+                                                        <span class="selectedTemplate"><i class="fas fa-check-circle"></i></span>
+                                                        <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe.jpg" data-lightbox="Template 5"><i class="fas fa-search"></i></a></span>
                                                     </label>
                                                 </li>
                                                 <li class="col-sm-3 col-md-2">
                                                     <input type="radio" name="templateSelection" id="template6" class="input-hidden" />
                                                     <label for="template6">
                                                         <img src="assets/img/template/thumbnail/wireframe3.jpg" class="img-responsive">
+                                                        <span class="selectedTemplate"><i class="fas fa-check-circle"></i></span>
+                                                        <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe2.jpg" data-lightbox="Template 6"><i class="fas fa-search"></i></a></span>
                                                     </label>
                                                 </li>
                                                 <li class="col-sm-3 col-md-2">
                                                     <input type="radio" name="templateSelection" id="template7" class="input-hidden" />
                                                     <label for="template7">
                                                         <img src="assets/img/template/thumbnail/wireframe2.jpg" class="img-responsive">
+                                                        <span class="selectedTemplate"><i class="fas fa-check-circle"></i></span>
+                                                        <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe3.jpg" data-lightbox="Template 7"><i class="fas fa-search"></i></a></span>
                                                     </label>
                                                 </li>
                                                 <li class="col-sm-3 col-md-2">
                                                     <input type="radio" name="templateSelection" id="template8" class="input-hidden" />
                                                     <label for="template8">
                                                         <img src="assets/img/template/thumbnail/wireframe4.jpg" class="img-responsive">
+                                                        <span class="selectedTemplate"><i class="fas fa-check-circle"></i></span>
+                                                        <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe4.jpg" data-lightbox="Template 8"><i class="fas fa-search"></i></a></span>
                                                     </label>
                                                 </li>
                                             </ul>
@@ -228,7 +245,19 @@
                                 <div class="tab-pane" id="configureMessage">
                                     <div class="row">
                                         <div class="col-sm-12">
-                                            <img src="assets/img/template/thumbnail/wireframe.jpg">
+                                            <center>
+                                                <table width="800" class="table table-bordered template-table">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td bgcolor="#FFFFFF">WIDGET 1</td>
+                                                            <td bgcolor="#FFFFFF">WIDGET 2</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="2" bgcolor="#FFFFFF">WIDGET 3</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </center>
                                         </div>
                                         <div class="col-sm-12">
                                             <h3 class="subHeadBox">Add Message Content</h3>
@@ -528,6 +557,7 @@
     <script src="assets/js/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script src="assets/js/lightbox.min.js"></script>
     <script src="assets/js/jquery.slimscroll.min.js"></script>
     <script src="assets/js/fastclick.js"></script>
     <script src="assets/js/adminlte.min.js"></script>
