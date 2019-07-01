@@ -238,7 +238,7 @@
                                         </div>
                                     </div>
                                     <div class="box-footer no-padding-left-right">
-                                        <button type="button" class="btn btn-success btn-flat pull-right">Next</button>
+                                        <button type="button" class="btn btn-default btn-flat pull-right continue">Next</button>
                                     </div>
                                 </div>
                                 <!-- /.tab-pane -->
@@ -419,7 +419,7 @@
                                                     </div>
                                                     <div class="col-sm-12">
                                                         <div class="form-group">
-                                                            <button type="button" class="btn btn-success btn-flat">Add Message</button>
+                                                            <button type="button" class="btn btn-primary btn-flat">Add Message</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -516,9 +516,12 @@
 
                                     </div>
                                     <div class="box-footer no-padding-left-right">
+                                        <button type="button" class="btn btn-default btn-flat back">Previous</button>
+                                        <div class="pull-right">
+                                            <button type="button" class="btn btn-danger btn-flat ">Cancel</button>
+                                            <button type="button" class="btn btn-success btn-flat">Save</button>
+                                        </div>
 
-                                        <button type="button" class="btn btn-danger btn-flat">Cancel</button>
-                                        <button type="button" class="btn btn-success btn-flat">Save</button>
                                     </div>
 
 
@@ -632,8 +635,7 @@
             });
 
         })
-
-
+        //Show Hide Exisiting Message or New Message
         function show1() {
             document.getElementById('ExistingMsgContent').style.display = 'none';
             document.getElementById('NewMsgContent').style.display = 'block';
@@ -644,6 +646,8 @@
             document.getElementById('NewMsgContent').style.display = 'none';
         }
 
+
+        // Image Uploader
         function readURL(input) {
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
@@ -658,6 +662,15 @@
 
         $("#imgInp").change(function() {
             readURL(this);
+        });
+
+
+        // Tab Next Previous
+        $('.continue').click(function() {
+            $('.nav-tabs > .active').next('li').find('a').trigger('click');
+        });
+        $('.back').click(function() {
+            $('.nav-tabs > .active').prev('li').find('a').trigger('click');
         });
 
     </script>
