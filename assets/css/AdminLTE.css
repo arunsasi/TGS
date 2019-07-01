@@ -6241,26 +6241,6 @@ div.dataTables_wrapper div.dataTables_info {
     margin: 0;
 }
 
-.well.smcmodal {
-    border-radius: 0;
-    padding: 10px;
-}
-
-.well.smcmodal .thumbnail {
-    margin-bottom: 0;
-    border-radius: 0;
-    border: none;
-}
-
-#verifyRTO input,
-#verifyRTOView input,
-#verifyRTOEdit input {
-    margin-top: 8px;
-}
-
-.well.smcmodal .form-group {
-    margin-bottom: 0;
-}
 
 .well.messageBox {
     border-radius: 0;
@@ -6277,6 +6257,15 @@ div.dataTables_wrapper div.dataTables_info {
     margin: 0;
     line-height: 1;
 
+}
+
+.box-grey {
+    background: #f5f5f5
+}
+
+.box-solid#addMessageContent {
+    box-shadow: none;
+    border: none;
 }
 
 fieldset {
