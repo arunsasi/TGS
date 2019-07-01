@@ -6359,10 +6359,28 @@ legend {
     border-color: #adadad !important;
 }
 
+.template-table td:hover,
+.template-table td:focus {
+    background-color: rgba(0, 166, 90, 0.31);
+}
+
 .template-table td {
     text-align: center;
-    padding: 70px 0 !important;
+    padding: 0 !important;
     cursor: pointer;
+    transition: 200ms all;
+    font-weight: 700;
+}
+
+.template-table td a {
+    display: block;
+    width: 100%;
+    padding: 70px 0;
+    color: #333333;
+}
+
+.red-cell {
+    background-color: rgba(0, 166, 90, 0.31);
 }
 
 .empty-lbl {

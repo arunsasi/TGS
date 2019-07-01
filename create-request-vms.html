@@ -249,17 +249,17 @@
                                                 <table width="800" class="table table-bordered template-table">
                                                     <tbody>
                                                         <tr>
-                                                            <td bgcolor="#FFFFFF">WIDGET 1</td>
-                                                            <td bgcolor="#FFFFFF">WIDGET 2</td>
+                                                            <td><a href="#addMessageContent">WIDGET 1</a></td>
+                                                            <td><a href="#addMessageContent">WIDGET 3</a></td>
                                                         </tr>
                                                         <tr>
-                                                            <td colspan="2" bgcolor="#FFFFFF">WIDGET 3</td>
+                                                            <td colspan="2"><a href="#addMessageContent">WIDGET 3</a></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
                                             </center>
                                         </div>
-                                        <div class="col-sm-12">
+                                        <div class="col-sm-12" id="addMessageContent">
                                             <h3 class="subHeadBox">Add Message Content</h3>
                                             <div class="well messageBox">
                                                 <div class="row">
@@ -413,9 +413,6 @@
                                                                 <div id="VideoMsgPreview"></div>
                                                             </div>
                                                         </div>
-
-
-
                                                     </div>
                                                     <div class="col-sm-12">
                                                         <div class="form-group">
@@ -634,44 +631,63 @@
 
             });
 
-        })
-        //Show Hide Exisiting Message or New Message
-        function show1() {
-            document.getElementById('ExistingMsgContent').style.display = 'none';
-            document.getElementById('NewMsgContent').style.display = 'block';
-        }
 
-        function show2() {
-            document.getElementById('ExistingMsgContent').style.display = 'block';
-            document.getElementById('NewMsgContent').style.display = 'none';
-        }
-
-
-        // Image Uploader
-        function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-                reader.onload = function(e) {
-                    $('#MsgImgInput').attr('src', e.target.result);
-                    $('#MsgImgInput').show();
-                }
-
-                reader.readAsDataURL(input.files[0]);
+            //Show Hide Exisiting Message or New Message
+            function show1() {
+                document.getElementById('ExistingMsgContent').style.display = 'none';
+                document.getElementById('NewMsgContent').style.display = 'block';
             }
-        }
 
-        $("#imgInp").change(function() {
-            readURL(this);
-        });
+            function show2() {
+                document.getElementById('ExistingMsgContent').style.display = 'block';
+                document.getElementById('NewMsgContent').style.display = 'none';
+            }
 
 
-        // Tab Next Previous
-        $('.continue').click(function() {
-            $('.nav-tabs > .active').next('li').find('a').trigger('click');
-        });
-        $('.back').click(function() {
-            $('.nav-tabs > .active').prev('li').find('a').trigger('click');
-        });
+            // Image Uploader
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        $('#MsgImgInput').attr('src', e.target.result);
+                        $('#MsgImgInput').show();
+                    }
+
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+
+            $("#imgInp").change(function() {
+                readURL(this);
+            });
+
+
+            // Tab Next Previous
+            $('.continue').click(function() {
+                $('.nav-tabs > .active').next('li').find('a').trigger('click');
+            });
+            $('.back').click(function() {
+                $('.nav-tabs > .active').prev('li').find('a').trigger('click');
+            });
+            //Table Selection
+            $('.template-table td').click(function() {
+                $('.template-table td').removeClass('red-cell');
+                $(this).addClass('red-cell');
+            });
+
+
+
+            // Add smooth scrolling to links
+            $(".template-table td a").click(function(event) {
+                event.preventDefault();
+                $("html, body").animate({
+                    scrollTop: $($(this).attr("href")).offset().top
+                }, 500, function() {
+                    window.location.hash = "";
+                });
+            });
+
+        })
 
     </script>
 </body>
