@@ -8,6 +8,7 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/js/datatables.net-bs/css/dataTables.bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
     <link rel="stylesheet" href="assets/css/lightbox.min.css">
@@ -175,7 +176,7 @@
                                                     <label for="template1">
                                                         <img src="assets/img/template/thumbnail/wireframe.jpg" class="img-responsive">
                                                         <span class="selectedTemplate"><i class="fas fa-check-circle"></i></span>
-                                                        <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe.jpg" data-lightbox="Template 1"><i class="fas fa-search"></i></a></span>
+                                                        <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe.jpg" data-lightbox="Template 1" data-title="Template 2:3 Column"><i class="fas fa-search"></i></a></span>
                                                     </label>
                                                 </li>
                                                 <li class="col-sm-3 col-md-2">
@@ -183,7 +184,7 @@
                                                     <label for="template2">
                                                         <img src="assets/img/template/thumbnail/wireframe2.jpg" class="img-responsive">
                                                         <span class="selectedTemplate"><i class="fas fa-check-circle"></i></span>
-                                                        <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe2.jpg" data-lightbox="Template 2"><i class="fas fa-search"></i></a></span>
+                                                        <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe2.jpg" data-lightbox="Template 2" data-title="Template 3:2 Column"><i class="fas fa-search"></i></a></span>
                                                     </label>
                                                 </li>
                                                 <li class="col-sm-3 col-md-2">
@@ -191,7 +192,7 @@
                                                     <label for="template3">
                                                         <img src="assets/img/template/thumbnail/wireframe3.jpg" class="img-responsive">
                                                         <span class="selectedTemplate"><i class="fas fa-check-circle"></i></span>
-                                                        <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe3.jpg" data-lightbox="Template 3"><i class="fas fa-search"></i></a></span>
+                                                        <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe3.jpg" data-lightbox="Template 3" data-title="Template 1:1 Column"><i class="fas fa-search"></i></a></span>
                                                     </label>
                                                 </li>
                                                 <li class="col-sm-3 col-md-2">
@@ -199,7 +200,7 @@
                                                     <label for="template4">
                                                         <img src="assets/img/template/thumbnail/wireframe4.jpg" class="img-responsive">
                                                         <span class="selectedTemplate"><i class="fas fa-check-circle"></i></span>
-                                                        <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe4.jpg" data-lightbox="Template 4"><i class="fas fa-search"></i></a></span>
+                                                        <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe4.jpg" data-lightbox="Template 4" data-title="Template 3:2 Column"><i class="fas fa-search"></i></a></span>
                                                     </label>
                                                 </li>
                                                 <li class="col-sm-3 col-md-2">
@@ -207,7 +208,7 @@
                                                     <label for="template5">
                                                         <img src="assets/img/template/thumbnail/wireframe.jpg" class="img-responsive">
                                                         <span class="selectedTemplate"><i class="fas fa-check-circle"></i></span>
-                                                        <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe.jpg" data-lightbox="Template 5"><i class="fas fa-search"></i></a></span>
+                                                        <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe.jpg" data-lightbox="Template 5" data-title="Template 3:2 Column"><i class="fas fa-search"></i></a></span>
                                                     </label>
                                                 </li>
                                                 <li class="col-sm-3 col-md-2">
@@ -215,7 +216,7 @@
                                                     <label for="template6">
                                                         <img src="assets/img/template/thumbnail/wireframe3.jpg" class="img-responsive">
                                                         <span class="selectedTemplate"><i class="fas fa-check-circle"></i></span>
-                                                        <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe2.jpg" data-lightbox="Template 6"><i class="fas fa-search"></i></a></span>
+                                                        <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe2.jpg" data-lightbox="Template 6" data-title="Template 3:2 Column"><i class="fas fa-search"></i></a></span>
                                                     </label>
                                                 </li>
                                                 <li class="col-sm-3 col-md-2">
@@ -223,7 +224,7 @@
                                                     <label for="template7">
                                                         <img src="assets/img/template/thumbnail/wireframe2.jpg" class="img-responsive">
                                                         <span class="selectedTemplate"><i class="fas fa-check-circle"></i></span>
-                                                        <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe3.jpg" data-lightbox="Template 7"><i class="fas fa-search"></i></a></span>
+                                                        <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe3.jpg" data-lightbox="Template 7" data-title="Template 1:1 Column"><i class="fas fa-search"></i></a></span>
                                                     </label>
                                                 </li>
                                                 <li class="col-sm-3 col-md-2">
@@ -231,7 +232,7 @@
                                                     <label for="template8">
                                                         <img src="assets/img/template/thumbnail/wireframe4.jpg" class="img-responsive">
                                                         <span class="selectedTemplate"><i class="fas fa-check-circle"></i></span>
-                                                        <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe4.jpg" data-lightbox="Template 8"><i class="fas fa-search"></i></a></span>
+                                                        <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe4.jpg" data-lightbox="Template 8" data-title="Template 1:1 Column"><i class="fas fa-search"></i></a></span>
                                                     </label>
                                                 </li>
                                             </ul>
@@ -265,7 +266,7 @@
                                         <div class="box-header">
                                             <h3 class="box-title">Configure Widget Properties</h3>
                                             <div class="box-tools">
-                                                <button type="button" class="btn btn-box-tool btn-flat" data-widget="collapse"><i class="fas fa-minus"></i>
+                                                <button type="button" class="btn btn-box-tool btn-flat" data-widget="collapse"><i class="fas fa-plus"></i>
                                                 </button>
                                             </div>
                                         </div>
@@ -432,29 +433,112 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
-                                                        <table class="table table-bordered table-striped table-message">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <th>Message Code</th>
-                                                                    <th>Message Name</th>
-                                                                    <th>Message Content</th>
-                                                                    <th class="text-center" width="10%">Action</th>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>ADV/19/2019</td>
-                                                                    <td>Display Message 1 </td>
-                                                                    <td>Display Message 1 </td>
-                                                                    <td class="text-center" width="10%"><a><i class="fas fa-times" title="Delete"></i></a></td>
-                                                                </tr>
-                                                                <tr>
 
-                                                                    <td>ADV/20/2019</td>
-                                                                    <td>Display Message 2</td>
-                                                                    <td>Display Message 2</td>
-                                                                    <td class="text-center" width="10%"><a><i class="fas fa-times" title="Delete"></i></a></td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
+                                                        <div class="table-responsive">
+                                                            <table class="table table-bordered table-striped table-hover table-message" id="message-table">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>Message Code</th>
+                                                                        <th>Message Name</th>
+                                                                        <th>Message Content</th>
+                                                                        <th class="text-center">Action</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>ADV/19/2019</td>
+                                                                        <td>Display Message 1 </td>
+                                                                        <td>Display Message 1 </td>
+                                                                        <td class="text-center" width="10%"><a><i class="fas fa-times" title="Delete"></i></a></td>
+                                                                    </tr>
+                                                                    <tr>
+
+                                                                        <td>ADV/20/2019</td>
+                                                                        <td>Display Message 2</td>
+                                                                        <td>Display Message 2</td>
+                                                                        <td class="text-center" width="10%"><a><i class="fas fa-times" title="Delete"></i></a></td>
+                                                                    </tr>
+                                                                    <tr>
+
+                                                                        <td>ADV/20/2019</td>
+                                                                        <td>Display Message 2</td>
+                                                                        <td>Display Message 2</td>
+                                                                        <td class="text-center" width="10%"><a><i class="fas fa-times" title="Delete"></i></a></td>
+                                                                    </tr>
+                                                                    <tr>
+
+                                                                        <td>ADV/20/2019</td>
+                                                                        <td>Display Message 2</td>
+                                                                        <td>Display Message 2</td>
+                                                                        <td class="text-center" width="10%"><a><i class="fas fa-times" title="Delete"></i></a></td>
+                                                                    </tr>
+                                                                    <tr>
+
+                                                                        <td>ADV/20/2019</td>
+                                                                        <td>Display Message 2</td>
+                                                                        <td>Display Message 2</td>
+                                                                        <td class="text-center" width="10%"><a><i class="fas fa-times" title="Delete"></i></a></td>
+                                                                    </tr>
+                                                                    <tr>
+
+                                                                        <td>ADV/20/2019</td>
+                                                                        <td>Display Message 2</td>
+                                                                        <td>Display Message 2</td>
+                                                                        <td class="text-center" width="10%"><a><i class="fas fa-times" title="Delete"></i></a></td>
+                                                                    </tr>
+                                                                    <tr>
+
+                                                                        <td>ADV/20/2019</td>
+                                                                        <td>Display Message 2</td>
+                                                                        <td>Display Message 2</td>
+                                                                        <td class="text-center" width="10%"><a><i class="fas fa-times" title="Delete"></i></a></td>
+                                                                    </tr>
+                                                                    <tr>
+
+                                                                        <td>ADV/20/2019</td>
+                                                                        <td>Display Message 2</td>
+                                                                        <td>Display Message 2</td>
+                                                                        <td class="text-center" width="10%"><a><i class="fas fa-times" title="Delete"></i></a></td>
+                                                                    </tr>
+                                                                    <tr>
+
+                                                                        <td>ADV/20/2019</td>
+                                                                        <td>Display Message 2</td>
+                                                                        <td>Display Message 2</td>
+                                                                        <td class="text-center" width="10%"><a><i class="fas fa-times" title="Delete"></i></a></td>
+                                                                    </tr>
+                                                                    <tr>
+
+                                                                        <td>ADV/20/2019</td>
+                                                                        <td>Display Message 2</td>
+                                                                        <td>Display Message 2</td>
+                                                                        <td class="text-center" width="10%"><a><i class="fas fa-times" title="Delete"></i></a></td>
+                                                                    </tr>
+                                                                    <tr>
+
+                                                                        <td>ADV/20/2019</td>
+                                                                        <td>Display Message 2</td>
+                                                                        <td>Display Message 2</td>
+                                                                        <td class="text-center" width="10%"><a><i class="fas fa-times" title="Delete"></i></a></td>
+                                                                    </tr>
+                                                                    <tr>
+
+                                                                        <td>ADV/20/2019</td>
+                                                                        <td>Display Message 2</td>
+                                                                        <td>Display Message 2</td>
+                                                                        <td class="text-center" width="10%"><a><i class="fas fa-times" title="Delete"></i></a></td>
+                                                                    </tr>
+                                                                    <tr>
+
+                                                                        <td>ADV/20/2019</td>
+                                                                        <td>Display Message 2</td>
+                                                                        <td>Display Message 2</td>
+                                                                        <td class="text-center" width="10%"><a><i class="fas fa-times" title="Delete"></i></a></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+
 
                                                     </div>
 
@@ -609,6 +693,21 @@
                 $(this).val('');
             });
 
+            //Message Table
+            $('#message-table').dataTable({
+
+                bFilter: false, //hide search box
+                "sDom": "<'row'<'col-sm-12'tr>>" + "<'row'<'col-sm-2'l><'col-sm-3'i><'col-sm-7'p>>", // move filter to bottom
+                'columnDefs': [{
+                    'orderable': false,
+                    'targets': 3
+                }], // hide sort icon on header of first column
+                'aaSorting': [
+                    [0, 'asc']
+                ] // start to sort data in second column 
+            });
+
+
 
             $('#formatSelector').change(function() {
                 $('.msgFormat').hide();
@@ -698,11 +797,16 @@
                     window.location.hash = "";
                 });
 
+
                 $('#addMessageContent').removeClass('collapsed-box');
                 $('#addMessageContent .box-tools i').toggleClass('fa-minus fa-plus');
                 $('#addMessageContent .box-body').css({
                     'display': 'block'
                 });
+
+                if ($('#addMessageContent .box-body').css('display') == 'block') {
+
+                }
 
             });
 

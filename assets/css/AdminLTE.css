@@ -6498,6 +6498,15 @@ fieldset[disabled] .form-control {
     border-radius: 4px;
 }
 
+.template-select-grid label {
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.template-select-grid label:focus,
+.template-select-grid label:hover {
+    transform: translateY(-6px);
+}
+
 .template-select-grid label .selectedTemplate i {
     color: #00a65a;
     font-size: 20px;
@@ -6520,25 +6529,25 @@ fieldset[disabled] .form-control {
     left: -9999px;
 }
 
-input[type=radio]:checked + label > img {
+.template-select-grid input[type=radio]:checked + label > img {
     border: 1px solid #00a65a;
     -webkit-box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.73);
     -moz-box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.73);
     box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.73);
 }
 
-input[type=radio] + label > img {
+.template-select-grid input[type=radio] + label > img {
     border: 1px solid #bebfc1;
     transition: 200ms all;
     cursor: pointer;
 }
 
-input[type=radio] + label .selectedTemplate {
+.template-select-grid input[type=radio] + label .selectedTemplate {
     display: none;
     transition: 200ms all;
 }
 
-input[type=radio]:checked + label .selectedTemplate {
+.template-select-grid input[type=radio]:checked + label .selectedTemplate {
     display: block;
     position: absolute;
     bottom: 5px;
