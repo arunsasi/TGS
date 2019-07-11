@@ -6364,7 +6364,7 @@ legend {
 .template-table td a {
     display: block;
     width: 100%;
-    padding: 70px 0;
+    padding: 105px 0 20px;
     color: #333333;
 }
 
@@ -6571,6 +6571,21 @@ fieldset[disabled] .form-control {
     /* symbol for "collapsed" panels */
     content: "\e080";
     /* adjust as needed, taken from bootstrap.css */
+}
+
+.txtContent {
+    background: url("../img/textContent.svg") center 25% no-repeat;
+    background-size: 58px 58px;
+}
+
+.imgContent {
+    background: url("../img/imgContent.svg") center 25% no-repeat;
+    background-size: 58px 58px;
+}
+
+.videoContent {
+    background: url("../img/videoContent.svg") center 25% no-repeat;
+    background-size: 58px 58px;
 }
 
 @media (min-width: 992px) {
