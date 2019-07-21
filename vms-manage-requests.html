@@ -83,7 +83,7 @@
                                     </span>
                                 </a>
                                 <ul class="treeview-menu">
-                                    <li class="active"><a href="manage-request.html"><i class="far fa-file-alt"></i> Manage Requests</a></li>
+                                    <li class="active"><a href="vms-manage-requests.html"><i class="far fa-file-alt"></i> Manage Requests</a></li>
                                     <li><a href="#"><i class="fas fa-hourglass-half"></i> Overall Schedule &amp; Preview</a></li>
                                 </ul>
                             </li>
@@ -140,23 +140,6 @@
                             </div>
                             <div class="box-body">
                                 <div class="row">
-
-                                    <!--
-
-                                    <div class="col-sm-3">
-                                        <div class="form-group">
-                                            <label id="lblpriority">Status</label>
-                                            <select class="form-control select2" data-placeholder="Select Status" style="width: 100%;">
-                                                <option></option>
-                                                <option>Aprroved</option>
-                                                <option>Rejected</option>
-                                                <option>Waiting For Approval</option>
-                                                <option>Discarded</option>
-                                            </select>
-                                        </div>
-                                    </div>
--->
-
                                     <div class="col-sm-3">
                                         <div class="form-group">
                                             <label id="lblRegNumber">Parent Request ID</label>
@@ -169,7 +152,7 @@
                                             <label id="lbllastdetectiondateandtime">Date Range</label>
                                             <div class="input-group">
                                                 <div class="input-group-addon"><i class="far fa-calendar-alt"></i></div>
-                                                <input type="text" name="txtlastdetectiondate" placeholder="Choose Date Range" class="form-control daterangefilternt bg-white" readonly="readonly">
+                                                <input type="text" placeholder="Choose Date Range" class="form-control daterangefilter bg-white" readonly="readonly">
                                             </div>
                                         </div>
                                     </div>
@@ -197,7 +180,7 @@
                             </div>
                             <div class="box-body">
                                 <div class="table-responsive">
-                                    <table class="table table-bordered table-striped table-hover" id="vehicle-detection-table">
+                                    <table class="table table-bordered table-striped table-hover" id="manage-request-table">
                                         <thead>
                                             <tr>
                                                 <th>Parent Request ID</th>
@@ -218,9 +201,9 @@
                                                         <button type="button" class="btn btn-default btn-flat btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                                                             <i class="fa fa-bars"></i></button>
                                                         <ul class="dropdown-menu pull-right" role="menu">
-                                                            <li><a href="#"><i class="fa fa-eye" title="View Widget Requests"></i> View Widget Requests</a></li>
-                                                            <li><a href="#"><i class="fa fa-file" title="Preview Request in VMS"></i> Preview Request in VMS</a></li>
-                                                            <li><a href="#"><i class="fa fa-edit" title="Edit"></i> Edit</a></li>
+                                                            <li><a href="view-widget-requests.html"><i class="fa fa-eye"></i> View Widget Requests</a></li>
+                                                            <li><a href="#"><i class="fas fa-file-alt"></i> Preview Request in VMS</a></li>
+                                                            <li><a href="create-request-vms.html"><i class="fa fa-edit"></i> Edit</a></li>
 
                                                         </ul>
                                                     </div>
@@ -232,9 +215,9 @@
                                                 <td>27/03/2019 12:32:05</td>
                                                 <td>John Walsh</td>
                                                 <td class="action-icons" nowrap>
-                                                    <a href="#"><i class="fa fa-eye" title="View Widget Requests"></i></a>
-                                                    <a href="#"><i class="far fa-file-alt" title="Preview Request in VMS"></i></a>
-                                                    <a href="#"><i class="fa fa-edit" title="Edit"></i></a>
+                                                    <a href="view-widget-requests.html"><i class="fa fa-eye" title="View Widget Requests"></i></a>
+                                                    <a data-toggle="modal" data-target="#previewRequestVMS" data-backdrop="static" data-keyboard="false" href="#"><i class="far fa-file-alt" title="Preview Request in VMS"></i></a>
+                                                    <a href="create-request-vms.html"><i class="fa fa-edit" title="Edit"></i></a>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -401,6 +384,83 @@
                 </div>
 
 
+                <!--Preview Request VMS-->
+                <div class="modal fade" id="previewRequestVMS" tabindex="-1">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title">VMS Preview</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-sm-4 col-md-4">
+                                        <div class="form-group">
+                                            <label>Select VMS</label>
+                                            <select class="form-control select2" data-placeholder="Select VMS" style="width: 100%">
+                                                <option></option>
+                                                <option>VMS</option>
+                                                <option>VMS Group</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-sm-4 col-md-4">
+                                        <div class="form-group">
+                                            <label id="lbllastdetectiondateandtime">Date Range</label>
+                                            <div class="input-group">
+                                                <div class="input-group-addon"><i class="far fa-calendar-alt"></i></div>
+                                                <input type="text" placeholder="Choose Date Range" class="form-control daterangefilter bg-white" readonly="readonly">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4 col-md-4">
+                                        <div class="form-group"> <label class="empty-lbl"></label>
+                                            <button type="button" class="btn btn-success btn-flat">Search</button> <button type="button" class="btn btn-default btn-flat">Clear</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <center>
+                                            <table width="800" class="table table-bordered template-table-preview">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="imgContent" align="center">
+                                                            <img src="assets/img/sample-advt-img.jpg" alt="Widget Image" class="center-block" />
+                                                        </td>
+                                                        <td class="videoContent" valign="middle" align="center">
+                                                            <center>
+                                                                <video width="400" height="240" controls>
+                                                                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                                                                    <source src="https://www.w3schools.com/html/movie.ogg" type="video/ogg">
+                                                                    Your browser does not support the video tag.
+                                                                </video></center>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="2" class="txtContent">
+                                                            <div class="textAdvt">
+                                                                <h3 align="center">EVEN A SINGLE CRACKER CAN CAUSE A MAJOR ACCIDENT </h3>
+                                                            </div>
+
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </center>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
             </section>
             <!-- /.content -->
         </div>
@@ -436,34 +496,34 @@
                 allowClear: true,
             });
             //Date range picker
-            $('.daterangefilternt').daterangepicker({
-                ranges: {
-                    'Today': [moment(), moment()],
-                    'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-                    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-                    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-                    'This Month': [moment().startOf('month'), moment().endOf('month')],
-                    'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-                },
+            $('.daterangefilter').daterangepicker({
+
+                startDate: moment().startOf('hour'),
+                endDate: moment().startOf('hour').add(32, 'hour'),
                 autoUpdateInput: false,
+                timePicker: true,
+                timePicker24Hour: true,
+                timePickerIncrement: 10,
                 locale: {
                     cancelLabel: 'Clear',
-                    format: 'DD/MM/YYYY'
+                    format: 'DD/MM/YYYY HH:MM:ss'
                 },
-                startDate: moment().subtract(29, 'days'),
-                endDate: moment()
+
+
+
             });
 
-            $('.daterangefilternt').on('apply.daterangepicker', function(ev, picker) {
-                $(this).val(picker.startDate.format('DD/MM/YYYY') + ' - ' + picker.endDate.format('DD/MM/YYYY'));
+            $('.daterangefilter').on('apply.daterangepicker', function(ev, picker) {
+                $(this).val(picker.startDate.format('DD/MM/YYYY HH:MM:ss') + ' - ' + picker.endDate.format('DD/MM/YYYY HH:MM:ss'));
             });
 
-            $('.daterangefilternt').on('cancel.daterangepicker ', function(ev, picker) {
+            $('.daterangefilter').on('cancel.daterangepicker ', function(ev, picker) {
                 $(this).val('');
             });
 
+
             // Vehicle Detection
-            $('#vehicle-detection-table').dataTable({
+            $('#manage-request-table').dataTable({
 
                 bFilter: false, //hide search box
                 "sDom": "<'row'<'col-sm-12'tr>>" + "<'row'<'col-sm-2'l><'col-sm-3'i><'col-sm-7'p>>", // move filter to bottom

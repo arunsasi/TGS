@@ -1114,8 +1114,10 @@ a:focus {
 
 .dropdown-menu > li > a > .glyphicon,
 .dropdown-menu > li > a > .fa,
+.dropdown-menu > li > a > .fas,
 .dropdown-menu > li > a > .ion {
     margin-right: 10px;
+    width: 10px;
 }
 
 .dropdown-menu > li > a:hover {
@@ -6368,6 +6370,11 @@ legend {
     color: #333333;
 }
 
+.template-table-preview,
+.template-table-preview td {
+    border-color: #adadad !important;
+}
+
 .red-cell {
     background-color: rgba(0, 166, 90, 0.31);
 }
@@ -6588,6 +6595,26 @@ fieldset[disabled] .form-control {
     background-size: 58px 58px;
 }
 
+.template-table-preview .imgContent {
+    vertical-align: middle;
+    background: url("../img/imgContent.svg") 6px 3px no-repeat;
+    background-size: 30px 30px;
+}
+
+.template-table-preview .videoContent {
+    vertical-align: middle;
+    background: url("../img/videoContent.svg") 6px 3px no-repeat;
+    background-size: 30px 30px;
+}
+
+.template-table-preview .txtContent {
+    vertical-align: middle;
+    background: url(../img/textContent.svg) 6px 6px no-repeat;
+    background-size: 27px 26px;
+}
+
+
+
 @media (min-width: 992px) {
     .modal-lg {
         width: 1100px;
@@ -6598,6 +6625,13 @@ fieldset[disabled] .form-control {
  * Misc: print
  * -----------
  */
+
+@media only screen and (min-width: 1050px) {
+    .overflow-x {
+        overflow-x: unset !important;
+    }
+}
+
 @media print {
 
     .no-print,
