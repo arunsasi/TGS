@@ -152,7 +152,7 @@
                                             <label id="lbllastdetectiondateandtime">Date Range</label>
                                             <div class="input-group">
                                                 <div class="input-group-addon"><i class="far fa-calendar-alt"></i></div>
-                                                <input type="text" placeholder="Choose Date Range" class="form-control daterangefilter bg-white" readonly="readonly">
+                                                <input type="text" placeholder="Choose Date Range" class="form-control daterangefilterTS bg-white" readonly="readonly">
                                             </div>
                                         </div>
                                     </div>
@@ -191,24 +191,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>CDG1668</td>
-                                                <td>Template 2:3 Column</td>
-                                                <td>27/03/2019 12:32:05</td>
-                                                <td>John Walsh</td>
-                                                <td class="action-icons" nowrap>
-                                                    <div class="btn-group">
-                                                        <button type="button" class="btn btn-default btn-flat btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-                                                            <i class="fa fa-bars"></i></button>
-                                                        <ul class="dropdown-menu pull-right" role="menu">
-                                                            <li><a href="view-widget-requests.html"><i class="fa fa-eye"></i> View Widget Requests</a></li>
-                                                            <li><a href="#"><i class="fas fa-file-alt"></i> Preview Request in VMS</a></li>
-                                                            <li><a href="create-request-vms.html"><i class="fa fa-edit"></i> Edit</a></li>
 
-                                                        </ul>
-                                                    </div>
-                                                </td>
-                                            </tr>
                                             <tr>
                                                 <td>CDG1668</td>
                                                 <td>Template 2:3 Column</td>
@@ -216,7 +199,7 @@
                                                 <td>John Walsh</td>
                                                 <td class="action-icons" nowrap>
                                                     <a href="view-widget-requests.html"><i class="fa fa-eye" title="View Widget Requests"></i></a>
-                                                    <a data-toggle="modal" data-target="#previewRequestVMS" data-backdrop="static" data-keyboard="false" href="#"><i class="far fa-file-alt" title="Preview Request in VMS"></i></a>
+                                                    <a data-toggle="modal" data-target="#previewRequestVMS" data-backdrop="static" data-keyboard="false"><i class="far fa-file-alt" title="Preview Request in VMS"></i></a>
                                                     <a href="create-request-vms.html"><i class="fa fa-edit" title="Edit"></i></a>
                                                 </td>
                                             </tr>
@@ -410,7 +393,7 @@
                                             <label id="lbllastdetectiondateandtime">Date Range</label>
                                             <div class="input-group">
                                                 <div class="input-group-addon"><i class="far fa-calendar-alt"></i></div>
-                                                <input type="text" placeholder="Choose Date Range" class="form-control daterangefilter bg-white" readonly="readonly">
+                                                <input type="text" placeholder="Choose Date Range" class="form-control daterangefilterTS bg-white" readonly="readonly">
                                             </div>
                                         </div>
                                     </div>
@@ -495,29 +478,27 @@
             $('.select2').select2({
                 allowClear: true,
             });
-            //Date range picker
-            $('.daterangefilter').daterangepicker({
+            //Date range picker with seconds
+            $('.daterangefilterTS').daterangepicker({
 
-                startDate: moment().startOf('hour'),
-                endDate: moment().startOf('hour').add(32, 'hour'),
+
                 autoUpdateInput: false,
                 timePicker: true,
                 timePicker24Hour: true,
-                timePickerIncrement: 10,
+                timePickerSeconds: true,
                 locale: {
                     cancelLabel: 'Clear',
-                    format: 'DD/MM/YYYY HH:MM:ss'
+                    format: 'DD/MM/YYYY HH:mm:ss'
                 },
-
-
-
+                startDate: moment().startOf('hour'),
+                endDate: moment().startOf('hour').add(32, 'hour'),
             });
 
-            $('.daterangefilter').on('apply.daterangepicker', function(ev, picker) {
-                $(this).val(picker.startDate.format('DD/MM/YYYY HH:MM:ss') + ' - ' + picker.endDate.format('DD/MM/YYYY HH:MM:ss'));
+            $('.daterangefilterTS').on('apply.daterangepicker', function(ev, picker) {
+                $(this).val(picker.startDate.format('DD/MM/YYYY HH:mm:ss') + ' - ' + picker.endDate.format('DD/MM/YYYY HH:mm:ss'));
             });
 
-            $('.daterangefilter').on('cancel.daterangepicker ', function(ev, picker) {
+            $('.daterangefilterTS').on('cancel.daterangepicker ', function(ev, picker) {
                 $(this).val('');
             });
 

@@ -6613,7 +6613,23 @@ fieldset[disabled] .form-control {
     background-size: 27px 26px;
 }
 
+.box-header > .box-tools.short-tooltip {
+    position: absolute;
+    right: 7px;
+    top: 8px;
+    display: inline-flex;
+}
 
+.nav-tabs .box-tools.short-tooltip {
+    position: absolute;
+    right: 7px;
+    top: 8px;
+    display: inline-flex;
+}
+
+.nav-tabs .box-tools.short-tooltip a {
+    color: #444444;
+}
 
 @media (min-width: 992px) {
     .modal-lg {
