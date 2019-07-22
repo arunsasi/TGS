@@ -153,7 +153,7 @@
                                             <label id="lbllastdetectiondateandtime">Date Range</label>
                                             <div class="input-group">
                                                 <div class="input-group-addon"><i class="far fa-calendar-alt"></i></div>
-                                                <input type="text" placeholder="Choose Date Range" class="form-control daterangefilter bg-white" readonly="readonly">
+                                                <input type="text" placeholder="Choose Date Range" class="form-control daterangefilterTS bg-white" readonly="readonly">
                                             </div>
                                         </div>
                                     </div>
@@ -231,7 +231,7 @@
                                                         </ul>
                                                     </div>
                                                 </td>
-                                                <td align="center"><a href="#"><i class="fas fa-file-invoice" title="Generate Bill"></i></a></td>
+                                                <td align="center"><a href="vms-billing.html"><i class="fas fa-file-invoice" title="Generate Bill"></i></a></td>
                                                 <td class="action-icons" nowrap>
                                                     <a href="#"><i class="fa fa-edit" title="Edit"></i></a>
                                                     <a data-toggle="modal" data-target="#previewHistory" data-backdrop="static" data-keyboard="false"><i class="fas fa-history" title="View History"></i></a>
@@ -256,7 +256,7 @@
                                                         </ul>
                                                     </div>
                                                 </td>
-                                                <td align="center"><a href="#"><i class="fas fa-file-invoice" title="Generate Bill"></i></a></td>
+                                                <td align="center"><a href="vms-billing.html"><i class="fas fa-file-invoice" title="Generate Bill"></i></a></td>
                                                 <td class="action-icons" nowrap>
                                                     <a href="#"><i class="fa fa-edit" title="Edit"></i></a>
                                                     <a data-toggle="modal" data-target="#previewHistory" data-backdrop="static" data-keyboard="false"><i class="fas fa-history" title="View History"></i></a>
@@ -845,38 +845,27 @@
             $('.select2').select2({
                 allowClear: true,
             });
-            //Date range picker
-            $('.daterangefilter').daterangepicker({
-                ranges: {
-                    'Today': [moment(), moment()],
-                    'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-                    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-                    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-                    'This Month': [moment().startOf('month'), moment().endOf('month')],
-                    'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-                },
-                startTime: '00:00',
-                endTime: '12:00',
+            //Date range picker with seconds
+            $('.daterangefilterTS').daterangepicker({
                 autoUpdateInput: false,
                 timePicker: true,
                 timePicker24Hour: true,
-                timePickerIncrement: 1,
+                timePickerSeconds: true,
                 locale: {
                     cancelLabel: 'Clear',
-                    format: 'DD/MM/YYYY HH:MM'
+                    format: 'DD/MM/YYYY HH:mm:ss'
                 },
-                startDate: moment().subtract(29, 'days'),
-                endDate: moment()
+                startDate: moment().startOf('hour'),
+                endDate: moment().startOf('hour').add(32, 'hour'),
             });
 
-            $('.daterangefilter').on('apply.daterangepicker', function(ev, picker) {
-                $(this).val(picker.startDate.format('DD/MM/YYYY HH:MM') + ' - ' + picker.endDate.format('DD/MM/YYYY HH:MM'));
+            $('.daterangefilterTS').on('apply.daterangepicker', function(ev, picker) {
+                $(this).val(picker.startDate.format('DD/MM/YYYY HH:mm:ss') + ' - ' + picker.endDate.format('DD/MM/YYYY HH:mm:ss'));
             });
 
-            $('.daterangefilter').on('cancel.daterangepicker ', function(ev, picker) {
+            $('.daterangefilterTS').on('cancel.daterangepicker ', function(ev, picker) {
                 $(this).val('');
             });
-
 
             // Vehicle Detection
             $('#widget-request-table').dataTable({
