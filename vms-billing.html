@@ -125,10 +125,8 @@
             <section class="content-header">
                 <h1>VMS Billing</h1>
             </section>
-
             <!-- Main content -->
             <section class="content container-fluid">
-
                 <div class="row">
                     <div class="col-md-12">
                         <!-- Custom Tabs -->
@@ -308,181 +306,176 @@
                                                 <button type="button" class="btn btn-success btn-flat">Search</button> <button type="button" class="btn btn-default btn-flat">Clear</button>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-7">
-                                            <div class="table-responsive">
-                                                <table class="table table-bordered table-striped table-hover" id="tobebilled-table">
-                                                    <thead>
-                                                        <tr role="row">
-
-                                                            <th>Scheduled Start - End Date &amp; Time</th>
-                                                            <th>Actual Start - End Date &amp; Time</th>
-
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>27/03/2019 12:32:05 &mdash; 28/05/2019 12:32:05</td>
-                                                            <td>27/03/2019 12:32:05 &mdash; 28/05/2019 12:32:05</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>27/03/2019 12:32:05 &mdash; 28/05/2019 12:32:05</td>
-                                                            <td>27/03/2019 12:32:05 &mdash; 28/05/2019 12:32:05</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>27/03/2019 12:32:05 &mdash; 28/05/2019 12:32:05</td>
-                                                            <td>27/03/2019 12:32:05 &mdash; 28/05/2019 12:32:05</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>27/03/2019 12:32:05 &mdash; 28/05/2019 12:32:05</td>
-                                                            <td>27/03/2019 12:32:05 &mdash; 28/05/2019 12:32:05</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>27/03/2019 12:32:05 &mdash; 28/05/2019 12:32:05</td>
-                                                            <td>27/03/2019 12:32:05 &mdash; 28/05/2019 12:32:05</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>27/03/2019 12:32:05 &mdash; 28/05/2019 12:32:05</td>
-                                                            <td>27/03/2019 12:32:05 &mdash; 28/05/2019 12:32:05</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>27/03/2019 12:32:05 &mdash; 28/05/2019 12:32:05</td>
-                                                            <td>27/03/2019 12:32:05 &mdash; 28/05/2019 12:32:05</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>27/03/2019 12:32:05 &mdash; 28/05/2019 12:32:05</td>
-                                                            <td>27/03/2019 12:32:05 &mdash; 28/05/2019 12:32:05</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>27/03/2019 12:32:05 &mdash; 28/05/2019 12:32:05</td>
-                                                            <td>27/03/2019 12:32:05 &mdash; 28/05/2019 12:32:05</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>27/03/2019 12:32:05 &mdash; 28/05/2019 12:32:05</td>
-                                                            <td>27/03/2019 12:32:05 &mdash; 28/05/2019 12:32:05</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>27/03/2019 12:32:05 &mdash; 28/05/2019 12:32:05</td>
-                                                            <td>27/03/2019 12:32:05 &mdash; 28/05/2019 12:32:05</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>27/03/2019 12:32:05 &mdash; 28/05/2019 12:32:05</td>
-                                                            <td>27/03/2019 12:32:05 &mdash; 28/05/2019 12:32:05</td>
-                                                        </tr>
-
-
-                                                    </tbody>
-                                                </table>
+                                        <div class="col-sm-6">
+                                            <div class="form-group pull-right"> <label class="empty-lbl"></label>
+                                                <button data-toggle="modal" data-target="#previewHistory" data-backdrop="static" data-keyboard="false" type="button" class="btn btn-success btn-info btn-flat">Generate Bill</button>
                                             </div>
-
-
-
-
-
-                                        </div>
-                                        <div class="col-md-5">
-
-                                            <div class="box box-default box-solid">
-                                                <div class="box-header with-no-border">
-                                                    <h3 class="box-title">Generate Bill</h3>
-                                                </div>
-                                                <!-- /.box-header -->
-                                                <!-- form start -->
-                                                <form class="form-horizontal generate-bill-form">
-                                                    <div class="box-body">
-                                                        <div class="form-group">
-                                                            <label class="col-sm-5 control-label">Information Provider Name</label>
-
-                                                            <div class="col-sm-7">
-                                                                <input type="text" class="form-control" value="Reporter 1" readonly="readonly">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="col-sm-5 control-label">Request Description</label>
-
-                                                            <div class="col-sm-7">
-                                                                <input type="text" class="form-control" value="Test" readonly="readonly">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="col-sm-5 control-label">Message Category</label>
-
-                                                            <div class="col-sm-7">
-                                                                <input type="text" class="form-control" value="Advertisement" readonly="readonly">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="col-sm-5 control-label">Scheduled Start Date & Time</label>
-
-                                                            <div class="col-sm-7">
-                                                                <input type="text" class="form-control" value="27/03/2019 12:32:05" readonly="readonly">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="col-sm-5 control-label">Scheduled End Date & Time</label>
-
-                                                            <div class="col-sm-7">
-                                                                <input type="text" class="form-control" value="28/05/2019 12:32:05" readonly="readonly">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="col-sm-5 control-label">Planned Airtime(HH:mm:ss)</label>
-
-                                                            <div class="col-sm-7">
-                                                                <input type="text" class="form-control" value="15:00:00" readonly="readonly">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="col-sm-5 control-label">Actual Airtime(HH:mm:ss</label>
-
-                                                            <div class="col-sm-7">
-                                                                <input type="text" class="form-control" value="15:00:00" readonly="readonly">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="col-sm-5 control-label">Bill Date</label>
-
-                                                            <div class="col-sm-7">
-                                                                <div class="input-group date">
-                                                                    <div class="input-group-addon"><i class="far fa-calendar-alt"></i></div>
-                                                                    <input type="text" id="txttrackingstartdate" placeholder="Bill Date" class="form-control bg-white" readonly="readonly">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="col-sm-5 control-label">Billing Amount</label>
-                                                            <div class="col-sm-7">
-
-                                                                <div class="input-group">
-                                                                    <span class="input-group-addon"><i class="fas fa-rupee-sign"></i></span>
-                                                                    <input class="form-control" type="Number" value="00.00">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-
-                                                    </div>
-                                                    <!-- /.box-body -->
-                                                    <div class="box-footer">
-                                                        <button type="submit" class="btn btn-success btn-flat">Save</button>
-                                                    </div>
-                                                    <!-- /.box-footer -->
-                                                </form>
-                                            </div>
-
                                         </div>
                                     </div>
+
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-striped table-hover" id="tobebilled-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Scheduled Start - End Date &amp; Time</th>
+                                                    <th>Actual Start - End Date &amp; Time</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>27/03/2019 12:32:05 &mdash; 28/05/2019 12:32:05</td>
+                                                    <td>27/03/2019 12:32:05 &mdash; 28/05/2019 12:32:05</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>27/03/2019 12:32:05 &mdash; 28/05/2019 12:32:05</td>
+                                                    <td>27/03/2019 12:32:05 &mdash; 28/05/2019 12:32:05</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>27/03/2019 12:32:05 &mdash; 28/05/2019 12:32:05</td>
+                                                    <td>27/03/2019 12:32:05 &mdash; 28/05/2019 12:32:05</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>27/03/2019 12:32:05 &mdash; 28/05/2019 12:32:05</td>
+                                                    <td>27/03/2019 12:32:05 &mdash; 28/05/2019 12:32:05</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>27/03/2019 12:32:05 &mdash; 28/05/2019 12:32:05</td>
+                                                    <td>27/03/2019 12:32:05 &mdash; 28/05/2019 12:32:05</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>27/03/2019 12:32:05 &mdash; 28/05/2019 12:32:05</td>
+                                                    <td>27/03/2019 12:32:05 &mdash; 28/05/2019 12:32:05</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>27/03/2019 12:32:05 &mdash; 28/05/2019 12:32:05</td>
+                                                    <td>27/03/2019 12:32:05 &mdash; 28/05/2019 12:32:05</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>27/03/2019 12:32:05 &mdash; 28/05/2019 12:32:05</td>
+                                                    <td>27/03/2019 12:32:05 &mdash; 28/05/2019 12:32:05</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>27/03/2019 12:32:05 &mdash; 28/05/2019 12:32:05</td>
+                                                    <td>27/03/2019 12:32:05 &mdash; 28/05/2019 12:32:05</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>27/03/2019 12:32:05 &mdash; 28/05/2019 12:32:05</td>
+                                                    <td>27/03/2019 12:32:05 &mdash; 28/05/2019 12:32:05</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>27/03/2019 12:32:05 &mdash; 28/05/2019 12:32:05</td>
+                                                    <td>27/03/2019 12:32:05 &mdash; 28/05/2019 12:32:05</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>27/03/2019 12:32:05 &mdash; 28/05/2019 12:32:05</td>
+                                                    <td>27/03/2019 12:32:05 &mdash; 28/05/2019 12:32:05</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
                                 </div>
                                 <!-- /.tab-pane -->
-
                             </div>
                             <!-- /.tab-content -->
                         </div>
                     </div>
-
-
                 </div>
+
+                <!--Generate Bill-->
+                <div class="modal fade" id="previewHistory" tabindex="-1">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title">History of Action(s)</h4>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>Information Provider Name</label>
+                                            <input type="text" class="form-control" value="Reporter 1" readonly="readonly">
+
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>Request Description</label>
+                                            <input type="text" class="form-control" value="Test" readonly="readonly">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>Message Category</label>
+                                            <input type="text" class="form-control" value="Advertisement" readonly="readonly">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>Scheduled Start Date &amp; Time</label>
+                                            <input type="text" class="form-control" value="27/03/2019 12:32:05" readonly="readonly">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>Scheduled End Date &amp; Time</label>
+                                            <input type="text" class="form-control" value="28/05/2019 12:32:05" readonly="readonly">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>Planned Airtime(HH:mm:ss)</label>
+                                            <input type="text" class="form-control" value="15:00:00" readonly="readonly">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>Actual Airtime(HH:mm:ss)</label>
+                                            <input type="text" class="form-control" value="15:00:00" readonly="readonly">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>Bill Date</label>
+                                            <div class="input-group date">
+                                                <div class="input-group-addon"><i class="far fa-calendar-alt"></i></div>
+                                                <input type="text" id="txttrackingstartdate" placeholder="Bill Date" class="form-control bg-white" readonly="readonly">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>Billing Amount</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fas fa-rupee-sign"></i></span>
+                                                <input class="form-control" type="Number" value="00.00">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Comments</label>
+                                            <textarea class="form-control" rows="3" placeholder="Comments"></textarea>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+
+
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-success btn-flat pull-left">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </section>
             <!-- /.content -->
         </div>

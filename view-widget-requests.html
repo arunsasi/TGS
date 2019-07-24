@@ -764,7 +764,7 @@
                             </div>
                             <div class="modal-body">
                                 <div class="table-responsive">
-                                    <table class="table table-bordered table-striped table-hover" id="history-actions">
+                                    <table class="table table-bordered table-striped table-hover" id="history-actions-table">
                                         <thead>
                                             <tr>
                                                 <th>Status</th>
@@ -774,6 +774,66 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <tr>
+                                                <td>Waiting For Approval</td>
+                                                <td>John Walsh</td>
+                                                <td>Mike Henry</td>
+                                                <td>15-07-2019, 11:50:55</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Approved</td>
+                                                <td>John Walsh</td>
+                                                <td>Mike Henry</td>
+                                                <td>15-07-2019, 11:50:55</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Rejected</td>
+                                                <td>John Walsh</td>
+                                                <td>Mike Henry</td>
+                                                <td>15-07-2019, 11:50:55</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Discarded</td>
+                                                <td>John Walsh</td>
+                                                <td>Mike Henry</td>
+                                                <td>15-07-2019, 11:50:55</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Waiting For Approval</td>
+                                                <td>John Walsh</td>
+                                                <td>Mike Henry</td>
+                                                <td>15-07-2019, 11:50:55</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Approved</td>
+                                                <td>John Walsh</td>
+                                                <td>Mike Henry</td>
+                                                <td>15-07-2019, 11:50:55</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Rejected</td>
+                                                <td>John Walsh</td>
+                                                <td>Mike Henry</td>
+                                                <td>15-07-2019, 11:50:55</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Discarded</td>
+                                                <td>John Walsh</td>
+                                                <td>Mike Henry</td>
+                                                <td>15-07-2019, 11:50:55</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Rejected</td>
+                                                <td>John Walsh</td>
+                                                <td>Mike Henry</td>
+                                                <td>15-07-2019, 11:50:55</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Discarded</td>
+                                                <td>John Walsh</td>
+                                                <td>Mike Henry</td>
+                                                <td>15-07-2019, 11:50:55</td>
+                                            </tr>
                                             <tr>
                                                 <td>Waiting For Approval</td>
                                                 <td>John Walsh</td>
@@ -867,7 +927,7 @@
                 $(this).val('');
             });
 
-            // Vehicle Detection
+
             $('#widget-request-table').dataTable({
 
                 bFilter: false, //hide search box
@@ -879,6 +939,11 @@
                 'aaSorting': [
                     [1, 'asc']
                 ] // start to sort data in second column 
+            });
+            $('#history-actions-table').dataTable({
+
+                bFilter: false, //hide search box
+                "sDom": "<'row'<'col-sm-12'tr>>" + "<'row'<'col-sm-2'l><'col-sm-3'i><'col-sm-7'p>>", // move filter to bottom
             });
 
         })
