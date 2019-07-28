@@ -6631,6 +6631,16 @@ fieldset[disabled] .form-control {
     color: #444444;
 }
 
+.nav-tabs .btn-info {
+    background-color: #00c0ef !important;
+    border-color: #00acd6 !important;
+    color: #ffffff !important;
+    border: solid 1px;
+    padding: 5px 10px !important;
+    margin: 4px 0 0 0 !important;
+    display: inline-block;
+}
+
 .pagination-sm > li > a,
 .pagination-sm > li > span {
     padding: 5px 10px;
@@ -6646,6 +6656,10 @@ ul.pagination .fas {
 
 .form-horizontal.generate-bill-form .control-label {
     text-align: left;
+}
+
+.select2-selection--multiple .select2-search--inline .select2-search__field {
+    width: 100% !important;
 }
 
 @media (min-width: 992px) {

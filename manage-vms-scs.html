@@ -105,7 +105,7 @@
                                 </a>
                                 <ul class="treeview-menu">
                                     <li><a href="#"><i class="far fa-address-book"></i> Manage Information Providers</a></li>
-                                    <li class="active"><a href="#"><i class="fas fa-server"></i> Manage VMS &amp; SCS</a></li>
+                                    <li class="active"><a href="manage-vms-scs.html"><i class="fas fa-server"></i> Manage VMS &amp; SCS</a></li>
                                     <li><a href="#"><i class="far fa-comment-dots"></i> Preconfigured Message List</a></li>
                                 </ul>
                             </li>
@@ -128,20 +128,37 @@
 
             <!-- Main content -->
             <section class="content container-fluid">
-
                 <div class="row">
                     <div class="col-md-12">
                         <!-- Custom Tabs -->
                         <div class="nav-tabs-custom box-default">
                             <ul class="nav nav-tabs">
-                                <li class="active"><a href="#vmsBilled" data-toggle="tab">VMS/SCS Installation</a></li>
-                                <li><a href="#vmsToBeBilled" data-toggle="tab">VMS/SCS Group</a></li>
-                                <li class="pull-right"><a href="" class="btn btn-block btn-sm btn-info btn-flat">Add VMS/SCS</a></li>
+                                <li class="active"><a href="#vmsscsInstallation" data-toggle="tab">VMS/SCS Installation</a></li>
+                                <li><a href="#vmsscsGroup" data-toggle="tab">VMS/SCS Group</a></li>
                             </ul>
                             <div class="tab-content">
-                                <div class="tab-pane active" id="vmsBilled">
+                                <div class="tab-pane active" id="vmsscsInstallation">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label>Group Name</label>
+                                                <input type="text" placeholder="Group Name" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group"> <label class="empty-lbl"></label>
+                                                <button type="button" class="btn btn-success btn-flat">Search</button> <button type="button" class="btn btn-default btn-flat">Clear</button>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group pull-right"> <label class="empty-lbl"></label>
+                                                <button data-toggle="modal" data-target="#addVMSSCS" data-backdrop="static" data-keyboard="false" type="button" class="btn btn-success btn-info btn-flat">Add VMS/SCS Installation</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                     <div class="table-responsive">
-                                        <table class="table table-bordered table-striped table-hover" id="billed-table">
+                                        <table class="table table-bordered table-striped table-hover" id="vms-scs-installation-table">
                                             <thead>
                                                 <tr role="row">
                                                     <th>Device Type</th>
@@ -158,9 +175,141 @@
                                                     <td>SCS Device 1</td>
                                                     <td class="text-center"><i class="fa fa-check-circle text-green" title="Active"></i></td>
                                                     <td class="action-icons" nowrap>
-                                                        <a href="#"><i class="fa fa-edit" title="Edit"></i></a>
-                                                        <a href="#"><i class="fa fa-edit" title="Edit"></i></a>
-                                                        <a href="#"><i class="fa fa-edit" title="Edit"></i></a>
+                                                        <a href="#" data-toggle="modal" data-target="#displayScreenshot" data-backdrop="static" data-keyboard="false"><i class="fas fa-tv" title="Display Screenshot"></i></a>
+                                                        <a href="#" data-toggle="modal" data-target="#selfTest" data-backdrop="static" data-keyboard="false"><i class="fas fa-stethoscope" title="Self Test Info"></i></a>
+                                                        <a href="#" data-toggle="modal" data-target="#editVMSSCS" data-backdrop="static" data-keyboard="false"><i class="fa fa-edit" title="Edit"></i></a>
+                                                        <a href="#"><i class="far fa-trash-alt" title="Delete"></i></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>SCS</td>
+                                                    <td>SCB01 VIP Road</td>
+                                                    <td>SCS Device 1</td>
+                                                    <td class="text-center"><i class="fa fa-check-circle text-green" title="Active"></i></td>
+                                                    <td class="action-icons" nowrap>
+                                                        <a href="#" data-toggle="modal" data-target="#displayScreenshot" data-backdrop="static" data-keyboard="false"><i class="fas fa-tv" title="Display Screenshot"></i></a>
+                                                        <a href="#" data-toggle="modal" data-target="#selfTest" data-backdrop="static" data-keyboard="false"><i class="fas fa-stethoscope" title="Self Test Info"></i></a>
+                                                        <a href="#" data-toggle="modal" data-target="#editVMSSCS" data-backdrop="static" data-keyboard="false"><i class="fa fa-edit" title="Edit"></i></a>
+                                                        <a href="#"><i class="far fa-trash-alt" title="Delete"></i></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>SCS</td>
+                                                    <td>SCB01 VIP Road</td>
+                                                    <td>SCS Device 1</td>
+                                                    <td class="text-center"><i class="fa fa-check-circle text-green" title="Active"></i></td>
+                                                    <td class="action-icons" nowrap>
+                                                        <a href="#" data-toggle="modal" data-target="#displayScreenshot" data-backdrop="static" data-keyboard="false"><i class="fas fa-tv" title="Display Screenshot"></i></a>
+                                                        <a href="#" data-toggle="modal" data-target="#selfTest" data-backdrop="static" data-keyboard="false"><i class="fas fa-stethoscope" title="Self Test Info"></i></a>
+                                                        <a href="#" data-toggle="modal" data-target="#editVMSSCS" data-backdrop="static" data-keyboard="false"><i class="fa fa-edit" title="Edit"></i></a>
+                                                        <a href="#"><i class="far fa-trash-alt" title="Delete"></i></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>SCS</td>
+                                                    <td>SCB01 VIP Road</td>
+                                                    <td>SCS Device 1</td>
+                                                    <td class="text-center"><i class="fa fa-check-circle text-green" title="Active"></i></td>
+                                                    <td class="action-icons" nowrap>
+                                                        <a href="#" data-toggle="modal" data-target="#displayScreenshot" data-backdrop="static" data-keyboard="false"><i class="fas fa-tv" title="Display Screenshot"></i></a>
+                                                        <a href="#" data-toggle="modal" data-target="#selfTest" data-backdrop="static" data-keyboard="false"><i class="fas fa-stethoscope" title="Self Test Info"></i></a>
+                                                        <a href="#" data-toggle="modal" data-target="#editVMSSCS" data-backdrop="static" data-keyboard="false"><i class="fa fa-edit" title="Edit"></i></a>
+                                                        <a href="#"><i class="far fa-trash-alt" title="Delete"></i></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>SCS</td>
+                                                    <td>SCB01 VIP Road</td>
+                                                    <td>SCS Device 1</td>
+                                                    <td class="text-center"><i class="fa fa-check-circle text-green" title="Active"></i></td>
+                                                    <td class="action-icons" nowrap>
+                                                        <a href="#" data-toggle="modal" data-target="#displayScreenshot" data-backdrop="static" data-keyboard="false"><i class="fas fa-tv" title="Display Screenshot"></i></a>
+                                                        <a href="#" data-toggle="modal" data-target="#selfTest" data-backdrop="static" data-keyboard="false"><i class="fas fa-stethoscope" title="Self Test Info"></i></a>
+                                                        <a href="#" data-toggle="modal" data-target="#editVMSSCS" data-backdrop="static" data-keyboard="false"><i class="fa fa-edit" title="Edit"></i></a>
+                                                        <a href="#"><i class="far fa-trash-alt" title="Delete"></i></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>SCS</td>
+                                                    <td>SCB01 VIP Road</td>
+                                                    <td>SCS Device 1</td>
+                                                    <td class="text-center"><i class="fa fa-check-circle text-black" title="Active"></i></td>
+                                                    <td class="action-icons" nowrap>
+                                                        <a href="#" data-toggle="modal" data-target="#displayScreenshot" data-backdrop="static" data-keyboard="false"><i class="fas fa-tv" title="Display Screenshot"></i></a>
+                                                        <a href="#" data-toggle="modal" data-target="#selfTest" data-backdrop="static" data-keyboard="false"><i class="fas fa-stethoscope" title="Self Test Info"></i></a>
+                                                        <a href="#" data-toggle="modal" data-target="#editVMSSCS" data-backdrop="static" data-keyboard="false"><i class="fa fa-edit" title="Edit"></i></a>
+                                                        <a href="#"><i class="far fa-trash-alt" title="Delete"></i></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>SCS</td>
+                                                    <td>SCB01 VIP Road</td>
+                                                    <td>SCS Device 1</td>
+                                                    <td class="text-center"><i class="fa fa-check-circle text-green" title="Active"></i></td>
+                                                    <td class="action-icons" nowrap>
+                                                        <a href="#" data-toggle="modal" data-target="#displayScreenshot" data-backdrop="static" data-keyboard="false"><i class="fas fa-tv" title="Display Screenshot"></i></a>
+                                                        <a href="#" data-toggle="modal" data-target="#selfTest" data-backdrop="static" data-keyboard="false"><i class="fas fa-stethoscope" title="Self Test Info"></i></a>
+                                                        <a href="#" data-toggle="modal" data-target="#editVMSSCS" data-backdrop="static" data-keyboard="false"><i class="fa fa-edit" title="Edit"></i></a>
+                                                        <a href="#"><i class="far fa-trash-alt" title="Delete"></i></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>SCS</td>
+                                                    <td>SCB01 VIP Road</td>
+                                                    <td>SCS Device 1</td>
+                                                    <td class="text-center"><i class="fa fa-check-circle text-green" title="Active"></i></td>
+                                                    <td class="action-icons" nowrap>
+                                                        <a href="#" data-toggle="modal" data-target="#displayScreenshot" data-backdrop="static" data-keyboard="false"><i class="fas fa-tv" title="Display Screenshot"></i></a>
+                                                        <a href="#" data-toggle="modal" data-target="#selfTest" data-backdrop="static" data-keyboard="false"><i class="fas fa-stethoscope" title="Self Test Info"></i></a>
+                                                        <a href="#" data-toggle="modal" data-target="#editVMSSCS" data-backdrop="static" data-keyboard="false"><i class="fa fa-edit" title="Edit"></i></a>
+                                                        <a href="#"><i class="far fa-trash-alt" title="Delete"></i></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>SCS</td>
+                                                    <td>SCB01 VIP Road</td>
+                                                    <td>SCS Device 1</td>
+                                                    <td class="text-center"><i class="fa fa-check-circle text-black" title="Active"></i></td>
+                                                    <td class="action-icons" nowrap>
+                                                        <a href="#" data-toggle="modal" data-target="#displayScreenshot" data-backdrop="static" data-keyboard="false"><i class="fas fa-tv" title="Display Screenshot"></i></a>
+                                                        <a href="#" data-toggle="modal" data-target="#selfTest" data-backdrop="static" data-keyboard="false"><i class="fas fa-stethoscope" title="Self Test Info"></i></a>
+                                                        <a href="#" data-toggle="modal" data-target="#editVMSSCS" data-backdrop="static" data-keyboard="false"><i class="fa fa-edit" title="Edit"></i></a>
+                                                        <a href="#"><i class="far fa-trash-alt" title="Delete"></i></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>SCS</td>
+                                                    <td>SCB01 VIP Road</td>
+                                                    <td>SCS Device 1</td>
+                                                    <td class="text-center"><i class="fa fa-check-circle text-green" title="Active"></i></td>
+                                                    <td class="action-icons" nowrap>
+                                                        <a href="#" data-toggle="modal" data-target="#displayScreenshot" data-backdrop="static" data-keyboard="false"><i class="fas fa-tv" title="Display Screenshot"></i></a>
+                                                        <a href="#" data-toggle="modal" data-target="#selfTest" data-backdrop="static" data-keyboard="false"><i class="fas fa-stethoscope" title="Self Test Info"></i></a>
+                                                        <a href="#" data-toggle="modal" data-target="#editVMSSCS" data-backdrop="static" data-keyboard="false"><i class="fa fa-edit" title="Edit"></i></a>
+                                                        <a href="#"><i class="far fa-trash-alt" title="Delete"></i></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>SCS</td>
+                                                    <td>SCB01 VIP Road</td>
+                                                    <td>SCS Device 1</td>
+                                                    <td class="text-center"><i class="fa fa-check-circle text-green" title="Active"></i></td>
+                                                    <td class="action-icons" nowrap>
+                                                        <a href="#" data-toggle="modal" data-target="#displayScreenshot" data-backdrop="static" data-keyboard="false"><i class="fas fa-tv" title="Display Screenshot"></i></a>
+                                                        <a href="#" data-toggle="modal" data-target="#selfTest" data-backdrop="static" data-keyboard="false"><i class="fas fa-stethoscope" title="Self Test Info"></i></a>
+                                                        <a href="#" data-toggle="modal" data-target="#editVMSSCS" data-backdrop="static" data-keyboard="false"><i class="fa fa-edit" title="Edit"></i></a>
+                                                        <a href="#"><i class="far fa-trash-alt" title="Delete"></i></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>SCS</td>
+                                                    <td>SCB01 VIP Road</td>
+                                                    <td>SCS Device 1</td>
+                                                    <td class="text-center"><i class="fa fa-check-circle text-green" title="Active"></i></td>
+                                                    <td class="action-icons" nowrap>
+                                                        <a href="#" data-toggle="modal" data-target="#displayScreenshot" data-backdrop="static" data-keyboard="false"><i class="fas fa-tv" title="Display Screenshot"></i></a>
+                                                        <a href="#" data-toggle="modal" data-target="#selfTest" data-backdrop="static" data-keyboard="false"><i class="fas fa-stethoscope" title="Self Test Info"></i></a>
+                                                        <a href="#" data-toggle="modal" data-target="#editVMSSCS" data-backdrop="static" data-keyboard="false"><i class="fa fa-edit" title="Edit"></i></a>
                                                         <a href="#"><i class="far fa-trash-alt" title="Delete"></i></a>
                                                     </td>
                                                 </tr>
@@ -171,15 +320,12 @@
 
                                 </div>
                                 <!-- /.tab-pane -->
-                                <div class="tab-pane" id="vmsToBeBilled">
+                                <div class="tab-pane" id="vmsscsGroup">
                                     <div class="row">
                                         <div class="col-sm-3">
                                             <div class="form-group">
-                                                <label id="lbllastdetectiondateandtime">Billing Start - End Date Time</label>
-                                                <div class="input-group">
-                                                    <div class="input-group-addon"><i class="far fa-calendar-alt"></i></div>
-                                                    <input type="text" placeholder="Choose Date Range" class="form-control daterangefilterTS bg-white" readonly="readonly">
-                                                </div>
+                                                <label>Group Name</label>
+                                                <input type="text" placeholder="Group Name" class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-sm-3">
@@ -187,10 +333,147 @@
                                                 <button type="button" class="btn btn-success btn-flat">Search</button> <button type="button" class="btn btn-default btn-flat">Clear</button>
                                             </div>
                                         </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group pull-right"> <label class="empty-lbl"></label>
+                                                <button data-toggle="modal" data-target="#addVMSSCSgroup" data-backdrop="static" data-keyboard="false" type="button" class="btn btn-success btn-info btn-flat">Add VMS/SCS Group</button>
+                                            </div>
+                                        </div>
+
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-7"></div>
-                                        <div class="col-md-5"></div>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-striped table-hover" id="vms-scs-group-table">
+                                            <thead>
+                                                <tr role="row">
+                                                    <th>Device Type</th>
+                                                    <th>Group Name</th>
+                                                    <th>Group Memeber Name</th>
+                                                    <th class="text-center">Group Status</th>
+                                                    <th width="7%">Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>SCS</td>
+                                                    <td>Udhna</td>
+                                                    <td>VIP Road, UdhanaSCB</td>
+                                                    <td class="text-center"><i class="fa fa-check-circle text-green" title="Active"></i></td>
+                                                    <td class="action-icons" nowrap>
+                                                        <a href="#" data-toggle="modal" data-target="#editVMSSCSgroup" data-backdrop="static" data-keyboard="false"><i class="fa fa-edit" title="Edit"></i></a>
+                                                        <a href="#"><i class="far fa-trash-alt" title="Delete"></i></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>SCS</td>
+                                                    <td>Udhna</td>
+                                                    <td>VIP Road, UdhanaSCB</td>
+                                                    <td class="text-center"><i class="fa fa-check-circle text-green" title="Active"></i></td>
+                                                    <td class="action-icons" nowrap>
+                                                        <a href="#" data-toggle="modal" data-target="#editVMSSCSgroup" data-backdrop="static" data-keyboard="false"><i class="fa fa-edit" title="Edit"></i></a>
+                                                        <a href="#"><i class="far fa-trash-alt" title="Delete"></i></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>SCS</td>
+                                                    <td>Udhna</td>
+                                                    <td>VIP Road, UdhanaSCB</td>
+                                                    <td class="text-center"><i class="fa fa-check-circle text-green" title="Active"></i></td>
+                                                    <td class="action-icons" nowrap>
+                                                        <a href="#" data-toggle="modal" data-target="#editVMSSCSgroup" data-backdrop="static" data-keyboard="false"><i class="fa fa-edit" title="Edit"></i></a>
+                                                        <a href="#"><i class="far fa-trash-alt" title="Delete"></i></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>SCS</td>
+                                                    <td>Udhna</td>
+                                                    <td>VIP Road, UdhanaSCB</td>
+                                                    <td class="text-center"><i class="fa fa-check-circle text-green" title="Active"></i></td>
+                                                    <td class="action-icons" nowrap>
+                                                        <a href="#" data-toggle="modal" data-target="#editVMSSCSgroup" data-backdrop="static" data-keyboard="false"><i class="fa fa-edit" title="Edit"></i></a>
+                                                        <a href="#"><i class="far fa-trash-alt" title="Delete"></i></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>SCS</td>
+                                                    <td>Udhna</td>
+                                                    <td>VIP Road, UdhanaSCB</td>
+                                                    <td class="text-center"><i class="fa fa-check-circle text-black" title="Active"></i></td>
+                                                    <td class="action-icons" nowrap>
+                                                        <a href="#" data-toggle="modal" data-target="#editVMSSCSgroup" data-backdrop="static" data-keyboard="false"><i class="fa fa-edit" title="Edit"></i></a>
+                                                        <a href="#"><i class="far fa-trash-alt" title="Delete"></i></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>SCS</td>
+                                                    <td>Udhna</td>
+                                                    <td>VIP Road, UdhanaSCB</td>
+                                                    <td class="text-center"><i class="fa fa-check-circle text-green" title="Active"></i></td>
+                                                    <td class="action-icons" nowrap>
+                                                        <a href="#" data-toggle="modal" data-target="#editVMSSCSgroup" data-backdrop="static" data-keyboard="false"><i class="fa fa-edit" title="Edit"></i></a>
+                                                        <a href="#"><i class="far fa-trash-alt" title="Delete"></i></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>SCS</td>
+                                                    <td>Udhna</td>
+                                                    <td>VIP Road, UdhanaSCB</td>
+                                                    <td class="text-center"><i class="fa fa-check-circle text-green" title="Active"></i></td>
+                                                    <td class="action-icons" nowrap>
+                                                        <a href="#" data-toggle="modal" data-target="#editVMSSCSgroup" data-backdrop="static" data-keyboard="false"><i class="fa fa-edit" title="Edit"></i></a>
+                                                        <a href="#"><i class="far fa-trash-alt" title="Delete"></i></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>SCS</td>
+                                                    <td>Udhna</td>
+                                                    <td>VIP Road, UdhanaSCB</td>
+                                                    <td class="text-center"><i class="fa fa-check-circle text-black" title="Active"></i></td>
+                                                    <td class="action-icons" nowrap>
+                                                        <a href="#" data-toggle="modal" data-target="#editVMSSCSgroup" data-backdrop="static" data-keyboard="false"><i class="fa fa-edit" title="Edit"></i></a>
+                                                        <a href="#"><i class="far fa-trash-alt" title="Delete"></i></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>SCS</td>
+                                                    <td>Udhna</td>
+                                                    <td>VIP Road, UdhanaSCB</td>
+                                                    <td class="text-center"><i class="fa fa-check-circle text-green" title="Active"></i></td>
+                                                    <td class="action-icons" nowrap>
+                                                        <a href="#" data-toggle="modal" data-target="#editVMSSCSgroup" data-backdrop="static" data-keyboard="false"><i class="fa fa-edit" title="Edit"></i></a>
+                                                        <a href="#"><i class="far fa-trash-alt" title="Delete"></i></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>SCS</td>
+                                                    <td>Udhna</td>
+                                                    <td>VIP Road, UdhanaSCB</td>
+                                                    <td class="text-center"><i class="fa fa-check-circle text-green" title="Active"></i></td>
+                                                    <td class="action-icons" nowrap>
+                                                        <a href="#" data-toggle="modal" data-target="#editVMSSCSgroup" data-backdrop="static" data-keyboard="false"><i class="fa fa-edit" title="Edit"></i></a>
+                                                        <a href="#"><i class="far fa-trash-alt" title="Delete"></i></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>SCS</td>
+                                                    <td>Udhna</td>
+                                                    <td>VIP Road, UdhanaSCB</td>
+                                                    <td class="text-center"><i class="fa fa-check-circle text-green" title="Active"></i></td>
+                                                    <td class="action-icons" nowrap>
+                                                        <a href="#" data-toggle="modal" data-target="#editVMSSCSgroup" data-backdrop="static" data-keyboard="false"><i class="fa fa-edit" title="Edit"></i></a>
+                                                        <a href="#"><i class="far fa-trash-alt" title="Delete"></i></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>SCS</td>
+                                                    <td>Udhna</td>
+                                                    <td>VIP Road, UdhanaSCB</td>
+                                                    <td class="text-center"><i class="fa fa-check-circle text-green" title="Active"></i></td>
+                                                    <td class="action-icons" nowrap>
+                                                        <a href="#" data-toggle="modal" data-target="#editVMSSCSgroup" data-backdrop="static" data-keyboard="false"><i class="fa fa-edit" title="Edit"></i></a>
+                                                        <a href="#"><i class="far fa-trash-alt" title="Delete"></i></a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
                                 <!-- /.tab-pane -->
@@ -199,9 +482,227 @@
                             <!-- /.tab-content -->
                         </div>
                     </div>
-
-
                 </div>
+
+                <!--Add VMS/SCS Installation-->
+                <div class="modal fade" id="addVMSSCS" tabindex="-1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title">Add VMS/SCS Installation</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Device Type</label>
+                                            <select class="form-control select2" data-placeholder="Device Type" style="width: 100%;">
+                                                <option></option>
+                                                <option>SCS</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Location - Device</label>
+                                            <select class="form-control select2" data-placeholder="Location - Device" style="width: 100%;">
+                                                <option></option>
+                                                <option>SCB01 VIP Road</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Installation Name</label>
+                                            <input type="text" class="form-control" placeholder="Installation Name">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-success btn-flat pull-left">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Display Screenshot-->
+                <div class="modal fade" id="displayScreenshot" tabindex="-1">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title">Screenshot</h4>
+                            </div>
+                            <div class="modal-body">
+                                <img src="https://dummyimage.com/1000x500/000/e1e1e1.png" class="img-responsive center-block" />
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Self Test-->
+                <div class="modal fade" id="selfTest" tabindex="-1">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title">Self Test</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p>Self Test</p>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Edit VMS/SCS Installation-->
+                <div class="modal fade" id="editVMSSCS" tabindex="-1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title">Edit VMS/SCS Installation</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Device Type</label>
+                                            <select class="form-control" readonly="readonly">
+                                                <option>SCS</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Location - Device</label>
+                                            <select class="form-control" readonly="readonly">
+                                                <option>VIP Road</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Installation Name</label>
+                                            <input type="text" class="form-control" value="1">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-success btn-flat pull-left">Update</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!--Add VMS/SCS Group-->
+                <div class="modal fade" id="addVMSSCSgroup" tabindex="-1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title">Add VMS/SCS Group</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Device Type</label>
+                                            <select class="form-control select2" data-placeholder="Device Type" style="width: 100%;">
+                                                <option></option>
+                                                <option>VMS</option>
+                                                <option>SCS</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Group Name</label>
+                                            <input type="text" class="form-control" placeholder="Group Name">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Group Member Name</label>
+                                            <select class="form-control mselect2" multiple="multiple" data-placeholder="Group Member Name" style="width: 100%">
+                                                <option></option>
+                                                <option>VIP Road</option>
+                                                <option>Udhana SCB</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-success btn-flat pull-left">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Edit VMS/SCS Group-->
+                <div class="modal fade" id="editVMSSCSgroup" tabindex="-1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title">Edit VMS/SCS Group</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Device Type</label>
+                                            <select class="form-control select2" data-placeholder="Device Type" style="width: 100%;">
+                                                <option></option>
+                                                <option>VMS</option>
+                                                <option>SCS</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Group Name</label>
+                                            <input type="text" class="form-control" placeholder="Group Name">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Group Member Name</label>
+                                            <select class="form-control mselect2" multiple="multiple" data-placeholder="Group Member Name" style="width: 100%">
+                                                <option></option>
+                                                <option>VIP Road</option>
+                                                <option>Udhana SCB</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-success btn-flat pull-left">Update</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
             </section>
             <!-- /.content -->
         </div>
@@ -236,6 +737,10 @@
             $('.select2').select2({
                 allowClear: true,
             });
+
+            $('.mselect2').select2({
+                closeOnSelect: false
+            });
             //Date range picker with seconds
             $('.daterangefilterTS').daterangepicker({
                 autoUpdateInput: false,
@@ -260,26 +765,26 @@
 
 
             // Vehicle Detection
-            $('#billed-table').dataTable({
+            $('#vms-scs-installation-table').dataTable({
 
                 bFilter: false, //hide search box
                 "sDom": "<'row'<'col-sm-12'tr>>" + "<'row'<'col-sm-2'l><'col-sm-3'i><'col-sm-7'p>>", // move filter to bottom
                 'columnDefs': [{
                     'orderable': false,
-                    'targets': [7]
+                    'targets': [4]
                 }], // hide sort icon on header of first column
                 'aaSorting': [
                     [1, 'asc']
                 ] // start to sort data in second column 
             });
             // Vehicle Detection
-            $('#tobebilled-table').dataTable({
+            $('#vms-scs-group-table').dataTable({
 
                 bFilter: false, //hide search box
                 "sDom": "<'row'<'col-sm-12'tr>>" + "<'row'<'col-sm-2'l><'col-sm-3'i><'col-sm-7'p>>", // move filter to bottom
                 'columnDefs': [{
                     'orderable': false,
-                    'targets': [7]
+                    'targets': [4]
                 }], // hide sort icon on header of first column
                 'aaSorting': [
                     [1, 'asc']
