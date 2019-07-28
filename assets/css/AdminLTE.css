@@ -6420,7 +6420,7 @@ fieldset[disabled] .form-control {
 }
 
 .action-icons {
-    display: flex;
+    display: table-cell;
 
 }
 
@@ -6660,6 +6660,11 @@ ul.pagination .fas {
 
 .select2-selection--multiple .select2-search--inline .select2-search__field {
     width: 100% !important;
+}
+
+
+.table > tbody > tr > td {
+    vertical-align: middle;
 }
 
 @media (min-width: 992px) {
