@@ -142,7 +142,7 @@
                                 <div class="row">
                                     <div class="col-sm-3">
                                         <div class="form-group">
-                                            <label id="lbllastdetectiondateandtime">Date Range</label>
+                                            <label>Date Range</label>
                                             <div class="input-group">
                                                 <div class="input-group-addon"><i class="far fa-calendar-alt"></i></div>
                                                 <input type="text" placeholder="Choose Date Range" class="form-control daterangefilterTS bg-white" readonly="readonly">
@@ -162,7 +162,7 @@
                                     <div class="col-sm-3">
                                         <div class="form-group">
                                             <label>Status</label>
-                                            <select class="form-control select2" data-placeholder="Request Type" style="width: 100%;">
+                                            <select class="form-control select2" data-placeholder="Status" style="width: 100%;">
                                                 <option></option>
                                                 <option>New</option>
                                                 <option>Approved</option>
@@ -189,7 +189,7 @@
                             <div class="box-header with-border">
                                 <h3 class="box-title">Manage Requests List</h3>
                                 <div class="box-tools">
-                                    <a href="create-request-vms.html" class="btn btn-block btn-sm btn-info btn-flat">Create Request</a></div>
+                                    <a href="#" class="btn btn-block btn-sm btn-info btn-flat" data-toggle="modal" data-target="#createRequestSCS" data-backdrop="static" data-keyboard="false">Create SCS Request</a></div>
                             </div>
                             <div class="box-body">
                                 <div class="table-responsive overflow-x">
@@ -236,58 +236,74 @@
                 </div>
 
 
-                <!--Preview Request VMS-->
-                <div class="modal fade" id="previewRequestVMS" tabindex="-1">
+                <!--Create Request VMS-->
+                <div class="modal fade" id="createRequestSCS" tabindex="-1">
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title">VMS Preview</h4>
+                                <h4 class="modal-title">Create SCS Request</h4>
                             </div>
                             <div class="modal-body">
                                 <div class="row">
-                                    <div class="col-sm-12">
-                                        <h5><strong><i class="far fa-clock"></i> 09:00:00 &mdash; 09:05:00</strong></h5>
-
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Request Type</label>
+                                            <select class="form-control select2" data-placeholder="Request Type" style="width: 100%;" id="scsReqType">
+                                                <option></option>
+                                                <option value="SCSSpeed">Speed</option>
+                                                <option value="SCSSymbol">Symbol</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                    <div class="col-sm-12">
-                                        <center>
-                                            <table width="800" class="table table-bordered template-table-preview">
-                                                <tbody>
-                                                    <tr>
-                                                        <td class="imgContent" align="center">
-                                                            <img src="assets/img/sample-advt-img.jpg" alt="Widget Image" class="center-block" />
-                                                        </td>
-                                                        <td class="videoContent" valign="middle" align="center">
-                                                            <center>
-                                                                <video width="400" height="240" controls>
-                                                                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-                                                                    <source src="https://www.w3schools.com/html/movie.ogg" type="video/ogg">
-                                                                    Your browser does not support the video tag.
-                                                                </video></center>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td colspan="2" class="txtContent">
-                                                            <div class="textAdvt">
-                                                                <h3 align="center">EVEN A SINGLE CRACKER CAN CAUSE A MAJOR ACCIDENT </h3>
-                                                            </div>
+                                    <div class="scsReq" id="SCSSpeed" style="display: none">
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label>Speed</label>
+                                                <input type="text" placeholder="Speed" class="form-control">
+                                            </div>
+                                        </div>
 
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </center>
+                                        <div class="col-sm-2">
+                                            <div class="form-group">
+                                                <label class="mr-10 empty-lbl">Enforced</label>
+                                                <label class="switch">
+                                                    <input type="checkbox">
+                                                    <span class="slider round"></span></label>
+                                            </div>
+                                        </div>
                                     </div>
+                                    <div class="col-sm-6 scsReq" id="SCSSymbol" style="display: none">
+                                        <div class="form-group">
+                                            <label>Symbol</label>
+                                            <select class="form-control select2" data-placeholder="Symbol" style="width: 100%;">
+                                                <option></option>
+                                                <option>No Entry</option>
+                                                <option>One Way</option>
+                                                <option>Wrong Direction</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
                                 </div>
-                                <div class="clearfix">
-                                    <ul class="pagination pagination-sm no-margin pull-right">
-                                        <li><a href="#"><i class="fas fa-chevron-left"></i></a></li>
-                                        <li class="active"><a href="#">1</a></li>
-                                        <li><a href="#">2</a></li>
-                                        <li><a href="#">3</a></li>
-                                        <li><a href="#"><i class="fas fa-chevron-right"></i></a></li>
-                                    </ul>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Request Description</label>
+                                            <textarea class="form-control" rows="3" placeholder="Request Description"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Date Range</label>
+                                            <div class="input-group">
+                                                <div class="input-group-addon"><i class="far fa-calendar-alt"></i></div>
+                                                <input type="text" placeholder="Choose Date Range" class="form-control daterangefilterTS bg-white" readonly="readonly">
+                                            </div>
+                                        </div>
+                                    </div>
+
+
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -354,7 +370,6 @@
                 $(this).val('');
             });
 
-
             // Vehicle Detection
             $('#manage-request-table').dataTable({
 
@@ -368,6 +383,16 @@
                     [1, 'asc']
                 ] // start to sort data in second column 
             });
+
+            $('#scsReqType').change(function() {
+                $('.scsReq').hide();
+                $('#' + $(this).val()).show();
+            });
+
+
+
+
+
 
         })
 
