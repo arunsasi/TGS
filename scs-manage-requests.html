@@ -106,7 +106,7 @@
                                 <ul class="treeview-menu">
                                     <li><a href="manage-information-providers.html"><i class="far fa-address-book"></i> Manage Information Providers</a></li>
                                     <li><a href="manage-vms-scs.html"><i class="fas fa-server"></i> Manage VMS &amp; SCS</a></li>
-                                    <li><a href="#"><i class="far fa-comment-dots"></i> Preconfigured Message List</a></li>
+                                    <li><a href="preconfigured-message-list.html"><i class="far fa-comment-dots"></i> Preconfigured Message List</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -370,7 +370,7 @@
                 $(this).val('');
             });
 
-            // Vehicle Detection
+            // SCS Manage Request
             $('#manage-request-table').dataTable({
 
                 bFilter: false, //hide search box
@@ -388,11 +388,6 @@
                 $('.scsReq').hide();
                 $('#' + $(this).val()).show();
             });
-
-
-
-
-
 
         })
 

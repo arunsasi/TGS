@@ -106,7 +106,7 @@
                                 <ul class="treeview-menu">
                                     <li class="active"><a href="manage-information-providers.html"><i class="far fa-address-book"></i> Manage Information Providers</a></li>
                                     <li><a href="manage-vms-scs.html"><i class="fas fa-server"></i> Manage VMS &amp; SCS</a></li>
-                                    <li><a href="#"><i class="far fa-comment-dots"></i> Preconfigured Message List</a></li>
+                                    <li><a href="preconfigured-message-list.html"><i class="far fa-comment-dots"></i> Preconfigured Message List</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -170,7 +170,7 @@
                             </div>
                             <div class="box-body">
                                 <div class="table-responsive overflow-x">
-                                    <table class="table table-bordered table-striped table-hover" id="manage-request-table">
+                                    <table class="table table-bordered table-striped table-hover" id="manage-infoprovider-table">
                                         <thead>
                                             <tr>
                                                 <th>Code</th>
@@ -517,8 +517,8 @@
                 allowClear: true,
             });
 
-            // Vehicle Detection
-            $('#manage-request-table').dataTable({
+            // Manage Info Provider
+            $('#manage-infoprovider-table').dataTable({
 
                 bFilter: false, //hide search box
                 "sDom": "<'row'<'col-sm-12'tr>>" + "<'row'<'col-sm-2'l><'col-sm-3'i><'col-sm-7'p>>", // move filter to bottom

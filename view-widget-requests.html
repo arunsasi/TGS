@@ -106,7 +106,7 @@
                                 <ul class="treeview-menu">
                                     <li><a href="manage-information-providers.html"><i class="far fa-address-book"></i> Manage Information Providers</a></li>
                                     <li><a href="manage-vms-scs.html"><i class="fas fa-server"></i> Manage VMS &amp; SCS</a></li>
-                                    <li><a href="#"><i class="far fa-comment-dots"></i> Preconfigured Message List</a></li>
+                                    <li><a href="preconfigured-message-list.html"><i class="far fa-comment-dots"></i> Preconfigured Message List</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -225,7 +225,7 @@
                                                             <i class="fa fa-bars"></i></button>
                                                         <ul class="dropdown-menu pull-right" role="menu">
                                                             <li><a href="#"><i class="fa fa-eye"></i> View Request</a></li>
-                                                            <li><a href="#"><i class="fa fa-eye"></i> View Schedule</a></li>
+                                                            <li><a href="view-schedule.html"><i class="fa fa-eye"></i> View Schedule</a></li>
                                                             <li><a href="#"><i class="fa fa-eye"></i> View Conflict</a></li>
 
                                                         </ul>
@@ -927,7 +927,7 @@
                 $(this).val('');
             });
 
-
+            //Widget Request
             $('#widget-request-table').dataTable({
 
                 bFilter: false, //hide search box
@@ -940,6 +940,8 @@
                     [1, 'asc']
                 ] // start to sort data in second column 
             });
+
+            //History
             $('#history-actions-table').dataTable({
 
                 bFilter: false, //hide search box

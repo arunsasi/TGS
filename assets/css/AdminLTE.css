@@ -6667,6 +6667,14 @@ ul.pagination .fas {
     vertical-align: middle;
 }
 
+.nav-tabs li.short-tooltip {
+    margin-right: 0;
+}
+
+.nav-tabs li.short-tooltip a {
+    padding: 10px;
+}
+
 @media (min-width: 992px) {
     .modal-lg {
         width: 1100px;
