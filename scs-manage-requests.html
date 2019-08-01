@@ -302,9 +302,80 @@
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <label class="empty-lbl"></label>
+                                        <div class="form-group">
+                                            <label class=" radio-inline">
+                                                <input type="radio" name="optionsDailyorWeekly" id="optionsDaily" value="Daily" checked="" onclick="show1();">
+                                                Daily
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="optionsDailyorWeekly" id="optionsWeekly" value="Weekly" onclick="show2();">
+                                                Weekly
+                                            </label>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>Start Time</label>
+                                            <input class="form-control" type="text" placeholder="hh:mm:ss">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>End Time</label>
+                                            <input class="form-control" type="text" placeholder="hh:mm:ss">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group" id="SCSWeek" style="display: none">
+                                            <label>Day of the Week</label>
+                                            <select multiple="" class="form-control mselect2" data-placeholder="Select Day of the Week" style="width: 100%">
+                                                <option></option>
+                                                <option>Sunday</option>
+                                                <option>Monday</option>
+                                                <option>Tuesday</option>
+                                                <option>Wednesday</option>
+                                                <option>Thursday</option>
+                                                <option>Firday</option>
+                                                <option>Saturday</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-4">
+                                        <div class="form-group">
+                                            <label>Select Group</label>
+                                            <select class="form-control select2" data-placeholder="Select Group" style="width: 100%">
+                                                <option></option>
+                                                <option>SCS</option>
+                                                <option>SCS Group</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-8">
+                                        <div class="form-group">
+                                            <label>Select Devices</label>
+                                            <select multiple="" class="form-control mselect2" data-placeholder="Select Devices" style="width: 100%">
+                                                <option></option>
+                                                <option>Option 1</option>
+                                                <option>Option 2</option>
+                                                <option>Option 3</option>
+                                                <option>Option 4</option>
+                                                <option>Option 5</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+
+
 
 
                                 </div>
+
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">Close</button>
@@ -348,6 +419,12 @@
             $('.select2').select2({
                 allowClear: true,
             });
+
+
+            $('.mselect2').select2({
+                closeOnSelect: false,
+                placeholder: "Select",
+            });
             //Date range picker with seconds
             $('.daterangefilterTS').daterangepicker({
                 autoUpdateInput: false,
@@ -390,7 +467,14 @@
             });
 
         })
+        //Show Hide Exisiting Message or New Message
+        function show1() {
+            document.getElementById('SCSWeek').style.display = 'none';
+        }
 
+        function show2() {
+            document.getElementById('SCSWeek').style.display = 'block';
+        }
     </script>
 </body>
 
