@@ -213,16 +213,16 @@
                                                         <button type="button" class="btn btn-default btn-flat btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                                                             <i class="fa fa-bars"></i></button>
                                                         <ul class="dropdown-menu pull-right" role="menu">
-                                                            <li><a href="#"><i class="fa fa-eye"></i> View Request</a></li>
+                                                            <li><a href="#" data-toggle="modal" data-target="#viewRequestSCS" data-backdrop="static" data-keyboard="false"><i class="fa fa-eye"></i> View Request</a></li>
                                                             <li><a href="#"><i class="fa fa-eye"></i> View Schedule</a></li>
                                                             <!--                                                          <li><a href="#"><i class="fa fa-eye"></i> View Conflict</a></li>-->
                                                         </ul>
                                                     </div>
                                                 </td>
                                                 <td class="action-icons" nowrap>
-                                                    <!--                                                   <a href="#"><i class="fa fa-eye" title="View Widget Requests"></i></a>-->
+                                                    <a href="#" data-toggle="modal" data-target="#viewRequestSCS" data-backdrop="static" data-keyboard="false"><i class="fa fa-eye" title="View SCS Requests"></i></a>
                                                     <!--                                                   <a data-toggle="modal" data-target="#previewRequestVMS" data-backdrop="static" data-keyboard="false"><i class="far fa-file-alt" title="Preview Request in VMS"></i></a>-->
-                                                    <a href="#"><i class="fa fa-edit" title="Edit"></i></a>
+                                                    <a href="#" data-toggle="modal" data-target="#editRequestSCS" data-backdrop="static" data-keyboard="false"><i class="fa fa-edit" title="Edit SCS  Requests"></i></a>
                                                 </td>
                                             </tr>
 
@@ -249,8 +249,8 @@
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label>Request Type</label>
-                                            <select class="form-control select2" data-placeholder="Request Type" style="width: 100%;" id="scsReqType">
-                                                <option></option>
+                                            <select class="form-control" style="width: 100%;" id="scsReqType">
+                                                <option>Select Request Type</option>
                                                 <option value="SCSSpeed">Speed</option>
                                                 <option value="SCSSymbol">Symbol</option>
                                             </select>
@@ -315,7 +315,135 @@
                                                 <input type="radio" name="optionsDailyorWeekly" id="optionsWeekly" value="Weekly" onclick="show2();">
                                                 Weekly
                                             </label>
+                                        </div>
+                                    </div>
 
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>Start Time</label>
+                                            <input class="form-control" type="text" placeholder="hh:mm:ss">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>End Time</label>
+                                            <input class="form-control" type="text" placeholder="hh:mm:ss">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group" id="SCSWeek" style="display: none">
+                                            <label>Day of the Week</label>
+                                            <select multiple="" class="form-control mselect2" data-placeholder="Select Day" style="width: 100%">
+                                                <option></option>
+                                                <option>Sunday</option>
+                                                <option>Monday</option>
+                                                <option>Tuesday</option>
+                                                <option>Wednesday</option>
+                                                <option>Thursday</option>
+                                                <option>Firday</option>
+                                                <option>Saturday</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-4">
+                                        <div class="form-group">
+                                            <label>Select Group</label>
+                                            <select class="form-control select2" data-placeholder="Select Group" style="width: 100%">
+                                                <option></option>
+                                                <option>SCS</option>
+                                                <option>SCS Group</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-8">
+                                        <div class="form-group">
+                                            <label>Select Devices</label>
+                                            <select multiple="" class="form-control mselect2" data-placeholder="Select Devices" style="width: 100%">
+                                                <option></option>
+                                                <option>Option 1</option>
+                                                <option>Option 2</option>
+                                                <option>Option 3</option>
+                                                <option>Option 4</option>
+                                                <option>Option 5</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-success btn-flat pull-left">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Edit Request SCS-->
+                <div class="modal fade" id="editRequestSCS" tabindex="-1">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title">Edit SCS Request</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Request Type</label>
+                                            <select class="form-control" style="width: 100%;">
+                                                <option value="SCSSpeed" selected>Speed</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="scsReq" id="SCSSpeed" style="display: block">
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label>Speed</label>
+                                                <input type="text" value="100" class="form-control">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-2">
+                                            <div class="form-group">
+                                                <label class="mr-10 empty-lbl">Enforced</label>
+                                                <label class="switch">
+                                                    <input type="checkbox" checked>
+                                                    <span class="slider round"></span></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Request Description</label>
+                                            <textarea class="form-control" rows="3">Request Description</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Date Range</label>
+                                            <div class="input-group">
+                                                <div class="input-group-addon"><i class="far fa-calendar-alt"></i></div>
+                                                <input type="text" placeholder="Choose Date Range" class="form-control daterangefilterTS bg-white" readonly="readonly">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <label class="empty-lbl"></label>
+                                        <div class="form-group">
+                                            <label class=" radio-inline">
+                                                <input type="radio" name="optionsDailyorWeekly" id="optionsDaily" value="Daily" checked="" onclick="show1();">
+                                                Daily
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="optionsDailyorWeekly" id="optionsWeekly" value="Weekly" onclick="show2();">
+                                                Weekly
+                                            </label>
                                         </div>
                                     </div>
 
@@ -369,11 +497,133 @@
                                             </select>
                                         </div>
                                     </div>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-success btn-flat pull-left">Update</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
 
+                <!--View Request SCS-->
+                <div class="modal fade" id="viewRequestSCS" tabindex="-1">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title">View SCS Request</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Request Type</label>
+                                            <select class="form-control" style="width: 100%;">
+                                                <option value="SCSSpeed" selected>Speed</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="scsReq">
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label>Speed</label>
+                                                <input type="text" value="100" class="form-control" readonly>
+                                            </div>
+                                        </div>
 
+                                        <div class="col-sm-2">
+                                            <div class="form-group">
+                                                <label class="mr-10 empty-lbl">Enforced</label>
+                                                <label class="switch">
+                                                    <input type="checkbox" checked disabled>
+                                                    <span class="slider round"></span></label>
+                                            </div>
+                                        </div>
+                                    </div>
 
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Request Description</label>
+                                            <textarea class="form-control" rows="3" readonly>Request Description</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Date Range</label>
+                                            <div class="input-group">
+                                                <div class="input-group-addon"><i class="far fa-calendar-alt"></i></div>
+                                                <input type="text" value="02/08/2019 11:00:00 - 03/08/2019 19:00:00" class="form-control" readonly="readonly">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <label class="empty-lbl"></label>
+                                        <div class="form-group">
+                                            <label class=" radio-inline">
+                                                <input type="radio" name="optionsDailyorWeekly" id="optionsDaily" value="Daily" onclick="show1();" readonly>
+                                                Daily
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="optionsDailyorWeekly" id="optionsWeekly" value="Weekly" checked="" onclick="show2();" readonly>
+                                                Weekly
+                                            </label>
+                                        </div>
+                                    </div>
 
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>Start Time</label>
+                                            <input class="form-control" type="text" value="00:10:00" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>End Time</label>
+                                            <input class="form-control" type="text" value="00:12:00" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group" id="SCSWeek" style="display: block">
+                                            <label>Day of the Week</label>
+                                            <select multiple="" class="form-control mselect2" data-placeholder="Select Day of the Week" style="width: 100%">
+                                                <option selected>Sunday</option>
+                                                <option selected>Monday</option>
+                                                <option>Tuesday</option>
+                                                <option>Wednesday</option>
+                                                <option selected>Thursday</option>
+                                                <option>Firday</option>
+                                                <option>Saturday</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-4">
+                                        <div class="form-group">
+                                            <label>Select Group</label>
+                                            <select class="form-control" style="width: 100%" readonly>
+                                                <option selected>SCS</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-8">
+                                        <div class="form-group">
+                                            <label>Select Devices</label>
+                                            <select multiple="" class="form-control mselect2" data-placeholder="Select Devices" style="width: 100%">
+                                                <option selected>Option 1</option>
+                                                <option>Option 2</option>
+                                                <option>Option 3</option>
+                                                <option selected>Option 4</option>
+                                                <option>Option 5</option>
+                                            </select>
+                                        </div>
+                                    </div>
                                 </div>
 
                             </div>
@@ -475,6 +725,7 @@
         function show2() {
             document.getElementById('SCSWeek').style.display = 'block';
         }
+
     </script>
 </body>
 
