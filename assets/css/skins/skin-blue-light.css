@@ -45,7 +45,8 @@
     }
 
     .skin-blue-light .main-header .navbar .dropdown-menu li a {
-        color: #fff;
+        color: #444444;
+        padding: 5px 15px 5px 15px;
     }
 
     .skin-blue-light .main-header .navbar .dropdown-menu li a:hover {
