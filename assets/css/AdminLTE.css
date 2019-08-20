@@ -6817,6 +6817,13 @@ ul.pagination .fas {
 
 .panel-heading {
     padding: 0;
+    border-top-left-radius: 1px;
+    border-top-right-radius: 1px;
+}
+
+.panel-group .panel {
+    margin-bottom: 0;
+    border-radius: 2px;
 }
 
 .panel-heading .accordion-toggle:after {

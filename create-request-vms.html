@@ -262,133 +262,597 @@
             <section class="content container-fluid">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="panel-group" id="accordion">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#selectDecvieTemplate">
-                                            Select Device, Template &amp; Widget
-                                        </a>
-                                    </h4>
+                        <div class="box box-default box-solid">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Create VMS Request</h3>
+                                <div class="box-tools short-tooltip">
+                                    <a href="vms-manage-requests.html" class="back-btn-header" data-html="true" data-toggle="tooltip" data-placement="left" data-original-title="<p class='text-left'>Back to Manage Requests</p>"><i class="fas fa-caret-square-left"></i></a>
                                 </div>
-                                <div id="selectDecvieTemplate" class="panel-collapse collapse in">
-                                    <div class="panel-body">
-                                        <div class="row">
-                                            <div class="col-md-12">
+                            </div>
+                            <div class="box-body">
+                                <div class="panel-group" id="accordion">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#selectDecvieTemplate">
+                                                    Select Device, Template &amp; Widget
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="selectDecvieTemplate" class="panel-collapse collapse in">
+                                            <div class="panel-body">
                                                 <div class="row">
-                                                    <div class="col-sm-6 col-md-4">
+                                                    <div class="col-md-12">
+                                                        <div class="row">
+                                                            <div class="col-sm-6 col-md-4">
+                                                                <div class="form-group">
+                                                                    <label>Select Group</label>
+                                                                    <select class="form-control select2" data-placeholder="Select Group" style="width: 100%">
+                                                                        <option></option>
+                                                                        <option>VMS</option>
+                                                                        <option>VMS Group</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-6 col-md-3">
+                                                                <div class=" form-group">
+                                                                    <label>Select Devices</label>
+                                                                    <select multiple="multiple" class="form-control" id="SelectDevice" style="width: 100%">
+                                                                        <option>Option 1</option>
+                                                                        <option>Option 2</option>
+                                                                        <option>Option 3</option>
+                                                                        <option>Option 4</option>
+                                                                        <option>Option 5</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <hr />
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <!-- Template Grid -->
+                                                                <label>Select Template</label>
+                                                                <ul class="row template-select-grid">
+                                                                    <li class="col-sm-3 col-md-3">
+                                                                        <input type="radio" name="templateSelection" id="template1" class="input-hidden" checked />
+                                                                        <label for="template1">
+                                                                            <img src="assets/img/template/thumbnail/wireframe.jpg" class="img-responsive">
+                                                                            <span class="selectedTemplate"><i class="fas fa-check-circle"></i></span>
+                                                                            <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe.jpg" data-lightbox="Template 1" data-title="Template 2:3 Column"><i class="fas fa-search"></i></a></span>
+                                                                        </label>
+                                                                    </li>
+                                                                    <li class="col-sm-3 col-md-3">
+                                                                        <input type="radio" name="templateSelection" id="template2" class="input-hidden" />
+                                                                        <label for="template2">
+                                                                            <img src="assets/img/template/thumbnail/wireframe2.jpg" class="img-responsive">
+                                                                            <span class="selectedTemplate"><i class="fas fa-check-circle"></i></span>
+                                                                            <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe2.jpg" data-lightbox="Template 2" data-title="Template 3:2 Column"><i class="fas fa-search"></i></a></span>
+                                                                        </label>
+                                                                    </li>
+                                                                    <li class="col-sm-3 col-md-3">
+                                                                        <input type="radio" name="templateSelection" id="template3" class="input-hidden" />
+                                                                        <label for="template3">
+                                                                            <img src="assets/img/template/thumbnail/wireframe3.jpg" class="img-responsive">
+                                                                            <span class="selectedTemplate"><i class="fas fa-check-circle"></i></span>
+                                                                            <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe3.jpg" data-lightbox="Template 3" data-title="Template 1:1 Column"><i class="fas fa-search"></i></a></span>
+                                                                        </label>
+                                                                    </li>
+                                                                    <li class="col-sm-3 col-md-3">
+                                                                        <input type="radio" name="templateSelection" id="template4" class="input-hidden" />
+                                                                        <label for="template4">
+                                                                            <img src="assets/img/template/thumbnail/wireframe4.jpg" class="img-responsive">
+                                                                            <span class="selectedTemplate"><i class="fas fa-check-circle"></i></span>
+                                                                            <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe4.jpg" data-lightbox="Template 4" data-title="Template 3:2 Column"><i class="fas fa-search"></i></a></span>
+                                                                        </label>
+                                                                    </li>
+                                                                    <li class="col-sm-3 col-md-3">
+                                                                        <input type="radio" name="templateSelection" id="template5" class="input-hidden" />
+                                                                        <label for="template5">
+                                                                            <img src="assets/img/template/thumbnail/wireframe.jpg" class="img-responsive">
+                                                                            <span class="selectedTemplate"><i class="fas fa-check-circle"></i></span>
+                                                                            <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe.jpg" data-lightbox="Template 5" data-title="Template 3:2 Column"><i class="fas fa-search"></i></a></span>
+                                                                        </label>
+                                                                    </li>
+                                                                    <li class="col-sm-3 col-md-3">
+                                                                        <input type="radio" name="templateSelection" id="template6" class="input-hidden" />
+                                                                        <label for="template6">
+                                                                            <img src="assets/img/template/thumbnail/wireframe3.jpg" class="img-responsive">
+                                                                            <span class="selectedTemplate"><i class="fas fa-check-circle"></i></span>
+                                                                            <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe2.jpg" data-lightbox="Template 6" data-title="Template 3:2 Column"><i class="fas fa-search"></i></a></span>
+                                                                        </label>
+                                                                    </li>
+                                                                    <li class="col-sm-3 col-md-3">
+                                                                        <input type="radio" name="templateSelection" id="template7" class="input-hidden" />
+                                                                        <label for="template7">
+                                                                            <img src="assets/img/template/thumbnail/wireframe2.jpg" class="img-responsive">
+                                                                            <span class="selectedTemplate"><i class="fas fa-check-circle"></i></span>
+                                                                            <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe3.jpg" data-lightbox="Template 7" data-title="Template 1:1 Column"><i class="fas fa-search"></i></a></span>
+                                                                        </label>
+                                                                    </li>
+                                                                    <li class="col-sm-3 col-md-3">
+                                                                        <input type="radio" name="templateSelection" id="template8" class="input-hidden" />
+                                                                        <label for="template8">
+                                                                            <img src="assets/img/template/thumbnail/wireframe4.jpg" class="img-responsive">
+                                                                            <span class="selectedTemplate"><i class="fas fa-check-circle"></i></span>
+                                                                            <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe4.jpg" data-lightbox="Template 8" data-title="Template 1:1 Column"><i class="fas fa-search"></i></a></span>
+                                                                        </label>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="row">
+                                                                    <div class="col-sm-12">
+                                                                        <label>Select Template</label>
+                                                                        <center class="widget-table">
+                                                                            <table width="800" class="table table-bordered template-table">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td><a href="#addMessageContent" class="txtContent">WIDGET 1</a></td>
+                                                                                        <td><a href="#addMessageContent" class="imgContent">WIDGET 2</a></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td colspan="2"><a href="#addMessageContent" class="videoContent">WIDGET 3</a></td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </center>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#selectWidget">
+                                                    Select Widget
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="selectWidget" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <center>
+                                                            <table width="800" class="table table-bordered template-table">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td><a href="#addMessageContent" class="txtContent">WIDGET 1</a></td>
+                                                                        <td><a href="#addMessageContent" class="imgContent">WIDGET 2</a></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td colspan="2"><a href="#addMessageContent" class="videoContent">WIDGET 3</a></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </center>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#selectSchedule">
+                                                    Select Schedule
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="selectSchedule" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#configureWidget">
+                                                    Configure Text Message for Widget 1
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="configureWidget" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <div class="row">
+
+                                                            <div class="col-sm-6 col-md-3">
+                                                                <div class="form-group">
+                                                                    <label>Message Category</label>
+                                                                    <select class="form-control select2" data-placeholder="Select Category" style="width: 100%">
+                                                                        <option></option>
+                                                                        <option>ADV</option>
+                                                                        <option>PA</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-6 col-md-3">
+                                                                <div class="form-group">
+                                                                    <label>Message Format</label>
+                                                                    <select class="form-control select2" data-placeholder="Select Format" id="formatSelector" style="width: 100%">
+                                                                        <option></option>
+                                                                        <option value="txtFormat">Text</option>
+                                                                        <option value="imgFormat">Image</option>
+                                                                        <option value="videoFormat">Video</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-6 col-md-3">
+                                                                <div class="form-group">
+                                                                    <label>Start Date &amp; Time</label>
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-addon"><i class="far fa-calendar-alt"></i></div>
+                                                                        <input type="text" placeholder="Start Date &amp; Time" class="form-control dateSingleTime bg-white" readonly="readonly">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-6 col-md-3">
+                                                                <div class="form-group">
+                                                                    <label>Valid Till</label>
+                                                                    <select class="form-control select2" data-placeholder="Select Validity" style="width: 100%">
+                                                                        <option> </option>
+                                                                        <option value="0">One Time</option>
+                                                                        <option value="1">Repeat</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-6 col-md-3">
+                                                                <div class="form-group"> <label class="empty-lbl"></label>
+                                                                    <button type="button" class="btn btn-danger btn-flat">View Conflicts</button>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <hr />
+
                                                         <div class="form-group">
-                                                            <label>Select Group</label>
-                                                            <select class="form-control select2" data-placeholder="Select Group" style="width: 100%">
+                                                            <label class=" radio-inline">
+                                                                <input type="radio" name="optionsMessage" id="optionsNew" value="New Message Content" checked="" onclick="show1();">
+                                                                New Message Content
+                                                            </label>
+                                                            <label class="radio-inline">
+                                                                <input type="radio" name="optionsMessage" id="optionsExisting" value="Existing Message Content" onclick="show2();">
+                                                                Existing Message Content
+                                                            </label>
+
+                                                        </div>
+                                                        <div class="row">
+                                                            <div id="ExistingMsgContent" style="display: none;">
+                                                                <div class="col-sm-6 col-md-3">
+                                                                    <div class="form-group">
+                                                                        <label>Message Code</label>
+                                                                        <select class="form-control select2" data-placeholder="Select Message Code" style="width: 100%">
+                                                                            <option></option>
+                                                                            <option>ADV/1/2019</option>
+                                                                            <option>ADV/2/2019</option>
+                                                                        </select> </div>
+                                                                </div>
+                                                                <div class="col-sm-6 col-md-3">
+                                                                    <div class="form-group">
+                                                                        <label>Message Name</label>
+
+                                                                        <input class="form-control" type="text" placeholder="Message Name" disabled value="">
+
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-6 col-md-3">
+                                                                    <div class="form-group">
+                                                                        <label>Display Duration</label>
+                                                                        <input class="form-control" type="text" placeholder="hh:mm:ss">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-12">
+                                                                    <div class="form-group">
+                                                                        <label>Message Preview</label>
+                                                                        <textarea class="form-control" rows="3" disabled>This text is visible</textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div id="NewMsgContent">
+                                                                <div class="col-sm-6 col-md-3">
+                                                                    <div class="form-group">
+                                                                        <label>Message Name</label>
+                                                                        <input class="form-control" type="text" placeholder="Message Name" value="">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-6 col-md-3">
+                                                                    <div class="form-group">
+                                                                        <label>Display Duration</label>
+                                                                        <input class="form-control" type="text" placeholder="hh:mm:ss">
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="msgFormat" id="imgFormat">
+                                                                    <div class="col-sm-6 col-md-3">
+                                                                        <div class="form-group">
+                                                                            <label class="empty-lbl">Choose Image</label>
+                                                                            <input type="file" class="imguploader" id="imgInp" style="visibility: hidden; position: absolute">
+                                                                            <button class="imguploader-btn btn btn-primary btn-flat pull-left">Upload Image</button><small class="help-block">Max File size 2 MB</small>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-sm-12 col-md-12">
+                                                                        <img id="MsgImgInput" class="prevImg" style="display: none;" />
+                                                                    </div>
+
+                                                                </div>
+                                                                <div class="col-sm-12 msgFormat" id="txtFormat">
+                                                                    <div class="form-group">
+                                                                        <label>Text Message</label>
+                                                                        <textarea class="form-control" rows="3" placeholder="Type your message"></textarea>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="msgFormat" id="videoFormat">
+                                                                    <div class="col-sm-6 col-md-3">
+                                                                        <div class="form-group">
+                                                                            <label class="empty-lbl">Choose Video</label>
+                                                                            <input type="file" class="fileuploader" style="visibility: hidden; position: absolute">
+                                                                            <button class="fileuploader-btn btn btn-primary btn-flat pull-left">Upload Video</button><small class="help-block">Max File size 12 MB</small>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-sm-12 col-md-12">
+                                                                        <div id="VideoMsgPreview"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-12">
+                                                                <div class="form-group">
+                                                                    <button type="button" class="btn btn-primary btn-flat">Add Message</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+
+                                                            <div class="table-responsive">
+                                                                <table class="table table-bordered table-striped table-hover table-message" id="message-table">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>Message Code</th>
+                                                                            <th>Message Name</th>
+                                                                            <th>Message Content</th>
+                                                                            <th class="text-center">Action</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>ADV/19/2019</td>
+                                                                            <td>Display Message 1 </td>
+                                                                            <td>Display Message 1 </td>
+                                                                            <td class="text-center" width="10%"><a><i class="fas fa-trash-alt" title="Delete"></i></a></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>ADV/19/2019</td>
+                                                                            <td>Display Message 1 </td>
+                                                                            <td>Display Message 1 </td>
+                                                                            <td class="text-center" width="10%"><a><i class="fas fa-trash-alt" title="Delete"></i></a></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>ADV/19/2019</td>
+                                                                            <td>Display Message 1 </td>
+                                                                            <td>Display Message 1 </td>
+                                                                            <td class="text-center" width="10%"><a><i class="fas fa-trash-alt" title="Delete"></i></a></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>ADV/19/2019</td>
+                                                                            <td>Display Message 1 </td>
+                                                                            <td>Display Message 1 </td>
+                                                                            <td class="text-center" width="10%"><a><i class="fas fa-trash-alt" title="Delete"></i></a></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>ADV/19/2019</td>
+                                                                            <td>Display Message 1 </td>
+                                                                            <td>Display Message 1 </td>
+                                                                            <td class="text-center" width="10%"><a><i class="fas fa-trash-alt" title="Delete"></i></a></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>ADV/19/2019</td>
+                                                                            <td>Display Message 1 </td>
+                                                                            <td>Display Message 1 </td>
+                                                                            <td class="text-center" width="10%"><a><i class="fas fa-trash-alt" title="Delete"></i></a></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>ADV/19/2019</td>
+                                                                            <td>Display Message 1 </td>
+                                                                            <td>Display Message 1 </td>
+                                                                            <td class="text-center" width="10%"><a><i class="fas fa-trash-alt" title="Delete"></i></a></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>ADV/19/2019</td>
+                                                                            <td>Display Message 1 </td>
+                                                                            <td>Display Message 1 </td>
+                                                                            <td class="text-center" width="10%"><a><i class="fas fa-trash-alt" title="Delete"></i></a></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>ADV/19/2019</td>
+                                                                            <td>Display Message 1 </td>
+                                                                            <td>Display Message 1 </td>
+                                                                            <td class="text-center" width="10%"><a><i class="fas fa-trash-alt" title="Delete"></i></a></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>ADV/19/2019</td>
+                                                                            <td>Display Message 1 </td>
+                                                                            <td>Display Message 1 </td>
+                                                                            <td class="text-center" width="10%"><a><i class="fas fa-trash-alt" title="Delete"></i></a></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>ADV/19/2019</td>
+                                                                            <td>Display Message 1 </td>
+                                                                            <td>Display Message 1 </td>
+                                                                            <td class="text-center" width="10%"><a><i class="fas fa-trash-alt" title="Delete"></i></a></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>ADV/19/2019</td>
+                                                                            <td>Display Message 1 </td>
+                                                                            <td>Display Message 1 </td>
+                                                                            <td class="text-center" width="10%"><a><i class="fas fa-trash-alt" title="Delete"></i></a></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>ADV/19/2019</td>
+                                                                            <td>Display Message 1 </td>
+                                                                            <td>Display Message 1 </td>
+                                                                            <td class="text-center" width="10%"><a><i class="fas fa-trash-alt" title="Delete"></i></a></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>ADV/19/2019</td>
+                                                                            <td>Display Message 1 </td>
+                                                                            <td>Display Message 1 </td>
+                                                                            <td class="text-center" width="10%"><a><i class="fas fa-trash-alt" title="Delete"></i></a></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>ADV/19/2019</td>
+                                                                            <td>Display Message 1 </td>
+                                                                            <td>Display Message 1 </td>
+                                                                            <td class="text-center" width="10%"><a><i class="fas fa-trash-alt" title="Delete"></i></a></td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+
+
+                                                        </div>
+
+                                                        <hr />
+                                                        <div class="row">
+                                                            <div class="col-sm-6 col-md-3">
+                                                                <div class="form-group">
+                                                                    <label>Information Provided By</label>
+                                                                    <select class="form-control select2" data-placeholder="Select Information" style="width: 100%">
+                                                                        <option></option>
+                                                                        <option>RC-1</option>
+                                                                        <option>RC-2</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-6 col-md-3">
+                                                                <div class="form-group">
+                                                                    <label>Source/Reported Via</label>
+                                                                    <select class="form-control select2" data-placeholder="Select Source/Reported Via" style="width: 100%">
+                                                                        <option></option>
+                                                                        <option value="SMS">SMS</option>
+                                                                        <option value="Phone">Phone</option>
+                                                                        <option value="Fax">Fax</option>
+                                                                        <option value="Email">Email</option>
+                                                                        <option value="System">System</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-6 col-md-3">
+                                                                <div class="form-group">
+                                                                    <label>Reported On Date &amp; Time</label>
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-addon"><i class="far fa-calendar-alt"></i></div>
+                                                                        <input type="text" placeholder="Reported On Date &amp; Time" class="form-control dateSingleTime bg-white" readonly="readonly">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-6 col-md-3">
+                                                                <div class="form-group">
+                                                                    <label id="lblmake">Priority</label>
+                                                                    <select class="form-control select2" data-placeholder="Select Priority" style="width: 100%">
+                                                                        <option></option>
+                                                                        <option value="Critical">Critical</option>
+                                                                        <option value="High">High</option>
+                                                                        <option value="Medium">Medium</option>
+                                                                        <option value="Low">Low</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-6 col-md-9">
+                                                                <div class="form-group">
+                                                                    <label>Request Description</label>
+                                                                    <textarea class="form-control" rows="3" placeholder="Request Description"></textarea>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-sm-6 col-md-3">
+                                                                <div class="form-group"> <label class="empty-lbl"></label>
+                                                                    <button type="button" class="btn btn-success btn-flat" id="saveWidgetDetails">Save Widget Details</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#requestInformation">
+                                                    Enter Request Information
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="requestInformation" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <div class="row">
+                                                    <div class="col-sm-6 col-md-3">
+                                                        <div class="form-group">
+                                                            <label>Information Provided By</label>
+                                                            <select class="form-control select2" data-placeholder="Select Information" style="width: 100%">
                                                                 <option></option>
-                                                                <option>VMS</option>
-                                                                <option>VMS Group</option>
+                                                                <option>RC-1</option>
+                                                                <option>RC-2</option>
                                                             </select>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-6 col-md-3">
-                                                        <div class=" form-group">
-                                                            <label>Select Devices</label>
-                                                            <select multiple="multiple" class="form-control" id="SelectDevice" style="width: 100%">
-                                                                <option>Option 1</option>
-                                                                <option>Option 2</option>
-                                                                <option>Option 3</option>
-                                                                <option>Option 4</option>
-                                                                <option>Option 5</option>
+                                                        <div class="form-group">
+                                                            <label>Source/Reported Via</label>
+                                                            <select class="form-control select2" data-placeholder="Select Source/Reported Via" style="width: 100%">
+                                                                <option></option>
+                                                                <option value="SMS">SMS</option>
+                                                                <option value="Phone">Phone</option>
+                                                                <option value="Fax">Fax</option>
+                                                                <option value="Email">Email</option>
+                                                                <option value="System">System</option>
                                                             </select>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <hr />
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <!-- Template Grid -->
-                                                        <label>Select Template</label>
-                                                        <ul class="row template-select-grid">
-                                                            <li class="col-sm-3 col-md-3">
-                                                                <input type="radio" name="templateSelection" id="template1" class="input-hidden" checked />
-                                                                <label for="template1">
-                                                                    <img src="assets/img/template/thumbnail/wireframe.jpg" class="img-responsive">
-                                                                    <span class="selectedTemplate"><i class="fas fa-check-circle"></i></span>
-                                                                    <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe.jpg" data-lightbox="Template 1" data-title="Template 2:3 Column"><i class="fas fa-search"></i></a></span>
-                                                                </label>
-                                                            </li>
-                                                            <li class="col-sm-3 col-md-3">
-                                                                <input type="radio" name="templateSelection" id="template2" class="input-hidden" />
-                                                                <label for="template2">
-                                                                    <img src="assets/img/template/thumbnail/wireframe2.jpg" class="img-responsive">
-                                                                    <span class="selectedTemplate"><i class="fas fa-check-circle"></i></span>
-                                                                    <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe2.jpg" data-lightbox="Template 2" data-title="Template 3:2 Column"><i class="fas fa-search"></i></a></span>
-                                                                </label>
-                                                            </li>
-                                                            <li class="col-sm-3 col-md-3">
-                                                                <input type="radio" name="templateSelection" id="template3" class="input-hidden" />
-                                                                <label for="template3">
-                                                                    <img src="assets/img/template/thumbnail/wireframe3.jpg" class="img-responsive">
-                                                                    <span class="selectedTemplate"><i class="fas fa-check-circle"></i></span>
-                                                                    <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe3.jpg" data-lightbox="Template 3" data-title="Template 1:1 Column"><i class="fas fa-search"></i></a></span>
-                                                                </label>
-                                                            </li>
-                                                            <li class="col-sm-3 col-md-3">
-                                                                <input type="radio" name="templateSelection" id="template4" class="input-hidden" />
-                                                                <label for="template4">
-                                                                    <img src="assets/img/template/thumbnail/wireframe4.jpg" class="img-responsive">
-                                                                    <span class="selectedTemplate"><i class="fas fa-check-circle"></i></span>
-                                                                    <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe4.jpg" data-lightbox="Template 4" data-title="Template 3:2 Column"><i class="fas fa-search"></i></a></span>
-                                                                </label>
-                                                            </li>
-                                                            <li class="col-sm-3 col-md-3">
-                                                                <input type="radio" name="templateSelection" id="template5" class="input-hidden" />
-                                                                <label for="template5">
-                                                                    <img src="assets/img/template/thumbnail/wireframe.jpg" class="img-responsive">
-                                                                    <span class="selectedTemplate"><i class="fas fa-check-circle"></i></span>
-                                                                    <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe.jpg" data-lightbox="Template 5" data-title="Template 3:2 Column"><i class="fas fa-search"></i></a></span>
-                                                                </label>
-                                                            </li>
-                                                            <li class="col-sm-3 col-md-3">
-                                                                <input type="radio" name="templateSelection" id="template6" class="input-hidden" />
-                                                                <label for="template6">
-                                                                    <img src="assets/img/template/thumbnail/wireframe3.jpg" class="img-responsive">
-                                                                    <span class="selectedTemplate"><i class="fas fa-check-circle"></i></span>
-                                                                    <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe2.jpg" data-lightbox="Template 6" data-title="Template 3:2 Column"><i class="fas fa-search"></i></a></span>
-                                                                </label>
-                                                            </li>
-                                                            <li class="col-sm-3 col-md-3">
-                                                                <input type="radio" name="templateSelection" id="template7" class="input-hidden" />
-                                                                <label for="template7">
-                                                                    <img src="assets/img/template/thumbnail/wireframe2.jpg" class="img-responsive">
-                                                                    <span class="selectedTemplate"><i class="fas fa-check-circle"></i></span>
-                                                                    <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe3.jpg" data-lightbox="Template 7" data-title="Template 1:1 Column"><i class="fas fa-search"></i></a></span>
-                                                                </label>
-                                                            </li>
-                                                            <li class="col-sm-3 col-md-3">
-                                                                <input type="radio" name="templateSelection" id="template8" class="input-hidden" />
-                                                                <label for="template8">
-                                                                    <img src="assets/img/template/thumbnail/wireframe4.jpg" class="img-responsive">
-                                                                    <span class="selectedTemplate"><i class="fas fa-check-circle"></i></span>
-                                                                    <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe4.jpg" data-lightbox="Template 8" data-title="Template 1:1 Column"><i class="fas fa-search"></i></a></span>
-                                                                </label>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="row">
-                                                            <div class="col-sm-12">
-                                                                <label>Select Template</label>
-                                                                <center class="widget-table">
-                                                                    <table width="800" class="table table-bordered template-table">
-                                                                        <tbody>
-                                                                            <tr>
-                                                                                <td><a href="#addMessageContent" class="txtContent">WIDGET 1</a></td>
-                                                                                <td><a href="#addMessageContent" class="imgContent">WIDGET 2</a></td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td colspan="2"><a href="#addMessageContent" class="videoContent">WIDGET 3</a></td>
-                                                                            </tr>
-                                                                        </tbody>
-                                                                    </table>
-                                                                </center>
+                                                    <div class="col-sm-6 col-md-3">
+                                                        <div class="form-group">
+                                                            <label>Reported On Date &amp; Time</label>
+                                                            <div class="input-group">
+                                                                <div class="input-group-addon"><i class="far fa-calendar-alt"></i></div>
+                                                                <input type="text" placeholder="Reported On Date &amp; Time" class="form-control dateSingleTime bg-white" readonly="readonly">
                                                             </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-md-3">
+                                                        <div class="form-group">
+                                                            <label id="lblmake">Priority</label>
+                                                            <select class="form-control select2" data-placeholder="Select Priority" style="width: 100%">
+                                                                <option></option>
+                                                                <option value="Critical">Critical</option>
+                                                                <option value="High">High</option>
+                                                                <option value="Medium">Medium</option>
+                                                                <option value="Low">Low</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-md-9">
+                                                        <div class="form-group">
+                                                            <label>Request Description</label>
+                                                            <textarea class="form-control" rows="3" placeholder="Request Description"></textarea>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-sm-6 col-md-3">
+                                                        <div class="form-group"> <label class="empty-lbl"></label>
+                                                            <button type="button" class="btn btn-success btn-flat" id="saveWidgetDetails">Save Widget Details</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -397,479 +861,18 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#selectWidget">
-                                            Select Widget
-                                        </a>
-                                    </h4>
-                                </div>
-                                <div id="selectWidget" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <center>
-                                                    <table width="800" class="table table-bordered template-table">
-                                                        <tbody>
-                                                            <tr>
-                                                                <td><a href="#addMessageContent" class="txtContent">WIDGET 1</a></td>
-                                                                <td><a href="#addMessageContent" class="imgContent">WIDGET 2</a></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td colspan="2"><a href="#addMessageContent" class="videoContent">WIDGET 3</a></td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </center>
-                                            </div>
-                                        </div>
+                                <div class="box-footer no-padding-left-right">
+                                    <button type="button" class="btn btn-success btn-flat">Save</button>
+                                    <div class="pull-right">
+                                        <button type="button" class="btn btn-danger btn-flat ">Cancel</button>
                                     </div>
-                                </div>
-                            </div>
 
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#selectSchedule">
-                                            Select Schedule
-                                        </a>
-                                    </h4>
-                                </div>
-                                <div id="selectSchedule" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#selectSchedule">
-                                            Select Schedule
-                                        </a>
-                                    </h4>
-                                </div>
-                                <div id="selectSchedule" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                    </div>
                                 </div>
                             </div>
                         </div>
-
-
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <!-- Custom Tabs -->
-                        <div class="nav-tabs-custom box-default">
-                            <ul class="nav nav-tabs">
-                                <li class="active"><a href="#templateSection" data-toggle="tab">Select VMS Template</a></li>
-                                <li><a href="#configureMessage" data-toggle="tab">Configure Message</a></li>
-                                <li class="pull-right">
-                                    <div class="box-tools short-tooltip">
-                                        <a href="vms-manage-requests.html" class="back-btn-header" data-html="true" data-toggle="tooltip" data-placement="left" data-original-title="<p class='text-left'>Back to Manage Requests</p>"><i class="fas fa-caret-square-left"></i></a>
-                                    </div>
-                                </li>
-                            </ul>
-                            <div class="tab-content">
-                                <div class="tab-pane active" id="templateSection">
 
-                                    <div class="box-footer no-padding-left-right">
-                                        <button type="button" class="btn btn-default btn-flat pull-right continue">Next</button>
-                                    </div>
-                                </div>
-                                <!-- /.tab-pane -->
-                                <div class="tab-pane" id="configureMessage">
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <center>
-                                                <table width="800" class="table table-bordered template-table">
-                                                    <tbody>
-                                                        <tr>
-                                                            <td><a href="#addMessageContent" class="txtContent">WIDGET 1</a></td>
-                                                            <td><a href="#addMessageContent" class="imgContent">WIDGET 2</a></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td colspan="2"><a href="#addMessageContent" class="videoContent">WIDGET 3</a></td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </center>
-                                        </div>
-                                    </div>
-                                    <div class="box box-default box-solid collapsed-box" id="addMessageContent">
-                                        <div class="box-header">
-                                            <h3 class="box-title">Configure Widget Properties</h3>
-                                            <div class="box-tools">
-                                                <button type="button" class="btn btn-box-tool btn-flat" data-widget="collapse"><i class="fas fa-plus"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div style="display:none;" class="box-body box-grey">
-                                            <div class="row">
-                                                <div class="col-sm-12">
-                                                    <div class="row">
-                                                        <div class="col-sm-6 col-md-3">
-                                                            <div class="form-group">
-                                                                <label>Template</label>
-                                                                <select class="form-control">
-                                                                    <option selected>Template 1</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-6 col-md-3">
-                                                            <div class="form-group">
-                                                                <label>Widget</label>
-                                                                <select class="form-control">
-                                                                    <option selected>Widget 1</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-6 col-md-3">
-                                                            <div class="form-group">
-                                                                <label>Message Category</label>
-                                                                <select class="form-control select2" data-placeholder="Select Category" style="width: 100%">
-                                                                    <option></option>
-                                                                    <option>ADV</option>
-                                                                    <option>PA</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-6 col-md-3">
-                                                            <div class="form-group">
-                                                                <label>Message Format</label>
-                                                                <select class="form-control select2" data-placeholder="Select Format" id="formatSelector" style="width: 100%">
-                                                                    <option></option>
-                                                                    <option value="txtFormat">Text</option>
-                                                                    <option value="imgFormat">Image</option>
-                                                                    <option value="videoFormat">Video</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-6 col-md-3">
-                                                            <div class="form-group">
-                                                                <label>Start Date &amp; Time</label>
-                                                                <div class="input-group">
-                                                                    <div class="input-group-addon"><i class="far fa-calendar-alt"></i></div>
-                                                                    <input type="text" placeholder="Start Date &amp; Time" class="form-control dateSingleTime bg-white" readonly="readonly">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-6 col-md-3">
-                                                            <div class="form-group">
-                                                                <label>Valid Till</label>
-                                                                <select class="form-control select2" data-placeholder="Select Validity" style="width: 100%">
-                                                                    <option> </option>
-                                                                    <option value="0">One Time</option>
-                                                                    <option value="1">Repeat</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-6 col-md-3">
-                                                            <div class="form-group"> <label class="empty-lbl"></label>
-                                                                <button type="button" class="btn btn-danger btn-flat">View Conflicts</button>
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <hr />
-
-                                                    <div class="form-group">
-                                                        <label class=" radio-inline">
-                                                            <input type="radio" name="optionsMessage" id="optionsNew" value="New Message Content" checked="" onclick="show1();">
-                                                            New Message Content
-                                                        </label>
-                                                        <label class="radio-inline">
-                                                            <input type="radio" name="optionsMessage" id="optionsExisting" value="Existing Message Content" onclick="show2();">
-                                                            Existing Message Content
-                                                        </label>
-
-                                                    </div>
-                                                    <div class="row">
-                                                        <div id="ExistingMsgContent" style="display: none;">
-                                                            <div class="col-sm-6 col-md-3">
-                                                                <div class="form-group">
-                                                                    <label>Message Code</label>
-                                                                    <select class="form-control select2" data-placeholder="Select Message Code" style="width: 100%">
-                                                                        <option></option>
-                                                                        <option>ADV/1/2019</option>
-                                                                        <option>ADV/2/2019</option>
-                                                                    </select> </div>
-                                                            </div>
-                                                            <div class="col-sm-6 col-md-3">
-                                                                <div class="form-group">
-                                                                    <label>Message Name</label>
-
-                                                                    <input class="form-control" type="text" placeholder="Message Name" disabled value="">
-
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-sm-6 col-md-3">
-                                                                <div class="form-group">
-                                                                    <label>Display Duration</label>
-                                                                    <input class="form-control" type="text" placeholder="hh:mm:ss">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-sm-12">
-                                                                <div class="form-group">
-                                                                    <label>Message Preview</label>
-                                                                    <textarea class="form-control" rows="3" disabled>This text is visible</textarea>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div id="NewMsgContent">
-                                                            <div class="col-sm-6 col-md-3">
-                                                                <div class="form-group">
-                                                                    <label>Message Name</label>
-                                                                    <input class="form-control" type="text" placeholder="Message Name" value="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-sm-6 col-md-3">
-                                                                <div class="form-group">
-                                                                    <label>Display Duration</label>
-                                                                    <input class="form-control" type="text" placeholder="hh:mm:ss">
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="msgFormat" id="imgFormat">
-                                                                <div class="col-sm-6 col-md-3">
-                                                                    <div class="form-group">
-                                                                        <label class="empty-lbl">Choose Image</label>
-                                                                        <input type="file" class="imguploader" id="imgInp" style="visibility: hidden; position: absolute">
-                                                                        <button class="imguploader-btn btn btn-primary btn-flat pull-left">Upload Image</button><small class="help-block">Max File size 2 MB</small>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-sm-12 col-md-12">
-                                                                    <img id="MsgImgInput" class="prevImg" style="display: none;" />
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="col-sm-12 msgFormat" id="txtFormat">
-                                                                <div class="form-group">
-                                                                    <label>Text Message</label>
-                                                                    <textarea class="form-control" rows="3" placeholder="Type your message"></textarea>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="msgFormat" id="videoFormat">
-                                                                <div class="col-sm-6 col-md-3">
-                                                                    <div class="form-group">
-                                                                        <label class="empty-lbl">Choose Video</label>
-                                                                        <input type="file" class="fileuploader" style="visibility: hidden; position: absolute">
-                                                                        <button class="fileuploader-btn btn btn-primary btn-flat pull-left">Upload Video</button><small class="help-block">Max File size 12 MB</small>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-sm-12 col-md-12">
-                                                                    <div id="VideoMsgPreview"></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-12">
-                                                            <div class="form-group">
-                                                                <button type="button" class="btn btn-primary btn-flat">Add Message</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-
-                                                        <div class="table-responsive">
-                                                            <table class="table table-bordered table-striped table-hover table-message" id="message-table">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th>Message Code</th>
-                                                                        <th>Message Name</th>
-                                                                        <th>Message Content</th>
-                                                                        <th class="text-center">Action</th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <td>ADV/19/2019</td>
-                                                                        <td>Display Message 1 </td>
-                                                                        <td>Display Message 1 </td>
-                                                                        <td class="text-center" width="10%"><a><i class="fas fa-trash-alt" title="Delete"></i></a></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>ADV/19/2019</td>
-                                                                        <td>Display Message 1 </td>
-                                                                        <td>Display Message 1 </td>
-                                                                        <td class="text-center" width="10%"><a><i class="fas fa-trash-alt" title="Delete"></i></a></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>ADV/19/2019</td>
-                                                                        <td>Display Message 1 </td>
-                                                                        <td>Display Message 1 </td>
-                                                                        <td class="text-center" width="10%"><a><i class="fas fa-trash-alt" title="Delete"></i></a></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>ADV/19/2019</td>
-                                                                        <td>Display Message 1 </td>
-                                                                        <td>Display Message 1 </td>
-                                                                        <td class="text-center" width="10%"><a><i class="fas fa-trash-alt" title="Delete"></i></a></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>ADV/19/2019</td>
-                                                                        <td>Display Message 1 </td>
-                                                                        <td>Display Message 1 </td>
-                                                                        <td class="text-center" width="10%"><a><i class="fas fa-trash-alt" title="Delete"></i></a></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>ADV/19/2019</td>
-                                                                        <td>Display Message 1 </td>
-                                                                        <td>Display Message 1 </td>
-                                                                        <td class="text-center" width="10%"><a><i class="fas fa-trash-alt" title="Delete"></i></a></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>ADV/19/2019</td>
-                                                                        <td>Display Message 1 </td>
-                                                                        <td>Display Message 1 </td>
-                                                                        <td class="text-center" width="10%"><a><i class="fas fa-trash-alt" title="Delete"></i></a></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>ADV/19/2019</td>
-                                                                        <td>Display Message 1 </td>
-                                                                        <td>Display Message 1 </td>
-                                                                        <td class="text-center" width="10%"><a><i class="fas fa-trash-alt" title="Delete"></i></a></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>ADV/19/2019</td>
-                                                                        <td>Display Message 1 </td>
-                                                                        <td>Display Message 1 </td>
-                                                                        <td class="text-center" width="10%"><a><i class="fas fa-trash-alt" title="Delete"></i></a></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>ADV/19/2019</td>
-                                                                        <td>Display Message 1 </td>
-                                                                        <td>Display Message 1 </td>
-                                                                        <td class="text-center" width="10%"><a><i class="fas fa-trash-alt" title="Delete"></i></a></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>ADV/19/2019</td>
-                                                                        <td>Display Message 1 </td>
-                                                                        <td>Display Message 1 </td>
-                                                                        <td class="text-center" width="10%"><a><i class="fas fa-trash-alt" title="Delete"></i></a></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>ADV/19/2019</td>
-                                                                        <td>Display Message 1 </td>
-                                                                        <td>Display Message 1 </td>
-                                                                        <td class="text-center" width="10%"><a><i class="fas fa-trash-alt" title="Delete"></i></a></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>ADV/19/2019</td>
-                                                                        <td>Display Message 1 </td>
-                                                                        <td>Display Message 1 </td>
-                                                                        <td class="text-center" width="10%"><a><i class="fas fa-trash-alt" title="Delete"></i></a></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>ADV/19/2019</td>
-                                                                        <td>Display Message 1 </td>
-                                                                        <td>Display Message 1 </td>
-                                                                        <td class="text-center" width="10%"><a><i class="fas fa-trash-alt" title="Delete"></i></a></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>ADV/19/2019</td>
-                                                                        <td>Display Message 1 </td>
-                                                                        <td>Display Message 1 </td>
-                                                                        <td class="text-center" width="10%"><a><i class="fas fa-trash-alt" title="Delete"></i></a></td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-                                                        </div>
-
-
-                                                    </div>
-
-                                                    <hr />
-                                                    <div class="row">
-                                                        <div class="col-sm-6 col-md-3">
-                                                            <div class="form-group">
-                                                                <label>Information Provided By</label>
-                                                                <select class="form-control select2" data-placeholder="Select Information" style="width: 100%">
-                                                                    <option></option>
-                                                                    <option>RC-1</option>
-                                                                    <option>RC-2</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-6 col-md-3">
-                                                            <div class="form-group">
-                                                                <label>Source/Reported Via</label>
-                                                                <select class="form-control select2" data-placeholder="Select Source/Reported Via" style="width: 100%">
-                                                                    <option></option>
-                                                                    <option value="SMS">SMS</option>
-                                                                    <option value="Phone">Phone</option>
-                                                                    <option value="Fax">Fax</option>
-                                                                    <option value="Email">Email</option>
-                                                                    <option value="System">System</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-6 col-md-3">
-                                                            <div class="form-group">
-                                                                <label>Reported On Date &amp; Time</label>
-                                                                <div class="input-group">
-                                                                    <div class="input-group-addon"><i class="far fa-calendar-alt"></i></div>
-                                                                    <input type="text" placeholder="Reported On Date &amp; Time" class="form-control dateSingleTime bg-white" readonly="readonly">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-6 col-md-3">
-                                                            <div class="form-group">
-                                                                <label id="lblmake">Priority</label>
-                                                                <select class="form-control select2" data-placeholder="Select Priority" style="width: 100%">
-                                                                    <option></option>
-                                                                    <option value="Critical">Critical</option>
-                                                                    <option value="High">High</option>
-                                                                    <option value="Medium">Medium</option>
-                                                                    <option value="Low">Low</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-6 col-md-9">
-                                                            <div class="form-group">
-                                                                <label>Request Description</label>
-                                                                <textarea class="form-control" rows="3" placeholder="Request Description"></textarea>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-6 col-md-3">
-                                                            <div class="form-group"> <label class="empty-lbl"></label>
-                                                                <button type="button" class="btn btn-success btn-flat" id="saveWidgetDetails">Save Widget Details</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="box-footer no-padding-left-right">
-                                        <button type="button" class="btn btn-default btn-flat back">Previous</button>
-                                        <div class="pull-right">
-                                            <button type="button" class="btn btn-danger btn-flat ">Cancel</button>
-                                            <button type="button" class="btn btn-success btn-flat">Save</button>
-                                        </div>
-
-                                    </div>
-
-
-                                </div>
-                                <!-- /.tab-pane -->
-
-                            </div>
-                            <!-- /.tab-content -->
-                        </div>
-                    </div>
-
-
-                </div>
 
 
 
@@ -1075,6 +1078,7 @@
             document.getElementById('ExistingMsgContent').style.display = 'block';
             document.getElementById('NewMsgContent').style.display = 'none';
         }
+
     </script>
 </body>
 
