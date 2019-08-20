@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="assets/js/datatables.net-bs/css/dataTables.bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap-multiselect.css" />
     <link rel="stylesheet" href="assets/css/lightbox.min.css">
     <link rel="stylesheet" href="assets/Ionicons/css/ionicons.min.css">
     <link rel="stylesheet" href="assets/icofont/icofont.min.css">
@@ -259,7 +260,208 @@
 
             <!-- Main content -->
             <section class="content container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel-group" id="accordion">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#selectDecvieTemplate">
+                                            Select Device, Template &amp; Widget
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="selectDecvieTemplate" class="panel-collapse collapse in">
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row">
+                                                    <div class="col-sm-6 col-md-4">
+                                                        <div class="form-group">
+                                                            <label>Select Group</label>
+                                                            <select class="form-control select2" data-placeholder="Select Group" style="width: 100%">
+                                                                <option></option>
+                                                                <option>VMS</option>
+                                                                <option>VMS Group</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-md-3">
+                                                        <div class=" form-group">
+                                                            <label>Select Devices</label>
+                                                            <select multiple="multiple" class="form-control" id="SelectDevice" style="width: 100%">
+                                                                <option>Option 1</option>
+                                                                <option>Option 2</option>
+                                                                <option>Option 3</option>
+                                                                <option>Option 4</option>
+                                                                <option>Option 5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr />
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <!-- Template Grid -->
+                                                        <label>Select Template</label>
+                                                        <ul class="row template-select-grid">
+                                                            <li class="col-sm-3 col-md-3">
+                                                                <input type="radio" name="templateSelection" id="template1" class="input-hidden" checked />
+                                                                <label for="template1">
+                                                                    <img src="assets/img/template/thumbnail/wireframe.jpg" class="img-responsive">
+                                                                    <span class="selectedTemplate"><i class="fas fa-check-circle"></i></span>
+                                                                    <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe.jpg" data-lightbox="Template 1" data-title="Template 2:3 Column"><i class="fas fa-search"></i></a></span>
+                                                                </label>
+                                                            </li>
+                                                            <li class="col-sm-3 col-md-3">
+                                                                <input type="radio" name="templateSelection" id="template2" class="input-hidden" />
+                                                                <label for="template2">
+                                                                    <img src="assets/img/template/thumbnail/wireframe2.jpg" class="img-responsive">
+                                                                    <span class="selectedTemplate"><i class="fas fa-check-circle"></i></span>
+                                                                    <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe2.jpg" data-lightbox="Template 2" data-title="Template 3:2 Column"><i class="fas fa-search"></i></a></span>
+                                                                </label>
+                                                            </li>
+                                                            <li class="col-sm-3 col-md-3">
+                                                                <input type="radio" name="templateSelection" id="template3" class="input-hidden" />
+                                                                <label for="template3">
+                                                                    <img src="assets/img/template/thumbnail/wireframe3.jpg" class="img-responsive">
+                                                                    <span class="selectedTemplate"><i class="fas fa-check-circle"></i></span>
+                                                                    <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe3.jpg" data-lightbox="Template 3" data-title="Template 1:1 Column"><i class="fas fa-search"></i></a></span>
+                                                                </label>
+                                                            </li>
+                                                            <li class="col-sm-3 col-md-3">
+                                                                <input type="radio" name="templateSelection" id="template4" class="input-hidden" />
+                                                                <label for="template4">
+                                                                    <img src="assets/img/template/thumbnail/wireframe4.jpg" class="img-responsive">
+                                                                    <span class="selectedTemplate"><i class="fas fa-check-circle"></i></span>
+                                                                    <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe4.jpg" data-lightbox="Template 4" data-title="Template 3:2 Column"><i class="fas fa-search"></i></a></span>
+                                                                </label>
+                                                            </li>
+                                                            <li class="col-sm-3 col-md-3">
+                                                                <input type="radio" name="templateSelection" id="template5" class="input-hidden" />
+                                                                <label for="template5">
+                                                                    <img src="assets/img/template/thumbnail/wireframe.jpg" class="img-responsive">
+                                                                    <span class="selectedTemplate"><i class="fas fa-check-circle"></i></span>
+                                                                    <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe.jpg" data-lightbox="Template 5" data-title="Template 3:2 Column"><i class="fas fa-search"></i></a></span>
+                                                                </label>
+                                                            </li>
+                                                            <li class="col-sm-3 col-md-3">
+                                                                <input type="radio" name="templateSelection" id="template6" class="input-hidden" />
+                                                                <label for="template6">
+                                                                    <img src="assets/img/template/thumbnail/wireframe3.jpg" class="img-responsive">
+                                                                    <span class="selectedTemplate"><i class="fas fa-check-circle"></i></span>
+                                                                    <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe2.jpg" data-lightbox="Template 6" data-title="Template 3:2 Column"><i class="fas fa-search"></i></a></span>
+                                                                </label>
+                                                            </li>
+                                                            <li class="col-sm-3 col-md-3">
+                                                                <input type="radio" name="templateSelection" id="template7" class="input-hidden" />
+                                                                <label for="template7">
+                                                                    <img src="assets/img/template/thumbnail/wireframe2.jpg" class="img-responsive">
+                                                                    <span class="selectedTemplate"><i class="fas fa-check-circle"></i></span>
+                                                                    <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe3.jpg" data-lightbox="Template 7" data-title="Template 1:1 Column"><i class="fas fa-search"></i></a></span>
+                                                                </label>
+                                                            </li>
+                                                            <li class="col-sm-3 col-md-3">
+                                                                <input type="radio" name="templateSelection" id="template8" class="input-hidden" />
+                                                                <label for="template8">
+                                                                    <img src="assets/img/template/thumbnail/wireframe4.jpg" class="img-responsive">
+                                                                    <span class="selectedTemplate"><i class="fas fa-check-circle"></i></span>
+                                                                    <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe4.jpg" data-lightbox="Template 8" data-title="Template 1:1 Column"><i class="fas fa-search"></i></a></span>
+                                                                </label>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="row">
+                                                            <div class="col-sm-12">
+                                                                <label>Select Template</label>
+                                                                <center class="widget-table">
+                                                                    <table width="800" class="table table-bordered template-table">
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td><a href="#addMessageContent" class="txtContent">WIDGET 1</a></td>
+                                                                                <td><a href="#addMessageContent" class="imgContent">WIDGET 2</a></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td colspan="2"><a href="#addMessageContent" class="videoContent">WIDGET 3</a></td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </center>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#selectWidget">
+                                            Select Widget
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="selectWidget" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <center>
+                                                    <table width="800" class="table table-bordered template-table">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td><a href="#addMessageContent" class="txtContent">WIDGET 1</a></td>
+                                                                <td><a href="#addMessageContent" class="imgContent">WIDGET 2</a></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="2"><a href="#addMessageContent" class="videoContent">WIDGET 3</a></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </center>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#selectSchedule">
+                                            Select Schedule
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="selectSchedule" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#selectSchedule">
+                                            Select Schedule
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="selectSchedule" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-md-12">
                         <!-- Custom Tabs -->
@@ -275,102 +477,7 @@
                             </ul>
                             <div class="tab-content">
                                 <div class="tab-pane active" id="templateSection">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="row">
-                                                <div class="col-sm-6 col-md-4">
-                                                    <div class="form-group">
-                                                        <label>Select Group</label>
-                                                        <select class="form-control select2" data-placeholder="Select Group" style="width: 100%">
-                                                            <option></option>
-                                                            <option>VMS</option>
-                                                            <option>VMS Group</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6 col-md-8">
-                                                    <div class=" form-group">
-                                                        <label>Select Devices</label>
-                                                        <select multiple="" class="form-control mselect2" data-placeholder="Select Devices" style="width: 100%">
-                                                            <option></option>
-                                                            <option>Option 1</option>
-                                                            <option>Option 2</option>
-                                                            <option>Option 3</option>
-                                                            <option>Option 4</option>
-                                                            <option>Option 5</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- Template Grid -->
-                                            <ul class="row template-select-grid">
-                                                <li class="col-sm-3 col-md-2">
-                                                    <input type="radio" name="templateSelection" id="template1" class="input-hidden" checked />
-                                                    <label for="template1">
-                                                        <img src="assets/img/template/thumbnail/wireframe.jpg" class="img-responsive">
-                                                        <span class="selectedTemplate"><i class="fas fa-check-circle"></i></span>
-                                                        <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe.jpg" data-lightbox="Template 1" data-title="Template 2:3 Column"><i class="fas fa-search"></i></a></span>
-                                                    </label>
-                                                </li>
-                                                <li class="col-sm-3 col-md-2">
-                                                    <input type="radio" name="templateSelection" id="template2" class="input-hidden" />
-                                                    <label for="template2">
-                                                        <img src="assets/img/template/thumbnail/wireframe2.jpg" class="img-responsive">
-                                                        <span class="selectedTemplate"><i class="fas fa-check-circle"></i></span>
-                                                        <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe2.jpg" data-lightbox="Template 2" data-title="Template 3:2 Column"><i class="fas fa-search"></i></a></span>
-                                                    </label>
-                                                </li>
-                                                <li class="col-sm-3 col-md-2">
-                                                    <input type="radio" name="templateSelection" id="template3" class="input-hidden" />
-                                                    <label for="template3">
-                                                        <img src="assets/img/template/thumbnail/wireframe3.jpg" class="img-responsive">
-                                                        <span class="selectedTemplate"><i class="fas fa-check-circle"></i></span>
-                                                        <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe3.jpg" data-lightbox="Template 3" data-title="Template 1:1 Column"><i class="fas fa-search"></i></a></span>
-                                                    </label>
-                                                </li>
-                                                <li class="col-sm-3 col-md-2">
-                                                    <input type="radio" name="templateSelection" id="template4" class="input-hidden" />
-                                                    <label for="template4">
-                                                        <img src="assets/img/template/thumbnail/wireframe4.jpg" class="img-responsive">
-                                                        <span class="selectedTemplate"><i class="fas fa-check-circle"></i></span>
-                                                        <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe4.jpg" data-lightbox="Template 4" data-title="Template 3:2 Column"><i class="fas fa-search"></i></a></span>
-                                                    </label>
-                                                </li>
-                                                <li class="col-sm-3 col-md-2">
-                                                    <input type="radio" name="templateSelection" id="template5" class="input-hidden" />
-                                                    <label for="template5">
-                                                        <img src="assets/img/template/thumbnail/wireframe.jpg" class="img-responsive">
-                                                        <span class="selectedTemplate"><i class="fas fa-check-circle"></i></span>
-                                                        <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe.jpg" data-lightbox="Template 5" data-title="Template 3:2 Column"><i class="fas fa-search"></i></a></span>
-                                                    </label>
-                                                </li>
-                                                <li class="col-sm-3 col-md-2">
-                                                    <input type="radio" name="templateSelection" id="template6" class="input-hidden" />
-                                                    <label for="template6">
-                                                        <img src="assets/img/template/thumbnail/wireframe3.jpg" class="img-responsive">
-                                                        <span class="selectedTemplate"><i class="fas fa-check-circle"></i></span>
-                                                        <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe2.jpg" data-lightbox="Template 6" data-title="Template 3:2 Column"><i class="fas fa-search"></i></a></span>
-                                                    </label>
-                                                </li>
-                                                <li class="col-sm-3 col-md-2">
-                                                    <input type="radio" name="templateSelection" id="template7" class="input-hidden" />
-                                                    <label for="template7">
-                                                        <img src="assets/img/template/thumbnail/wireframe2.jpg" class="img-responsive">
-                                                        <span class="selectedTemplate"><i class="fas fa-check-circle"></i></span>
-                                                        <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe3.jpg" data-lightbox="Template 7" data-title="Template 1:1 Column"><i class="fas fa-search"></i></a></span>
-                                                    </label>
-                                                </li>
-                                                <li class="col-sm-3 col-md-2">
-                                                    <input type="radio" name="templateSelection" id="template8" class="input-hidden" />
-                                                    <label for="template8">
-                                                        <img src="assets/img/template/thumbnail/wireframe4.jpg" class="img-responsive">
-                                                        <span class="selectedTemplate"><i class="fas fa-check-circle"></i></span>
-                                                        <span class="zoomTemplate"><a href="assets/img/template/thumbnail/wireframe4.jpg" data-lightbox="Template 8" data-title="Template 1:1 Column"><i class="fas fa-search"></i></a></span>
-                                                    </label>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
+
                                     <div class="box-footer no-padding-left-right">
                                         <button type="button" class="btn btn-default btn-flat pull-right continue">Next</button>
                                     </div>
@@ -788,6 +895,7 @@
     <script src="assets/js/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script src="assets/js/bootstrap-multiselect.js"></script>
     <script src="assets/js/lightbox.min.js"></script>
     <script src="assets/js/jquery.slimscroll.min.js"></script>
     <script src="assets/js/fastclick.js"></script>
@@ -802,10 +910,22 @@
                 allowClear: true,
             });
 
+
             $('.mselect2').select2({
                 closeOnSelect: false,
                 placeholder: "Select",
             });
+
+            $('#SelectDevice').multiselect({
+                enableFiltering: true,
+                includeSelectAllOption: true,
+                maxHeight: 400,
+                buttonWidth: '100%',
+                nonSelectedText: 'Select Device',
+                buttonClass: 'btn btn-default btn-flat',
+            });
+
+
 
             //Date picker with Time
             $('.dateSingleTime').daterangepicker({
