@@ -6480,7 +6480,7 @@ fieldset[disabled] .form-control {
 
 .template-select-grid {
     list-style: none;
-    padding: 0;
+    padding: 0 14px 0 0;
 }
 
 .template-select-grid li {
