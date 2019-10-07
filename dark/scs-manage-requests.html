@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Surat Municipal Corporation</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/js/datatables.net-bs/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" href="assets/Ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="assets/icofont/icofont.min.css">
+    <link rel="stylesheet" href="assets/css/AdminLTE.css">
+    <link rel="stylesheet" href="assets/css/skins/skin-blue-light.css">
+    <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+    <link rel="icon" type="image/png" href="assets/img/smc_logo.png" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+
+<body class="hold-transition skin-blue-light sidebar-mini">
+    <div class="wrapper">
+
+        <!-- Main Header -->
+        <header class="main-header">
+            <!-- Logo -->
+            <a href="#" class="logo">
+                <span class="logo-mini"></span>
+                <span class="logo-lg"></span>
+            </a>
+
+            <!-- Header Navbar -->
+            <nav class="navbar navbar-static-top" role="navigation">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                    <i class="fas fa-bars"></i>
+                </a>
+                <!-- Navbar Right Menu -->
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="#!" onclick=" javascript:toggleFullScreen()"><i class="full-screen fa fa-expand"></i></a>
+                        </li> <!-- Issue -->
+                        <li class="dropdown notifications-menu">
+                            <!-- Menu toggle button -->
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="far fa-flag"></i>
+                                <span class="label label-success">5</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header">Recent Issue Update</li>
+                                <li>
+                                    <ul class="menu">
+                                        <li>
+                                            <a href="#">
+
+                                                <h4>KL 01 CH 7071 <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                                                </h4>
+                                                <p>Vehicle is marked for showing in the map. Black Vehicle, Wanted Category</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <h4>KL 01 CH 7071 <small><i class="fa fa-clock-o"></i> 14 mins</small>
+                                                </h4>
+                                                <p>Vehicle tracking is enabled. Black Vehicle, Wanted Category</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <h4>KL 01 CH 7071 <small><i class="fa fa-clock-o"></i> 22 mins</small>
+                                                </h4>
+                                                <p>Green Vehicle, Wanted Category. Alert Issued by Surat Police</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <h4>KL 01 CH 7071 <small><i class="fa fa-clock-o"></i> 1 hr</small>
+                                                </h4>
+                                                <p>Green Vehicle, Wanted Category. Alert Issued by Surat Police</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <h4>KL 01 CH 7071 <small><i class="fa fa-clock-o"></i> 1 hr</small>
+                                                </h4>
+                                                <p>Green Vehicle, Wanted Category. Alert Issued by Surat Police</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <h4>KL 01 CH 7071 <small><i class="fa fa-clock-o"></i> 1 hr</small>
+                                                </h4>
+                                                <p>Green Vehicle, Wanted Category. Alert Issued by Surat Police</p>
+                                            </a>
+                                        </li>
+
+                                        <!-- end notification -->
+                                    </ul>
+                                </li>
+                                <li class="footer"><a href="#">View all</a></li>
+                            </ul>
+                        </li>
+                        <!-- Notifications -->
+                        <li class="dropdown notifications-menu">
+                            <!-- Menu toggle button -->
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="far fa-bell"></i>
+                                <span class="label label-success">5</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header">Recent Critical Update</li>
+                                <li>
+                                    <ul class="menu">
+                                        <li>
+                                            <a href="#">
+
+                                                <h4>KL 01 CH 7071 <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                                                </h4>
+                                                <p>Vehicle is marked for showing in the map. Black Vehicle, Wanted Category</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <h4>KL 01 CH 7071 <small><i class="fa fa-clock-o"></i> 14 mins</small>
+                                                </h4>
+                                                <p>Vehicle tracking is enabled. Black Vehicle, Wanted Category</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <h4>KL 01 CH 7071 <small><i class="fa fa-clock-o"></i> 22 mins</small>
+                                                </h4>
+                                                <p>Green Vehicle, Wanted Category. Alert Issued by Surat Police</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <h4>KL 01 CH 7071 <small><i class="fa fa-clock-o"></i> 1 hr</small>
+                                                </h4>
+                                                <p>Green Vehicle, Wanted Category. Alert Issued by Surat Police</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <h4>KL 01 CH 7071 <small><i class="fa fa-clock-o"></i> 1 hr</small>
+                                                </h4>
+                                                <p>Green Vehicle, Wanted Category. Alert Issued by Surat Police</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <h4>KL 01 CH 7071 <small><i class="fa fa-clock-o"></i> 1 hr</small>
+                                                </h4>
+                                                <p>Green Vehicle, Wanted Category. Alert Issued by Surat Police</p>
+                                            </a>
+                                        </li>
+
+                                        <!-- end notification -->
+                                    </ul>
+                                </li>
+                                <li class="footer"><a href="#">View all</a></li>
+                            </ul>
+                        </li>
+                        <!-- User Account Menu -->
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="assets/img/user.png" class="user-image visible-xs-block">
+                                <span class="hidden-xs">Alexander Pierce</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header"><a href="#" class=""><i class="icofont-user-alt-2"></i> My Profile</a></li>
+                                <li class="header"><a href="#" class=""><i class="icofont-logout"></i> Logout</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- Left side column -->
+        <aside class="main-sidebar">
+            <!-- sidebar -->
+            <section class="sidebar">
+                <!-- Sidebar Menu -->
+                <ul class="sidebar-menu" data-widget="tree">
+                    <li class="active treeview menu-open">
+                        <a href="#"><i class="fas fa-traffic-light"></i> <span>Traffic Guidance System</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="#"><i class="fas fa-desktop"></i> Dashboard</a></li>
+                            <li class="treeview">
+                                <a href="#"><i class="fas fa-solar-panel"></i> <span>Variable Message Signboard</span>
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li><a href="vms-manage-requests.html"><i class="far fa-file-alt"></i> Manage Requests</a></li>
+                                    <li><a href="#"><i class="fas fa-hourglass-half"></i> Overall Schedule &amp; Preview</a></li>
+                                </ul>
+                            </li>
+                            <li class="treeview active">
+                                <a href="#"><i class="fas fa-tachometer-alt"></i> <span>Speed Control Signboard</span>
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li class="active"><a href="scs-manage-requests.html"><i class="far fa-file-alt"></i> Manage Requests</a></li>
+                                </ul>
+                            </li>
+                            <li class="treeview">
+                                <a href="#"><i class="fas fa-globe"></i> <span>Website</span>
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li><a href="manage-feedback.html"><i class="far fa-comment"></i> Manage Feedback</a></li>
+                                </ul>
+                            </li>
+                            <li class="treeview">
+                                <a href="#"><i class="fas fa-sliders-h"></i> <span>Configurations</span>
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li><a href="manage-information-providers.html"><i class="far fa-address-book"></i> Manage Information Providers</a></li>
+                                    <li><a href="manage-vms-scs.html"><i class="fas fa-server"></i> Manage VMS &amp; SCS</a></li>
+                                    <li><a href="preconfigured-message-list.html"><i class="far fa-comment-dots"></i> Preconfigured Message List</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
+                <!-- /.sidebar-menu -->
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+
+
+        <!-- Content Wrapper-->
+        <div class="content-wrapper">
+            <!-- Content Header-->
+            <section class="content-header">
+                <h1>SCS Manage Requests</h1>
+            </section>
+
+            <!-- Main content -->
+            <section class="content container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box box-default box-solid">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Manage Requests Filter</h3>
+                                <div class="box-tools">
+                                    <button type="button" class="btn btn-box-tool btn-flat" data-widget="collapse"><i class="fas fa-filter"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="box-body">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>Date Range</label>
+                                            <div class="input-group">
+                                                <div class="input-group-addon"><i class="far fa-calendar-alt"></i></div>
+                                                <input type="text" placeholder="Choose Date Range" class="form-control daterangefilterTS bg-white" readonly="readonly">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>Request Type</label>
+                                            <select class="form-control select2" data-placeholder="Request Type" style="width: 100%;">
+                                                <option></option>
+                                                <option>Speed</option>
+                                                <option>Symbol</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>Status</label>
+                                            <select class="form-control select2" data-placeholder="Status" style="width: 100%;">
+                                                <option></option>
+                                                <option>New</option>
+                                                <option>Approved</option>
+                                                <option>Rejected</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group"> <label class="empty-lbl"></label>
+                                            <button type="button" class="btn btn-success btn-flat">Search</button> <button type="button" class="btn btn-default btn-flat">Clear</button>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box box-default box-solid">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Manage Requests List</h3>
+                                <div class="box-tools">
+                                    <a href="#" class="btn btn-block btn-sm btn-info btn-flat" data-toggle="modal" data-target="#createRequestSCS" data-backdrop="static" data-keyboard="false">Create SCS Request</a></div>
+                            </div>
+                            <div class="box-body">
+                                <div class="table-responsive overflow-x">
+                                    <table class="table table-bordered table-striped table-hover" id="manage-request-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Requested On</th>
+                                                <th>Request Type</th>
+                                                <th>Status</th>
+                                                <th>View</th>
+                                                <th width="10%">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>27/03/2019 12:32:05</td>
+                                                <td>Speed</td>
+                                                <td>Approved</td>
+                                                <td align="center">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default btn-flat btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                                                            <i class="fa fa-bars"></i></button>
+                                                        <ul class="dropdown-menu pull-right" role="menu">
+                                                            <li><a href="#" data-toggle="modal" data-target="#viewRequestSCS" data-backdrop="static" data-keyboard="false"><i class="fa fa-eye"></i> View Request</a></li>
+                                                            <li><a href="#"><i class="fa fa-eye"></i> View Schedule</a></li>
+                                                            <!--                                                          <li><a href="#"><i class="fa fa-eye"></i> View Conflict</a></li>-->
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                                <td class="action-icons" nowrap>
+                                                    <a href="#" data-toggle="modal" data-target="#viewRequestSCS" data-backdrop="static" data-keyboard="false"><i class="fa fa-eye" title="View SCS Requests"></i></a>
+                                                    <!--                                                   <a data-toggle="modal" data-target="#previewRequestVMS" data-backdrop="static" data-keyboard="false"><i class="far fa-file-alt" title="Preview Request in VMS"></i></a>-->
+                                                    <a href="#" data-toggle="modal" data-target="#editRequestSCS" data-backdrop="static" data-keyboard="false"><i class="fa fa-edit" title="Edit SCS  Requests"></i></a>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--Create Request SCS-->
+                <div class="modal fade" id="createRequestSCS" tabindex="-1">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title">Create SCS Request</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Request Type</label>
+                                            <select class="form-control" style="width: 100%;" id="scsReqType">
+                                                <option>Select Request Type</option>
+                                                <option value="SCSSpeed">Speed</option>
+                                                <option value="SCSSymbol">Symbol</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="scsReq" id="SCSSpeed" style="display: none">
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label>Speed</label>
+                                                <input type="text" placeholder="Speed" class="form-control">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-2">
+                                            <div class="form-group">
+                                                <label class="mr-10 empty-lbl">Enforced</label>
+                                                <label class="switch">
+                                                    <input type="checkbox">
+                                                    <span class="slider round"></span></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 scsReq" id="SCSSymbol" style="display: none">
+                                        <div class="form-group">
+                                            <label>Symbol</label>
+                                            <select class="form-control select2" data-placeholder="Symbol" style="width: 100%;">
+                                                <option></option>
+                                                <option>No Entry</option>
+                                                <option>One Way</option>
+                                                <option>Wrong Direction</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Request Description</label>
+                                            <textarea class="form-control" rows="3" placeholder="Request Description"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Date Range</label>
+                                            <div class="input-group">
+                                                <div class="input-group-addon"><i class="far fa-calendar-alt"></i></div>
+                                                <input type="text" placeholder="Choose Date Range" class="form-control daterangefilterTS bg-white" readonly="readonly">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <label class="empty-lbl"></label>
+                                        <div class="form-group">
+                                            <label class=" radio-inline">
+                                                <input type="radio" name="optionsDailyorWeekly" id="optionsDaily" value="Daily" checked="" onclick="show1();">
+                                                Daily
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="optionsDailyorWeekly" id="optionsWeekly" value="Weekly" onclick="show2();">
+                                                Weekly
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>Start Time</label>
+                                            <input class="form-control" type="text" placeholder="hh:mm:ss">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>End Time</label>
+                                            <input class="form-control" type="text" placeholder="hh:mm:ss">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group" id="SCSWeek" style="display: none">
+                                            <label>Day of the Week</label>
+                                            <select multiple="" class="form-control mselect2" data-placeholder="Select Day" style="width: 100%">
+                                                <option></option>
+                                                <option>Sunday</option>
+                                                <option>Monday</option>
+                                                <option>Tuesday</option>
+                                                <option>Wednesday</option>
+                                                <option>Thursday</option>
+                                                <option>Firday</option>
+                                                <option>Saturday</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-4">
+                                        <div class="form-group">
+                                            <label>Select Group</label>
+                                            <select class="form-control select2" data-placeholder="Select Group" style="width: 100%">
+                                                <option></option>
+                                                <option>SCS</option>
+                                                <option>SCS Group</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-8">
+                                        <div class="form-group">
+                                            <label>Select Devices</label>
+                                            <select multiple="" class="form-control mselect2" data-placeholder="Select Devices" style="width: 100%">
+                                                <option></option>
+                                                <option>Option 1</option>
+                                                <option>Option 2</option>
+                                                <option>Option 3</option>
+                                                <option>Option 4</option>
+                                                <option>Option 5</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-success btn-flat pull-left">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Edit Request SCS-->
+                <div class="modal fade" id="editRequestSCS" tabindex="-1">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title">Edit SCS Request</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Request Type</label>
+                                            <select class="form-control" style="width: 100%;">
+                                                <option value="SCSSpeed" selected>Speed</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="scsReq" id="SCSSpeed" style="display: block">
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label>Speed</label>
+                                                <input type="text" value="100" class="form-control">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-2">
+                                            <div class="form-group">
+                                                <label class="mr-10 empty-lbl">Enforced</label>
+                                                <label class="switch">
+                                                    <input type="checkbox" checked>
+                                                    <span class="slider round"></span></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Request Description</label>
+                                            <textarea class="form-control" rows="3">Request Description</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Date Range</label>
+                                            <div class="input-group">
+                                                <div class="input-group-addon"><i class="far fa-calendar-alt"></i></div>
+                                                <input type="text" placeholder="Choose Date Range" class="form-control daterangefilterTS bg-white" readonly="readonly">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <label class="empty-lbl"></label>
+                                        <div class="form-group">
+                                            <label class=" radio-inline">
+                                                <input type="radio" name="optionsDailyorWeekly" id="optionsDaily" value="Daily" checked="" onclick="show1();">
+                                                Daily
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="optionsDailyorWeekly" id="optionsWeekly" value="Weekly" onclick="show2();">
+                                                Weekly
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>Start Time</label>
+                                            <input class="form-control" type="text" placeholder="hh:mm:ss">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>End Time</label>
+                                            <input class="form-control" type="text" placeholder="hh:mm:ss">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group" id="SCSWeek" style="display: none">
+                                            <label>Day of the Week</label>
+                                            <select multiple="" class="form-control mselect2" data-placeholder="Select Day of the Week" style="width: 100%">
+                                                <option></option>
+                                                <option>Sunday</option>
+                                                <option>Monday</option>
+                                                <option>Tuesday</option>
+                                                <option>Wednesday</option>
+                                                <option>Thursday</option>
+                                                <option>Firday</option>
+                                                <option>Saturday</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-4">
+                                        <div class="form-group">
+                                            <label>Select Group</label>
+                                            <select class="form-control select2" data-placeholder="Select Group" style="width: 100%">
+                                                <option></option>
+                                                <option>SCS</option>
+                                                <option>SCS Group</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-8">
+                                        <div class="form-group">
+                                            <label>Select Devices</label>
+                                            <select multiple="" class="form-control mselect2" data-placeholder="Select Devices" style="width: 100%">
+                                                <option></option>
+                                                <option>Option 1</option>
+                                                <option>Option 2</option>
+                                                <option>Option 3</option>
+                                                <option>Option 4</option>
+                                                <option>Option 5</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-success btn-flat pull-left">Update</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--View Request SCS-->
+                <div class="modal fade" id="viewRequestSCS" tabindex="-1">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title">View SCS Request</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Request Type</label>
+                                            <select class="form-control" style="width: 100%;">
+                                                <option value="SCSSpeed" selected>Speed</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="scsReq">
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label>Speed</label>
+                                                <input type="text" value="100" class="form-control" readonly>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-2">
+                                            <div class="form-group">
+                                                <label class="mr-10 empty-lbl">Enforced</label>
+                                                <label class="switch">
+                                                    <input type="checkbox" checked disabled>
+                                                    <span class="slider round"></span></label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Request Description</label>
+                                            <textarea class="form-control" rows="3" readonly>Request Description</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Date Range</label>
+                                            <div class="input-group">
+                                                <div class="input-group-addon"><i class="far fa-calendar-alt"></i></div>
+                                                <input type="text" value="02/08/2019 11:00:00 - 03/08/2019 19:00:00" class="form-control" readonly="readonly">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <label class="empty-lbl"></label>
+                                        <div class="form-group">
+                                            <label class=" radio-inline">
+                                                <input type="radio" name="optionsDailyorWeekly" id="optionsDaily" value="Daily" onclick="show1();" readonly>
+                                                Daily
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="optionsDailyorWeekly" id="optionsWeekly" value="Weekly" checked="" onclick="show2();" readonly>
+                                                Weekly
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>Start Time</label>
+                                            <input class="form-control" type="text" value="00:10:00" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>End Time</label>
+                                            <input class="form-control" type="text" value="00:12:00" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group" id="SCSWeek" style="display: block">
+                                            <label>Day of the Week</label>
+                                            <select multiple="" class="form-control mselect2" data-placeholder="Select Day of the Week" style="width: 100%">
+                                                <option selected>Sunday</option>
+                                                <option selected>Monday</option>
+                                                <option>Tuesday</option>
+                                                <option>Wednesday</option>
+                                                <option selected>Thursday</option>
+                                                <option>Firday</option>
+                                                <option>Saturday</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-4">
+                                        <div class="form-group">
+                                            <label>Select Group</label>
+                                            <select class="form-control" style="width: 100%" readonly>
+                                                <option selected>SCS</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-8">
+                                        <div class="form-group">
+                                            <label>Select Devices</label>
+                                            <select multiple="" class="form-control mselect2" data-placeholder="Select Devices" style="width: 100%">
+                                                <option selected>Option 1</option>
+                                                <option>Option 2</option>
+                                                <option>Option 3</option>
+                                                <option selected>Option 4</option>
+                                                <option>Option 5</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+
+        <!-- Main Footer -->
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                Version 1.0
+            </div>
+            Copyright &copy; 2019 <a href="#">ARS Traffic &amp; Transport Technology </a>.
+        </footer>
+
+    </div>
+    <!-- ./wrapper -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="assets/js/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="assets/js/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script src="assets/js/jquery.slimscroll.min.js"></script>
+    <script src="assets/js/fastclick.js"></script>
+    <script src="assets/js/adminlte.min.js"></script>
+    <script src="assets/js/page.js"></script>
+
+
+    <script>
+        $(function() {
+            //select2
+            $('.select2').select2({
+                allowClear: true,
+            });
+
+
+            $('.mselect2').select2({
+                closeOnSelect: false,
+                placeholder: "Select",
+            });
+            //Date range picker with seconds
+            $('.daterangefilterTS').daterangepicker({
+                autoUpdateInput: false,
+                timePicker: true,
+                timePicker24Hour: true,
+                timePickerSeconds: true,
+                locale: {
+                    cancelLabel: 'Clear',
+                    format: 'DD/MM/YYYY HH:mm:ss'
+                },
+                startDate: moment().startOf('hour'),
+                endDate: moment().startOf('hour').add(32, 'hour'),
+            });
+
+            $('.daterangefilterTS').on('apply.daterangepicker', function(ev, picker) {
+                $(this).val(picker.startDate.format('DD/MM/YYYY HH:mm:ss') + ' - ' + picker.endDate.format('DD/MM/YYYY HH:mm:ss'));
+            });
+
+            $('.daterangefilterTS').on('cancel.daterangepicker ', function(ev, picker) {
+                $(this).val('');
+            });
+
+            // SCS Manage Request
+            $('#manage-request-table').dataTable({
+
+                bFilter: false, //hide search box
+                "sDom": "<'row'<'col-sm-12'tr>>" + "<'row'<'col-sm-2'l><'col-sm-3'i><'col-sm-7'p>>", // move filter to bottom
+                'columnDefs': [{
+                    'orderable': false,
+                    'targets': [4]
+                }], // hide sort icon on header of first column
+                'aaSorting': [
+                    [1, 'asc']
+                ] // start to sort data in second column 
+            });
+
+            $('#scsReqType').change(function() {
+                $('.scsReq').hide();
+                $('#' + $(this).val()).show();
+            });
+
+        })
+        //Show Hide Exisiting Message or New Message
+        function show1() {
+            document.getElementById('SCSWeek').style.display = 'none';
+        }
+
+        function show2() {
+            document.getElementById('SCSWeek').style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>
