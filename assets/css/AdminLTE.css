@@ -6940,6 +6940,8 @@ ul.pagination .fas {
 .report-select-grid .info-box-icon {
     height: 80px;
     width: 80px;
+    line-height: 76px;
+    font-size: 35px;
 }
 
 .all-reports {
@@ -6949,6 +6951,7 @@ ul.pagination .fas {
 .margin-btm-30 {
     margin-bottom: 30px;
 }
+
 
 @media (min-width: 992px) {
     .modal-lg {
