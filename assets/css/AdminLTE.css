@@ -6853,6 +6853,103 @@ ul.pagination .fas {
     color: #444444;
 }
 
+
+.report-select-grid {
+    list-style: none;
+    padding: 0 14px 0 0;
+}
+
+.report-select-grid li {
+    margin: 10px 10px;
+    position: relative;
+}
+
+.report-select-grid label {
+    position: relative;
+}
+
+
+.report-select-grid label {
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+
+.report-select-grid label:focus,
+.report-select-grid label:hover {}
+
+
+.report-select-grid label .selectedTemplate i {
+    color: #00a65a;
+    font-size: 20px;
+}
+
+.input-hidden {
+    position: absolute;
+    left: -9999px;
+}
+
+.report-select-grid input[type=radio]:checked + label > img {
+    border: 1px solid #00a65a;
+    -webkit-box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.73);
+    -moz-box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.73);
+    box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.73);
+}
+
+.report-select-grid input[type=radio] + label > info-box {
+    border: 1px solid #bebfc1;
+    transition: 200ms all;
+    cursor: pointer;
+}
+
+.report-select-grid input[type=radio] + label .selectedTemplate {
+    display: none;
+    transition: 200ms all;
+}
+
+.report-select-grid input[type=radio]:checked + label .selectedTemplate {
+    display: block;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    transition: 200ms all;
+}
+
+.report-select-grid .info-box {
+    cursor: pointer;
+    margin-bottom: 0px;
+    min-height: 80px;
+}
+
+.report-select-grid .info-box-text {
+    white-space: normal;
+}
+
+.report-select-grid label {
+    margin: 0px;
+    width: 100%;
+    font-weight: 400;
+}
+
+.report-select-grid .info-box-content {
+    margin-left: 80px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.report-select-grid .info-box-icon {
+    height: 80px;
+    width: 80px;
+}
+
+.all-reports {
+    background: #f2f2f2;
+}
+
+.margin-btm-30 {
+    margin-bottom: 30px;
+}
+
 @media (min-width: 992px) {
     .modal-lg {
         width: 1100px;
