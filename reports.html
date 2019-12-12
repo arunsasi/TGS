@@ -396,15 +396,15 @@
                                                     <div class="col-sm-6 col-md-6">
                                                         <div class=" form-group">
                                                             <label>Summarize By</label>
-                                                            <select class="form-control select2" data-placeholder="Summarize By" style="width: 100%">
+                                                            <select class="form-control select2" data-placeholder="Summarize By" style="width: 100%" id="SummarizeBy">
                                                                 <option></option>
-                                                                <option>Location</option>
-                                                                <option>Violation Type</option>
+                                                                <option value="Location">Location</option>
+                                                                <option value="Violation Type">Violation Type</option>
                                                             </select>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-6 col-md-4">
-                                                        <div class=" form-group">
+                                                        <div class="form-group">
                                                             <label>Sort By</label>
                                                             <select class="form-control select2" data-placeholder="Sort By" style="width: 100%">
                                                                 <option></option>
@@ -441,70 +441,64 @@
                                                                 <div id="advanceFilter" class="panel-collapse collapse">
                                                                     <div class="panel-body">
                                                                         <div class="row">
-                                                                            <div class="col-sm-6 col-md-3">
+                                                                            <div class="col-sm-6 col-md-4" id="SummarizeLocations" style="display: none;">
                                                                                 <div class="form-group">
-                                                                                    <label>Information Provided By</label>
-                                                                                    <select class="form-control select2" data-placeholder="Select Information" style="width: 100%">
-                                                                                        <option></option>
-                                                                                        <option>RC-1</option>
-                                                                                        <option>RC-2</option>
+                                                                                    <label>Location(s)</label>
+                                                                                    <select multiple="multiple" class="form-control" id="SelectLocations" style="width: 100%">
+                                                                                        <option>Location 1</option>
+                                                                                        <option>Location 2</option>
+                                                                                        <option>Location 3</option>
+                                                                                        <option>Location 4</option>
+                                                                                        <option>Location 5</option>
+                                                                                        <option>Location 6</option>
+                                                                                        <option>Location 7</option>
                                                                                     </select>
                                                                                 </div>
                                                                             </div>
-                                                                            <div class="col-sm-6 col-md-3">
+                                                                            <div class="col-sm-6 col-md-4" id="SummarizeViolations" style="display: none;">
                                                                                 <div class="form-group">
-                                                                                    <label>Source/Reported Via</label>
-                                                                                    <select class="form-control select2" data-placeholder="Select Source/Reported Via" style="width: 100%">
-                                                                                        <option></option>
-                                                                                        <option value="SMS">SMS</option>
-                                                                                        <option value="Phone">Phone</option>
-                                                                                        <option value="Fax">Fax</option>
-                                                                                        <option value="Email">Email</option>
-                                                                                        <option value="System">System</option>
+                                                                                    <label id="lblmake">Select Violation Type(s)</label>
+                                                                                    <select multiple="multiple" class="form-control" id="SelectViolationType" style="width: 100%">
+                                                                                        <option>Violation 1</option>
+                                                                                        <option>Violation 2</option>
+                                                                                        <option>Violation 3</option>
+                                                                                        <option>Violation 4</option>
                                                                                     </select>
                                                                                 </div>
                                                                             </div>
-                                                                            <div class="col-sm-6 col-md-3">
+                                                                            <div class="col-sm-6 col-md-4">
                                                                                 <div class="form-group">
-                                                                                    <label>Reported On Date &amp; Time</label>
+                                                                                    <label>Date Aggregation</label>
+                                                                                    <select class="form-control select2" data-placeholder="Select Date Aggregation" style="width: 100%" id="AggregateType">
+                                                                                        <option value="Aggregate by Date Selected">Aggregate by Date Selected</option>
+                                                                                        <option value="Aggregate by Day of Week">Aggregate by Day of Week</option>
+                                                                                        <option value="Aggregate by Hour">Aggregate by Hour</option>
+                                                                                        <option value="Aggregate by Month">Aggregate by Month</option>
+                                                                                        <option value="View Specific Time">View Specific Time</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-sm-6 col-md-4" id="AggregateSpecificDateTime" style="display: none">
+                                                                                <div class="form-group">
+                                                                                    <label>Select Date &amp; Time</label>
                                                                                     <div class="input-group">
                                                                                         <div class="input-group-addon"><i class="far fa-calendar-alt"></i></div>
-                                                                                        <input type="text" placeholder="Reported On Date &amp; Time" class="form-control dateSingleTime bg-white" readonly="readonly">
+                                                                                        <input type="text" placeholder="Select Date &amp; Time" class="form-control dateSingleTime bg-white" readonly="readonly">
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
-                                                                            <div class="col-sm-6 col-md-3">
+
+                                                                            <div class="col-sm-6 col-md-4">
                                                                                 <div class="form-group">
-                                                                                    <label id="lblmake">Priority</label>
-                                                                                    <select class="form-control select2" data-placeholder="Select Priority" style="width: 100%">
+                                                                                    <label>Output Value</label>
+                                                                                    <select class="form-control select2" data-placeholder="Select Output Value" style="width: 100%">
                                                                                         <option></option>
-                                                                                        <option value="Critical">Critical</option>
-                                                                                        <option value="High">High</option>
-                                                                                        <option value="Medium">Medium</option>
-                                                                                        <option value="Low">Low</option>
+                                                                                        <option>Average</option>
+                                                                                        <option>Sum</option>
                                                                                     </select>
                                                                                 </div>
                                                                             </div>
-                                                                            <div class="col-sm-6 col-md-3">
-                                                                                <div class="form-group">
-                                                                                    <label>Message Category</label>
-                                                                                    <select class="form-control select2" data-placeholder="Select Category" style="width: 100%">
-                                                                                        <option></option>
-                                                                                        <option>ADV</option>
-                                                                                        <option>PA</option>
-                                                                                    </select>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="col-sm-6 col-md-6">
-                                                                                <div class="form-group">
-                                                                                    <label>Request Description</label>
-                                                                                    <textarea class="form-control" rows="3" placeholder="Request Description"></textarea>
-                                                                                </div>
-                                                                            </div>
-
-
                                                                         </div>
-
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -524,16 +518,6 @@
                                         </div>
                                     </div>
                                 </div>
-
-                                <!--
-                                <div class="box-footer no-padding-left-right">
-                                    <button type="button" class="btn btn-success btn-flat">Generate Report</button>
-                                    <div class="pull-right">
-                                        <button type="button" class="btn btn-danger btn-flat ">Cancel</button>
-                                    </div>
-
-                                </div>
--->
                             </div>
                         </div>
                     </div>
@@ -574,12 +558,20 @@
             $('.select2').select2({
                 allowClear: true,
             });
-            $('#SelectDevice').multiselect({
+            $('#SelectLocations').multiselect({
                 enableFiltering: true,
                 includeSelectAllOption: true,
                 maxHeight: 400,
                 buttonWidth: '100%',
-                nonSelectedText: 'Select Device',
+                nonSelectedText: 'Select Locaton(s)',
+                buttonClass: 'btn btn-default btn-flat',
+            });
+            $('#SelectViolationType').multiselect({
+                enableFiltering: true,
+                includeSelectAllOption: true,
+                maxHeight: 400,
+                buttonWidth: '100%',
+                nonSelectedText: 'Select Violation Type(s)',
                 buttonClass: 'btn btn-default btn-flat',
             });
 
@@ -612,8 +604,6 @@
                 $(this).val('');
             });
 
-
-
             //Date range picker with seconds
             $('.daterangefilterTS').daterangepicker({
                 autoUpdateInput: false,
@@ -634,8 +624,6 @@
                     'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
                 },
 
-
-
                 startDate: moment().startOf('hour'),
                 endDate: moment().startOf('hour').add(32, 'hour'),
             });
@@ -647,9 +635,6 @@
             $('.daterangefilterTS').on('cancel.daterangepicker ', function(ev, picker) {
                 $(this).val('');
             });
-
-
-
 
             //Message Table
             $('#message-table').dataTable({
@@ -665,18 +650,30 @@
                 ] // start to sort data in second column 
             });
 
+            //Show Hide Location & Vialotion Type
+            $("#SummarizeBy").change(function() {
+                if ($(this).val() == "Location") {
+                    $("#SummarizeLocations").show();
+                } else {
+                    $("#SummarizeLocations").hide();
+                }
+            });
+            $("#SummarizeBy").change(function() {
+                if ($(this).val() == "Violation Type") {
+                    $("#SummarizeViolations").show();
+                } else {
+                    $("#SummarizeViolations").hide();
+                }
+            });
+            //Show Hide Specific Time
+            $("#AggregateType").change(function() {
+                if ($(this).val() == "View Specific Time") {
+                    $("#AggregateSpecificDateTime").show();
+                } else {
+                    $("#AggregateSpecificDateTime").hide();
+                }
+            });
+
         })
-
-
-        //Show Hide Exisiting Message or New Message
-        function show1() {
-            document.getElementById('ExistingMsgContent').style.display = 'none';
-            document.getElementById('NewMsgContent').style.display = 'block';
-        }
-
-        function show2() {
-            document.getElementById('ExistingMsgContent').style.display = 'block';
-            document.getElementById('NewMsgContent').style.display = 'none';
-        }
     </script>
 </body></html>
