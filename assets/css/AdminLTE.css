@@ -6948,10 +6948,13 @@ ul.pagination .fas {
     background: #f2f2f2;
 }
 
-.margin-btm-30 {
-    margin-bottom: 30px;
+.margin-btm-20 {
+    margin-bottom: 20px;
 }
 
+.lbl-head {
+    font-size: 16px;
+}
 
 @media (min-width: 992px) {
     .modal-lg {
